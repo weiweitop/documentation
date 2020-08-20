@@ -141,7 +141,13 @@ section {
 .card h3 {
   font-weight: 600;
   color: #464541;
-  font-family: Nunito, sans-serif;
+  font-family: 'Nunito', sans-serif;
+}
+.card img {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  max-height: 120px;
 }
 .card-1 {
   background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
@@ -166,6 +172,14 @@ section {
     margin: 20px;
   }
 }
+.typewriter h1 {
+  overflow: hidden;
+  border-right: 0.12em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
 @keyframes typing {
   from {
     width: 0;
@@ -180,15 +194,18 @@ section {
     border-color: transparent;
   }
   50% {
-    border-color: #464541;
+    border-color: rgb(70, 69, 65);
   }
 }
+
 header {
   height: 80px;
-  background-color: #464541;
+  background-color: rgb(70, 69, 65);
 }
 .hero {
-  padding-bottom: 37.5%;
+  padding-bottom: 37.5%; /* = ( 600 / 1600 ) x 100 */
+  background-image: url( 'https://www.juniper.net/documentation/webstatic/images/hero-optimized.png' );
   background-size: contain;
   background-repeat: no-repeat;
+
 }
