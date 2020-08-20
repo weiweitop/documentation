@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+
+    <!-- FontAwesome (GPL license) -->
+  
+          <meta content="width=device-width, initial-scale=1.0" name="viewport">
+          <title>Docs</title>
+          <meta content="" name="descriptison">
+          <meta content="" name="keywords">
+          <!-- Favicons -->
+          <!-- Google Fonts -->
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+          <!-- Vendor CSS Files -->
+          <!-- Template Main CSS File -->
+          <link href="../assets/css/Indstyle.css" rel="stylesheet">
+        
+       
+       </head>
+  <!-- FontAwesome (GPL license) -->
+    {% unless page.layout == "homepage" or page.type == "search" or page.type =="404" %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+        <script>
+        $( document ).ready(function() {
+            anchors.add('h2,h3,h4,h5');
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    {% endunless %}
+
+    <!-- <script>
+        $( document ).ready(function() {
+            $("#docnavsidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'open', // open
+                save: true,
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 300,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', true);
+            });
+        });
+
+    </script> -->
+
+ <!-- For responsive button to toggle sidebar -->
+    <!-- <script>
+        $(document).ready(function() {
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script> -->
+
+    <!-- User defined js -->
+    <!-- <script src="assets/js/user_defined_javascript.js"></script> -->
+    <!--Bootstrap (MIT license) -->
+    
+    <!-- <style>
+        ul#markdown-toc::before  {
+        content: "{{site.uistring.tableofcontents}}"
+         }
+    </style> -->
+
+</head>

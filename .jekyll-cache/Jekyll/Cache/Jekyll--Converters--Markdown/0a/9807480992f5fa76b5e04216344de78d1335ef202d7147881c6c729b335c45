@@ -1,0 +1,138 @@
+I"�7<p>This is the English Sample 1 page.blah blah blah blah.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EnhancedFor</span>
+<span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+	<span class="o">{</span>	<span class="kt">int</span><span class="o">[]</span> <span class="n">list</span> <span class="o">={</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
+		<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">sumListEnhanced</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Sum of elements in list: "</span> <span class="o">+</span> <span class="n">sum</span><span class="o">);</span>
+
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Original List"</span><span class="o">);</span>
+		<span class="n">printList</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Calling addOne"</span><span class="o">);</span>
+		<span class="n">addOne</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"List after call to addOne"</span><span class="o">);</span>
+		<span class="n">printList</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Calling addOneError"</span><span class="o">);</span>
+		<span class="n">addOneError</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"List after call to addOneError. Note elements of list did not change."</span><span class="o">);</span>
+		<span class="n">printList</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="c1">// pre: list != null</span>
+	<span class="c1">// post: return sum of elements</span>
+	<span class="c1">// uses enhanced for loop</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">sumListEnhanced</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="o">)</span>
+	<span class="o">{</span>	<span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">val</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span>
+		<span class="o">{</span>	<span class="n">total</span> <span class="o">+=</span> <span class="n">val</span><span class="o">;</span>
+		<span class="o">}</span>
+		<span class="k">return</span> <span class="n">total</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="c1">// pre: list != null</span>
+	<span class="c1">// post: return sum of elements</span>
+	<span class="c1">// use traditional for loop</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">sumListOld</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="o">)</span>
+	<span class="o">{</span>	<span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+		<span class="o">{</span>	<span class="n">total</span> <span class="o">+=</span> <span class="n">list</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">list</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">);</span>
+		<span class="o">}</span>
+		<span class="k">return</span> <span class="n">total</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="c1">// pre: list != null</span>
+	<span class="c1">// post: none.</span>
+	<span class="c1">// The code appears to add one to every element in the list, but does not</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addOneError</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="o">)</span>
+	<span class="o">{</span>	<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">val</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span>
+		<span class="o">{</span>	<span class="n">val</span> <span class="o">=</span> <span class="n">val</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="c1">// pre: list != null</span>
+	<span class="c1">// post: adds one to every element of list</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addOne</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="o">)</span>
+	<span class="o">{</span>	<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+		<span class="o">{</span>	<span class="n">list</span><span class="o">[</span><span class="n">i</span><span class="o">]++;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printList</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="o">)</span>
+	<span class="o">{</span>	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"index, value"</span><span class="o">);</span>
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+		<span class="o">{</span>	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="n">list</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>here is some js:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Simple Map<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+      <span class="c">/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */</span>
+      <span class="nf">#map</span> <span class="p">{</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c">/* Optional: Makes the sample page fill the window. */</span>
+      <span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="kd">var</span> <span class="nx">map</span><span class="p">;</span>
+      <span class="kd">function</span> <span class="nx">initMap</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nb">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">map</span><span class="dl">'</span><span class="p">),</span> <span class="p">{</span>
+          <span class="na">center</span><span class="p">:</span> <span class="p">{</span><span class="na">lat</span><span class="p">:</span> <span class="o">-</span><span class="mf">34.397</span><span class="p">,</span> <span class="na">lng</span><span class="p">:</span> <span class="mf">150.644</span><span class="p">},</span>
+          <span class="na">zoom</span><span class="p">:</span> <span class="mi">8</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;callback=initMap"</span>
+    <span class="na">async</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>this is the english version…</p>
+
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<p>Why do we use it?
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>sample</th>
+      <th>table</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>row 1</td>
+      <td>row 1</td>
+    </tr>
+    <tr>
+      <td>row 2</td>
+      <td>row 2</td>
+    </tr>
+  </tbody>
+</table>
+:ET

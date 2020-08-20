@@ -1,0 +1,39 @@
+## Topnav single links
+## if you want to list an external url, use url instead of url. the theme will apply a different link base.
+
+navbar_singleitems:
+- items:
+    - title: Docs Home
+      url: index.html
+    # - title: Contact
+    #   url: contact.html
+
+
+
+navbar_dropdowns:
+- title: Topnav dropdowns
+  folders:
+  - title: Products
+    folderitems:
+    - title: HR Works
+      url: jekyllhowto-content-and-formatting.html
+    - title: HR Works Plus (ESS)
+      url: jekyllhowto-content-and-formatting.html
+    - title: HRW Web
+      url: jekyllhowto-content-and-formatting.html
+    - title: e-TAS
+      url: jekyllhowto-content-and-formatting.html
+
+- title: Topnav dropdowns
+  folders:
+  - title: Dev docs
+    folderitems:
+    - title: Coding Styles and Guidelines
+      url: Coding_Style_Guide.html
+    - title: Database Management
+      url: jekyllhowto-content-and-formatting.html
+    - title: API Documentaton
+      url: jekyllhowto-content-and-formatting.html
+
+
+

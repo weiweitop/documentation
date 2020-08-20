@@ -1,0 +1,13 @@
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  padding: 10px !important;
+  color: #5d5d5d;
+}
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  text-decoration: none;
+  color: #e24d55;
+  font-weight: 700;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
