@@ -1,13 +1,38 @@
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  padding: 10px !important;
-  color: #5d5d5d;
+---
+layout: null
+---
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover, .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus{
+    text-decoration: none;
+    font-size: 15px; !important;
+    font-weight: 500; !important;
+    font-family: "Poppins", sans-serif; !important;
 }
-.navbar-default .navbar-nav > li > a:focus,
-.navbar-default .navbar-nav > li > a:hover {
-  text-decoration: none;
-  color: #e24d55;
-  font-weight: 700;
+
+.navbar-default .navbar-nav > li > .dropdown-menu{
+    padding: 0;
+
+
 }
+
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a, .navbar-default .navbar-nav > li > .dropdown-menu > li > a{
+    padding: 10px !important;
+    color: #5D5D5D;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+    text-decoration: none;
+    color: #e24d55; 
+    font-weight: bold;
+ 
+
+}
+
 .dropdown:hover .dropdown-menu {
-  display: block;
+    display: block;
 }
+.anchorjs-link  {
+    opacity: 100 !important;
+}
+/* left blank so you can overwrite this in your own project without copying the layout too */
+
+
