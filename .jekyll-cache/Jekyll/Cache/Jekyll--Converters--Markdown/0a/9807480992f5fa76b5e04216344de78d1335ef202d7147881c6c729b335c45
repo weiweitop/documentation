@@ -1,114 +1,114 @@
-I"ò7<p>This is the English Sample 1 page.blah blah blah blah.</p>
+I"Ö<p>This is the English Sample 1 page.blah blah blah blah.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EnhancedFor</span>
-<span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
-	<span class="o">{</span>	<span class="kt">int</span><span class="o">[]</span> <span class="n">list</span> <span class="o">={</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
-		<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">sumListEnhanced</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Sum of elements in list: "</span> <span class="o">+</span> <span class="n">sum</span><span class="o">);</span>
+<pre><code class="language-java">public class EnhancedFor
+{
+	public static void main(String[] args)
+	{	int[] list ={1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		int sum = sumListEnhanced(list);
+		System.out.println("Sum of elements in list: " + sum);
 
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Original List"</span><span class="o">);</span>
-		<span class="n">printList</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Calling addOne"</span><span class="o">);</span>
-		<span class="n">addOne</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"List after call to addOne"</span><span class="o">);</span>
-		<span class="n">printList</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Calling addOneError"</span><span class="o">);</span>
-		<span class="n">addOneError</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"List after call to addOneError. Note elements of list did not change."</span><span class="o">);</span>
-		<span class="n">printList</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
-	<span class="o">}</span>
+		System.out.println("Original List");
+		printList(list);
+		System.out.println("Calling addOne");
+		addOne(list);
+		System.out.println("List after call to addOne");
+		printList(list);
+		System.out.println("Calling addOneError");
+		addOneError(list);
+		System.out.println("List after call to addOneError. Note elements of list did not change.");
+		printList(list);
+	}
 
-	<span class="c1">// pre: list != null</span>
-	<span class="c1">// post: return sum of elements</span>
-	<span class="c1">// uses enhanced for loop</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">sumListEnhanced</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="o">)</span>
-	<span class="o">{</span>	<span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">val</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span>
-		<span class="o">{</span>	<span class="n">total</span> <span class="o">+=</span> <span class="n">val</span><span class="o">;</span>
-		<span class="o">}</span>
-		<span class="k">return</span> <span class="n">total</span><span class="o">;</span>
-	<span class="o">}</span>
+	// pre: list != null
+	// post: return sum of elements
+	// uses enhanced for loop
+	public static int sumListEnhanced(int[] list)
+	{	int total = 0;
+		for(int val : list)
+		{	total += val;
+		}
+		return total;
+	}
 
-	<span class="c1">// pre: list != null</span>
-	<span class="c1">// post: return sum of elements</span>
-	<span class="c1">// use traditional for loop</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">sumListOld</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="o">)</span>
-	<span class="o">{</span>	<span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-		<span class="o">{</span>	<span class="n">total</span> <span class="o">+=</span> <span class="n">list</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">list</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">);</span>
-		<span class="o">}</span>
-		<span class="k">return</span> <span class="n">total</span><span class="o">;</span>
-	<span class="o">}</span>
+	// pre: list != null
+	// post: return sum of elements
+	// use traditional for loop
+	public static int sumListOld(int[] list)
+	{	int total = 0;
+		for(int i = 0; i &lt; list.length; i++)
+		{	total += list[i];
+			System.out.println( list[i] );
+		}
+		return total;
+	}
 
-	<span class="c1">// pre: list != null</span>
-	<span class="c1">// post: none.</span>
-	<span class="c1">// The code appears to add one to every element in the list, but does not</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addOneError</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="o">)</span>
-	<span class="o">{</span>	<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">val</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span>
-		<span class="o">{</span>	<span class="n">val</span> <span class="o">=</span> <span class="n">val</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
-		<span class="o">}</span>
-	<span class="o">}</span>
+	// pre: list != null
+	// post: none.
+	// The code appears to add one to every element in the list, but does not
+	public static void addOneError(int[] list)
+	{	for(int val : list)
+		{	val = val + 1;
+		}
+	}
 
-	<span class="c1">// pre: list != null</span>
-	<span class="c1">// post: adds one to every element of list</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addOne</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="o">)</span>
-	<span class="o">{</span>	<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-		<span class="o">{</span>	<span class="n">list</span><span class="o">[</span><span class="n">i</span><span class="o">]++;</span>
-		<span class="o">}</span>
-	<span class="o">}</span>
+	// pre: list != null
+	// post: adds one to every element of list
+	public static void addOne(int[] list)
+	{	for(int i = 0; i &lt; list.length; i++)
+		{	list[i]++;
+		}
+	}
 
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printList</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="o">)</span>
-	<span class="o">{</span>	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"index, value"</span><span class="o">);</span>
-		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-		<span class="o">{</span>	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="n">list</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
-		<span class="o">}</span>
-	<span class="o">}</span>
+	public static void printList(int[] list)
+	{	System.out.println("index, value");
+		for(int i = 0; i &lt; list.length; i++)
+		{	System.out.println(i + ", " + list[i]);
+		}
+	}
 
 
 
-<span class="o">}</span>
-</code></pre></div></div>
+}
+</code></pre>
 
 <p>here is some js:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Simple Map<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"initial-scale=1.0"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;style&gt;</span>
-      <span class="c">/* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */</span>
-      <span class="nf">#map</span> <span class="p">{</span>
-        <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="c">/* Optional: Makes the sample page fill the window. */</span>
-      <span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
-        <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-        <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-        <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="nt">&lt;/style&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
-    <span class="nt">&lt;script&gt;</span>
-      <span class="kd">var</span> <span class="nx">map</span><span class="p">;</span>
-      <span class="kd">function</span> <span class="nx">initMap</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nb">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">map</span><span class="dl">'</span><span class="p">),</span> <span class="p">{</span>
-          <span class="na">center</span><span class="p">:</span> <span class="p">{</span><span class="na">lat</span><span class="p">:</span> <span class="o">-</span><span class="mf">34.397</span><span class="p">,</span> <span class="na">lng</span><span class="p">:</span> <span class="mf">150.644</span><span class="p">},</span>
-          <span class="na">zoom</span><span class="p">:</span> <span class="mi">8</span>
-        <span class="p">});</span>
-      <span class="p">}</span>
-    <span class="nt">&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;callback=initMap"</span>
-    <span class="na">async</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Simple Map&lt;/title&gt;
+    &lt;meta name="viewport" content="initial-scale=1.0"&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;style&gt;
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="map"&gt;&lt;/div&gt;
+    &lt;script&gt;
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    &lt;/script&gt;
+    &lt;script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;callback=initMap"
+    async defer&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
 <p>this is the english versionâ€¦</p>
 

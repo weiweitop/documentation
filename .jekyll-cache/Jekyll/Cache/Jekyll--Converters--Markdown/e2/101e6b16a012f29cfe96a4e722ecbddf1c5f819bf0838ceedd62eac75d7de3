@@ -1,0 +1,396 @@
+I"�<p>(setq markdown-xhtml-header-content
+      “<style type="text/css">
+table{table-layout:fixed;}
+td{width:1px;}
+</style>”)</p>
+
+<ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+</ul>
+
+<h1 id="introduction">Introduction</h1>
+<p>The <strong>Performance Management</strong> module in HR Works Plus takes care of the
+entire performance management cycle from creating performance plan
+period to final rating on employee appraisals.</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+&lt;/tr&gt;
+<tr>
+<td>Employee Sequence Code</td>
+<td>Select the sequence code you want to set as the Employee sequence code in the system.</td>
+<td>NA</td>
+
+</tr>
+<tr>
+<td>Over Time Cancellation</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>Vacation Accrual Type</td>
+<td>The system will calculate the vacation accrual days (in payroll calculation, vacation encashment, etc) based on the selection here. If Monthly Amount is selected the accrual days will be calculated as theVacation accrual days for a year / days in month.</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.</td>
+</tr>
+<tr>
+<td>Leave Application Check List Link</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>Notice Period Applicable Type</td>
+<td>"For different type of separations, Notice Period shall be either by employee or by employer. E.g. In case of Termination, employer has to give the notice period whereas in case of Resignation, employee has to give the notice period and so on. Whether Notice Period is by employee or by employer shall be maintained for the Separation Types.</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>'Notice Amount (Days)' shall be the no. of days for which the Notice Amount is to be calculated. This days shall be obtained based on 'Notice Period Applicable Type' of the separation type, Notice Period By Employee (days) / Notice Period By Employer (days) applicable for the employee, Date and Effective Date in the Action Form."</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Card Master to set value specific to each entity.</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>Notice Period By Employee(days)</td>
+<td>Please see above</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.</td>
+</tr>
+<tr>
+<td>Notice Period By Employer(days)</td>
+<td>Please see above</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.</td>
+</tr>
+<tr>
+<td>Notice Pay Calculation Formula</td>
+<td>"If Notice Pay Calculation Formula is not select or set as 'None', then system follow General calculation method.</td>
+<td>NA</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>Along with the existing notice pay calculation formula, the below options also are available calculate the notice pay.<br /> <br />	
+1. Based on daily rate policy for salary calculation. <br /> <br />
+2. Based on the daily rate calculation basis defined in the indemnity scheme <br /> <br />
+3. You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.
+<tr>
+<td>Min. Service Period for Loan Eligibility</td>
+<td>Specify the minimim required service period for an employee to avail loans.</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.</td>
+</tr>
+<tr>
+<td>Reset Vacation Accrual to Days</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.</td>
+</tr>
+<tr>
+<td>Multilevel Approval Workflow</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.</td>
+</tr>
+<tr>
+<td>Default Supension Leave Type</td>
+<td>Select the Leave type to be set as the suspension leave type. Once you set this, the suspension leave type cannot be changed from the leave type drop down while suspending the employee on the suspension screen.</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.</td>
+</tr>
+<tr>
+<td>Action form Email Workflow</td>
+<td>You can set this entity-wise by selecting the appropriate entity type from the Entity dropdown field. Once done, you will have an option under the entity type in the Application Parameter pane on the Card Master to set value specific to each entity.</td>
+</tr>
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[sample1]: sample1.html
+
+
+
+
+
+
+
+
+
+[sample2]: sample2.html
+
+
+
+
+
+
+
+
+
+[sample3]: sample3.html
+
+
+
+
+
+
+
+
+
+[glossary]: glossary.html
+
+[glossary#abstruse]: glossary.html#abstruse
+
+[glossary#adumbrate]: glossary.html#adumbrate
+
+[glossary#arboreal]: glossary.html#arboreal
+
+[glossary#Ebullient]: glossary.html#Ebullient
+
+[glossary#macabre]: glossary.html#macabre
+
+[glossary#riparian]: glossary.html#riparian
+
+
+
+
+
+
+
+
+
+
+
+[sample4]: sample1.html
+
+
+
+
+
+
+
+
+
+[sample5]: sample2.html
+
+
+
+
+
+
+
+
+
+[sample6]: sample3.html
+
+
+
+
+
+
+
+
+
+[sublevel1]: sublevel1.html
+
+
+
+
+
+
+
+
+
+[sublevel2]: sublevel2.html
+
+
+
+
+
+
+
+
+
+[sublevel3]: sublevel3.html
+
+
+
+
+
+
+
+
+
+[subsublevel1]: subsublevel1.html
+
+
+
+
+
+
+
+
+[subsublevel2]: subsublevel2.html
+
+
+
+
+
+
+
+
+[subsublevel3]: subsublevel3.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[jekyllhowto-getting-started]: index.html
+
+[jekyllhowto-getting-started#breadcrumbsection]: index.html#breadcrumbsection
+
+
+
+
+
+
+
+
+
+[jekyllhowto-sidebar-navigation]: jekyllhowto-sidebar-navigation.html
+
+[jekyllhowto-sidebar-navigation#sidebarentries]: jekyllhowto-sidebar-navigation.html#sidebarentries
+
+
+
+
+
+
+
+
+
+[jekyllhowto-content-and-formatting]: jekyllhowto-content-and-formatting.html
+
+[jekyllhowto-content-and-formatting#kramdowntoc]: jekyllhowto-content-and-formatting.html#kramdowntoc
+
+[jekyllhowto-content-and-formatting#images_section]: jekyllhowto-content-and-formatting.html#images_section
+
+
+
+
+
+
+
+
+
+[jekyllhowto-pdf]: jekyllhowto-pdf.html
+
+
+
+
+
+
+
+
+
+[jekyllhowto-troubleshooting]: jekyllhowto-troubleshooting.html
+
+
+
+
+
+
+
+
+
+
+
+[jekyllhowto-install-jekyll-on-mac]: jekyllhowto-install-jekyll-on-mac.html
+
+
+
+
+
+
+
+
+
+[jekyllhowto-install-jekyll-on-windows]: jekyllhowto-install-jekyll-on-windows.html
+
+
+
+
+
+
+
+
+
+[jekyllhowto-atom-text-editor]: jekyllhowto-atom-text-editor.html
+
+
+
+
+
+
+
+
+
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+
+
+
+
+
+</td></tr></table>
+:ET

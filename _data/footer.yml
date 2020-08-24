@@ -1,5 +1,6 @@
 about_title: About the Documentation
-about_description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.
+about_description: >
+  GITe's technical documentation homepage is your starting point for accessing documentation on GITe software, developer guides, style guides and other resources..
 
 column1_title: Column 1
 column1_links:

@@ -1,4 +1,4 @@
-I"J<p>Installation of Jekyll on Mac is usually less problematic than on Windows. However, you may run into permissions issues with Ruby that you must overcome. You should also use Bundler to be sure that you have all the required gems and other utilities on your computer to make the project run.</p>
+I"C<p>Installation of Jekyll on Mac is usually less problematic than on Windows. However, you may run into permissions issues with Ruby that you must overcome. You should also use Bundler to be sure that you have all the required gems and other utilities on your computer to make the project run.</p>
 
 <ul id="markdown-toc">
   <li><a href="#ruby-and-rubygems" id="markdown-toc-ruby-and-rubygems">Ruby and RubyGems</a></li>
@@ -9,25 +9,25 @@
 
 <h2 id="ruby-and-rubygems">Ruby and RubyGems</h2>
 
-<p>Ruby and <a href="https://rubygems.org/pages/download">RubyGems</a> are usually installed by default on Macs. Open your Terminal and type <code class="language-plaintext highlighter-rouge">which ruby</code> and  <code class="language-plaintext highlighter-rouge">which gem</code> to confirm that you have Ruby and Rubygems. You should get a response indicating the location of Ruby and Rubygems.</p>
+<p>Ruby and <a href="https://rubygems.org/pages/download">RubyGems</a> are usually installed by default on Macs. Open your Terminal and type <code>which ruby</code> and  <code>which gem</code> to confirm that you have Ruby and Rubygems. You should get a response indicating the location of Ruby and Rubygems.</p>
 
 <p>If you get responses that look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/bin/ruby
-</code></pre></div></div>
+<pre><code>/usr/local/bin/ruby
+</code></pre>
 
 <p>and</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/bin/gem
-</code></pre></div></div>
+<pre><code>/usr/local/bin/gem
+</code></pre>
 
 <p>Great! Skip down to the <a href="#bundler">Bundler</a> section.</p>
 
-<p>However, if your location is something like <code class="language-plaintext highlighter-rouge">/Users/MacBookPro/.rvm/rubies/ruby-2.2.1/bin/gem</code>, which points to your system location of Rubygems, you will likely run into permissions errors when trying to get a gem. A sample permissions error (triggered when you try to install the jekyll gem such as <code class="language-plaintext highlighter-rouge">gem install jekyll</code>) might look like this for Rubygems:</p>
+<p>However, if your location is something like <code>/Users/MacBookPro/.rvm/rubies/ruby-2.2.1/bin/gem</code>, which points to your system location of Rubygems, you will likely run into permissions errors when trying to get a gem. A sample permissions error (triggered when you try to install the jekyll gem such as <code>gem install jekyll</code>) might look like this for Rubygems:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt;ERROR:  While executing gem ... (Gem::FilePermissionError)
+<pre><code> &gt;ERROR:  While executing gem ... (Gem::FilePermissionError)
   You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.
-</code></pre></div></div>
+</code></pre>
 
 <p>Instead of changing the write permissions on your operating system’s version of Ruby and Rubygems (which could pose security issues), you can install another instance of Ruby (one that is writable) to get around this.</p>
 
@@ -35,32 +35,32 @@
 
 <p>Homebrew is a package manager for the Mac, and you can use it to install an alternative instance of Ruby code. To install Homebrew, run this command:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-</code></pre></div></div>
+<pre><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</code></pre>
 
 <p>If you already had Homebrew installed on your computer, be sure to update it:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew update
-</code></pre></div></div>
+<pre><code>brew update
+</code></pre>
 
 <h2 id="install-ruby-through-homebrew">Install Ruby through Homebrew</h2>
 
 <p>Now use Homebrew to install Ruby:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install ruby
-</code></pre></div></div>
+<pre><code>brew install ruby
+</code></pre>
 
 <p>Log out of terminal, and then then log back in.</p>
 
-<p>When you type <code class="language-plaintext highlighter-rouge">which ruby</code> and <code class="language-plaintext highlighter-rouge">which gem</code>, you should get responses like this:</p>
+<p>When you type <code>which ruby</code> and <code>which gem</code>, you should get responses like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/bin/ruby
-</code></pre></div></div>
+<pre><code>/usr/local/bin/ruby
+</code></pre>
 
 <p>And this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/bin/gem
-</code></pre></div></div>
+<pre><code>/usr/local/bin/gem
+</code></pre>
 
 <p>Now Ruby and Rubygems are installed under your username, so these directories are writeable.</p>
 
@@ -70,16 +70,16 @@
 
 <p>At this point you should have a writeable version of Ruby and Rubygem on your machine.</p>
 
-<p>Now use <code class="language-plaintext highlighter-rouge">gem</code> to install Jekyll:</p>
+<p>Now use <code>gem</code> to install Jekyll:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
-</code></pre></div></div>
+<pre><code>gem install jekyll
+</code></pre>
 
 <h2 id="serve-the-jekyll-documentation-theme">Serve the Jekyll Documentation theme</h2>
 
 <ol>
   <li>Browse to the directory where you downloaded the Documentation theme for Jekyll.</li>
-  <li>Type <code class="language-plaintext highlighter-rouge">jekyll serve</code></li>
+  <li>Type <code>jekyll serve</code></li>
   <li>Go to the preview address in the browser.</li>
 </ol>
 

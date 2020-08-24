@@ -1,5 +1,4 @@
-url: dli-it.github.io
-baseurl: /documentation
+
 ############# SITE PROPERTIES #############
 
 # localhost port (can be anything)
@@ -39,7 +38,7 @@ navbar-toggle: true
 
 ############# AUTOMATED LINKS #############
 
-# the links.html script requires you to list your sidebars here. this is if you're using managed links (see jekyllhowto-content-and-formatting.html#automatedlinks)
+# the links.html script requires you to list your sidebars here. this is if you're using managed links (see jekyllhowto-content-and-formatting.html#automategitenks)
 sidebars:
   - generic
   - jekyllhowto
@@ -53,7 +52,7 @@ link_type: jurl
 show_feedback: true
 
 # email address feedback gets sent to
-feedback_email: adarshbm11@gmail.com
+feedback_email: someemail@gmail.com
 
 # note: to customize the auto-completed body text, overwrite it by adding _includes/feedback.html in your own theme.
 
@@ -70,7 +69,8 @@ github_button_location_below_title: false
 github_button_location_page_bottom: false
 
 # link to your github repo. replace <organization> (if applicable) and <repo name> and <branch name>. Note that the github link will be {{site.github_editme_path}}/{{page.path}}
-github_editme_path: https://github.com/DLI-IT/documentation/blob/gh-pages
+github_editme_path: https://github.com/<organization>/<repo name>/blob/<branch name>
+
 
 ############# EXCLUDE LIST #############
 # these folders or files will not be included in the output. you can use wildcards with asterisks.
@@ -171,13 +171,12 @@ breadcrumb_home_url: http://yourcompanysite.com
 ##########  MARKDOWN PROCESS AND FILTER ##########
 # leave these settings as is unless you want to use something other than kramdown Markdown
 
-highlighter: rouge
+highlighter: none
 markdown: kramdown
 kramdown:
  input: GFM
  auto_ids: true
  hard_wrap: false
- syntax_highlighter: rouge
 
 ########## SASS SETTINGS ##########
 # used to define sass settings. leave as is.
@@ -197,7 +196,7 @@ collections:
 # Translate these for Japanese and German outputs.
 
 uistring:
-    title: DLI Documentation theme # title to appear in nav bar and page meta
+    title: GITe Documentation theme # title to appear in nav bar and page meta
     description: Description of the site # Displays as site description meta tag for site
     copyright: 2017 Your Company, Inc. # appears in footer
     breadcrumb_home_name: Home # display name for "Home" path in the breadcrumb

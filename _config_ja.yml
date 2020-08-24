@@ -13,7 +13,7 @@ copyright: 2017 Your Company, Inc.
 logo: assets/companylogo.png
 
 
-# the links.html script requires you to list your sidebars here. this is if you're using managed links (see jekyllhowto-content-and-formatting.html#automatedlinks)
+# the links.html script requires you to list your sidebars here. this is if you're using managed links (see jekyllhowto-content-and-formatting.html#automategitenks)
 sidebars:
   - generic
   - jekyllhowto

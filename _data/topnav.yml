@@ -18,7 +18,7 @@ navbar_dropdowns:
     - title: HR Works
       url: jekyllhowto-content-and-formatting.html
     - title: HR Works Plus (ESS)
-      url: jekyllhowto-content-and-formatting.html
+      url: pmm.html
     - title: HRW Web
       url: jekyllhowto-content-and-formatting.html
     - title: e-TAS
@@ -29,11 +29,11 @@ navbar_dropdowns:
   - title: Dev docs
     folderitems:
     - title: Coding Styles and Guidelines
-      url: Coding_Style_Guide.html
+      url: /jekyllhowto-content-and-formatting.html
     - title: Database Management
-      url: jekyllhowto-content-and-formatting.html
+      url: /index.html
     - title: API Documentaton
-      url: jekyllhowto-content-and-formatting.html
+      url: /index.html
 
 
 

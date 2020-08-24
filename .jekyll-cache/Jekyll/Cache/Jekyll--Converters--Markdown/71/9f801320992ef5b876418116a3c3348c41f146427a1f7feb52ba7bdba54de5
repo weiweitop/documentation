@@ -1,4 +1,4 @@
-I"�`<style>
+I"�]<style>
 body {
   padding:30px;
   max-width: 800px;
@@ -94,21 +94,21 @@ body {
 
 <h2 id="inline-code">Inline Code</h2>
 
-<p>This is some <code class="language-plaintext highlighter-rouge">inline code</code> in a sentence.</p>
+<p>This is some <code>inline code</code> in a sentence.</p>
 
 <h2 id="code-blocks">Code blocks</h2>
 
 <p>This is a code block:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s">My File Name</span>
-<span class="na">permalink</span><span class="pi">:</span> <span class="s">myfile.html</span>
-<span class="na">sidebar</span><span class="pi">:</span> <span class="s">mysidebar</span>
-<span class="na">product</span><span class="pi">:</span> <span class="s">My Product</span>
-<span class="nn">---</span>
-</code></pre></div></div>
+<pre><code class="language-yaml">---
+title: My File Name
+permalink: myfile.html
+sidebar: mysidebar
+product: My Product
+---
+</code></pre>
 
-<p>This is a code block with <code class="language-plaintext highlighter-rouge">pre</code> tags:</p>
+<p>This is a code block with <code>pre</code> tags:</p>
 
 <pre>
 - title: Sample Topic
@@ -188,8 +188,8 @@ body {
   <li>
     <p>Another list item. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>
 
-    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">);</span>
-</code></pre></div>    </div>
+    <pre><code class="language-js">function alert("hello");
+</code></pre>
 
     <p>The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>
   </li>
@@ -322,7 +322,7 @@ See <a href="sample3.html">Sample 3</a>
 
 <h2 id="edit-on-github-button">Edit on GitHub button</h2>
 
-<div class="githubFeedback"><span class="githubButton"><a target="_blank" href="https://github.com/DLI-IT/documentation/blob/gh-pages/_docs/Jekyll Doc Project/Theme Instructions/formattingtest.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a></span></div>
+<div class="githubFeedback"><span class="githubButton"><a target="_blank" href="https://github.com/&lt;organization&gt;/&lt;repo name&gt;/blob/&lt;branch name&gt;/_docs/Jekyll Doc Project/Theme Instructions/formattingtest.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a></span></div>
 
 <h2 id="definition-lists">Definition lists</h2>
 
