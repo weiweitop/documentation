@@ -1,4 +1,4 @@
-I"Ý<p>(setq markdown-xhtml-header-content
+I"ï¿½<p>(setq markdown-xhtml-header-content
       â€œ<style type="text/css">
 table{table-layout:fixed;}
 td{width:1px;}
@@ -9,7 +9,7 @@ td{width:1px;}
 </ul>
 
 <h1 id="introduction">Introduction</h1>
-<p>The <strong>Performance Management</strong> module in HR Works Plus takes care of the
+<p>The <strong>Performance Management</strong> module in Product0 Plus takes care of the
 entire performance management cycle from creating performance plan
 period to final rating on employee appraisals.</p>
 

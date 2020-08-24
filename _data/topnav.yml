@@ -15,11 +15,11 @@ navbar_dropdowns:
   folders:
   - title: Products
     folderitems:
-    - title: HR Works
+    - title: Product0
       url: jekyllhowto-content-and-formatting.html
-    - title: HR Works Plus (ESS)
+    - title: Product0 Plus (ESS)
       url: pmm.html
-    - title: HRW Web
+    - title: Prod0 Web
       url: jekyllhowto-content-and-formatting.html
     - title: e-TAS
       url: jekyllhowto-content-and-formatting.html
