@@ -30,7 +30,7 @@ folders:
 
   folderitems:
   - title: Tags on pages
-    jurl: /tagsOnPages.html.html
+    jurl: /tagsOnPages.html
     ref: hrw_app_param
     pdf: true
     bookmarks: [breadcrumbsection]
