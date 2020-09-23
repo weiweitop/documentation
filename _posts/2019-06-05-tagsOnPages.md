@@ -1,5 +1,5 @@
 ---
-title: Missing document notification to employee & HR
+title: Tags on pages
 sidebar: release
 permalink: tagsOnPages.html
 product: HRW
