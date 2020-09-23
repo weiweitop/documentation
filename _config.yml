@@ -1,6 +1,4 @@
 ############# SITE PROPERTIES #############
-baseurl: "/docs" # the subpath of your site, e.g. /blog
-url: "/" # the base hostname & protocol for your site
 
 # localhost port (can be anything)
 port: 4000
