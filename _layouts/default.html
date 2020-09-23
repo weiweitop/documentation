@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
+
   {% include head.html %}
+  {% if page.datatable == true %}
+    <!-- Include the standard DataTables bits -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+      <script>
+      $(document).ready(function(){
+          $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
+          $('table.display').DataTable( {
+              paging: true,
+              stateSave: true,
+              searching: true
+          });
+       });
+    </script>
+    {% endif %}
 
   <body class="{{page.layout}}">
     {% include topnav.html %}
     <div class="container">
       <div class="row row-offcanvas row-offcanvas-left">
         <!-- sidebar -->
-        <div
-          class="col-xs-6 col-sm-3 sidebar-offcanvas"
-          id="sidebar"
-          role="navigation"
-        >
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           {% include sidebar.html %}
         </div>
 
@@ -39,9 +52,15 @@
           github_button.html %} {% endif %} {% include disqus.html %}
         </div>
       </div>
-      <!--/.container-->
     </div>
-    <!--/.page-container-->
-    {% include footer.html %} {% include google_analytics.html %}
+<hr>    <hr>
+
+
   </body>
+  
+  <div class="footer">
+
+    {% include footer.html %}
+  </div>
+
 </html>

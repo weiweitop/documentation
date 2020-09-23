@@ -4,8 +4,8 @@ permalink: jekyllhowto-content-and-formatting.html
 sidebar: jekyllhowto
 product: Jekyll How-to Guide
 ---
-
-This page covers all the details you need to know about content and formatting, including topics such as page directories, links, alerts, images, and more.  
+ 
+<div class="summary">This page covers all the details you need to know about content and formatting, including topics such as page directories, links, alerts, images, and more.</div>
 
 * TOC
 {:toc}
@@ -27,15 +27,11 @@ product: My Product
 ---
 ```
 
-```javascript
-Some code.
-```
-
 You can store the `sidebar` and `product` properties as defaults in your \_config.yml file if you want. See the `defaults` property there.
 
 If you have a colon in your title, put the title's value in parentheses, like this:
 
-``` yaml
+```
 ---
 title: "ACME: A generic project"
 permalink: myfile.html
@@ -368,12 +364,12 @@ Also note that instead of storing the variable in your site's configuration file
 
 There are several types of links:
 
-* [Cross-References](#automategitenks)
+* [Cross-References](#automatedlinks)
 * [Bookmark Links on the Same Page](#bookmarkssampepage)
 * [Links to External Web Resources](#linksexternalwebresources)
 * [Links to Sections on Other Pages](#bookmarklinks)
 
-### Cross-References {#automategitenks}
+### Cross-References {#automatedlinks}
 
 To link one documentation topic to another inside the same project (internal cross references, not links to external web resources), don't use manual Markdown links. Instead, use an automated ref property that is generated from the `_include/links.html` file (which loops through your sidebar and gets all the `ref` properties).
 

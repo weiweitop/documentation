@@ -1,6 +1,6 @@
 body {
   padding-top: 51px;
-  font-family: "Open Sans",sans-serif;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif; 
 
 }
 
@@ -390,4 +390,9 @@ blockquote {
 a[data-toggle="tooltip"] {
     color: green;
     border-bottom: 1px dashed gray;
+}
+
+// Added by adarsh
+img { 
+  border:1px solid #5694f8;
 }

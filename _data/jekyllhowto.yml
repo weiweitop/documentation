@@ -28,7 +28,7 @@ folders:
 
   folderitems:
   - title: Getting Started
-    jurl: /index.html
+    jurl: /pmm.html
     ref: jekyllhowto-getting-started
     pdf: true
     bookmarks: [breadcrumbsection]

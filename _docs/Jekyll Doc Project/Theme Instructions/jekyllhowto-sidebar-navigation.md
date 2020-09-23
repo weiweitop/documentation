@@ -4,8 +4,8 @@ permalink: jekyllhowto-sidebar-navigation.html
 sidebar: jekyllhowto
 product: Jekyll How-to Guide
 ---
-
-The output for the sidebar navigation gets generated from the sidebar yaml file in the \_data folder. YAML files don't use markup tags but rather spacing to create syntax. Look carefully at the YAML syntax in the sample generic.yml  or jekyllhowto.yml files. The syntax for your YAML content must be correct in order for the files to be valid.
+<div class="summary">The output for the sidebar navigation gets generated from the sidebar yaml file in the \_data folder. YAML files don't use markup tags but rather spacing to create syntax. Look carefully at the YAML syntax in the sample generic.yml  or jekyllhowto.yml files. The syntax for your YAML content must be correct in order for the files to be valid.
+</div>
 
 * TOC
 {:toc}

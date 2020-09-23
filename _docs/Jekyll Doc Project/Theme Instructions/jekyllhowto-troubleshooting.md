@@ -4,8 +4,7 @@ permalink: jekyllhowto-troubleshooting.html
 sidebar: jekyllhowto
 product: Jekyll How-to Guide
 ---
-
-This page lists common errors and the steps needed to troubleshoot them.
+<div class="summary">This page lists common errors and the steps needed to troubleshoot them.<div>
 
 ## Issues building the site
 

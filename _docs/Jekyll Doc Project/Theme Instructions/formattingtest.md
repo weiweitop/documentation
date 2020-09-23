@@ -12,7 +12,7 @@ body {
 }
 </style>
 
-This page covers all the details you need to know about content and formatting, including topics such as page directories, links, alerts, images, and more.
+<div class="summary">This page covers all the details you need to know about content and formatting, including topics such as page directories, links, alerts, images, and more.</div>
 
 ## Table of Contents
 

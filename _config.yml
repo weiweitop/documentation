@@ -1,5 +1,6 @@
-
 ############# SITE PROPERTIES #############
+baseurl: "/docs" # the subpath of your site, e.g. /blog
+url: "/" # the base hostname & protocol for your site
 
 # localhost port (can be anything)
 port: 4000
@@ -38,10 +39,12 @@ navbar-toggle: true
 
 ############# AUTOMATED LINKS #############
 
-# the links.html script requires you to list your sidebars here. this is if you're using managed links (see jekyllhowto-content-and-formatting.html#automategitenks)
+# the links.html script requires you to list your sidebars here. this is if you're using managed links (see jekyllhowto-content-and-formatting.html#automatedlinks)
 sidebars:
   - generic
   - jekyllhowto
+  - hrw
+  - hrwdev
 
 # determines whether the links.html script uses the jurl or hurl values in the sidebar data file
 link_type: jurl
@@ -52,7 +55,7 @@ link_type: jurl
 show_feedback: true
 
 # email address feedback gets sent to
-feedback_email: someemail@gmail.com
+feedback_email: adarsh@dli-pdc.com
 
 # note: to customize the auto-completed body text, overwrite it by adding _includes/feedback.html in your own theme.
 
@@ -69,8 +72,7 @@ github_button_location_below_title: false
 github_button_location_page_bottom: false
 
 # link to your github repo. replace <organization> (if applicable) and <repo name> and <branch name>. Note that the github link will be {{site.github_editme_path}}/{{page.path}}
-github_editme_path: https://github.com/<organization>/<repo name>/blob/<branch name>
-
+github_editme_path: https://gitlab.com/dli-it/docs/-/blob/master
 
 ############# EXCLUDE LIST #############
 # these folders or files will not be included in the output. you can use wildcards with asterisks.
@@ -126,6 +128,14 @@ defaults:
   -
     scope:
       path: ""
+      type: posts
+    values:
+      layout: default
+      topnav: topnav
+      footer: footer
+  -
+    scope:
+      path: ""
       type: search
     values:
       layout: default
@@ -166,7 +176,7 @@ breadcrumb_display: true
 breadcrumb_home_display: true
 
 # Url for Home path to point to
-breadcrumb_home_url: http://yourcompanysite.com
+breadcrumb_home_url: index.html
 
 ##########  MARKDOWN PROCESS AND FILTER ##########
 # leave these settings as is unless you want to use something other than kramdown Markdown
@@ -196,9 +206,9 @@ collections:
 # Translate these for Japanese and German outputs.
 
 uistring:
-    title: GITe Documentation theme # title to appear in nav bar and page meta
-    description: Description of the site # Displays as site description meta tag for site
-    copyright: 2017 Your Company, Inc. # appears in footer
+    title: DLI Documentation theme # title to appear in nav bar and page meta
+    description: DLI Documentation site # Displays as site description meta tag for site
+    copyright: 2020 DLI IT Systems LLC. # appears in footer
     breadcrumb_home_name: Home # display name for "Home" path in the breadcrumb
     tableofcontents: Table of Contents # text that appears before in-page table of contents
     expandall: Expand All # appears as text in sidebar to expand all levels
@@ -208,3 +218,5 @@ uistring:
     feedback_link_name: Feedback # name of Feedback link
     feedback_subject_line: Feedback about docs # Auto-filled Subject link of email
     github_edit_button_text: Edit on GitHub # text for github button
+
+tags:

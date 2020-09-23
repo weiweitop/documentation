@@ -1,6 +1,5 @@
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="assets/css/prism.css">
     {% if page.layout == "homepage" or page.type == "search" or page.type =="404" %}
     <title>{{page.title}} | {{site.uistring.title}}</title>
     {% else %}
@@ -74,11 +73,9 @@
 
     <!-- User defined js -->
     <script src="assets/js/user_defined_javascript.js"></script>
-    <!--Bootstrap (MIT license) -->
     <script src="assets/js/prism.js"></script>
     <script src="assets/js/prism-line-numbers.js"></script>
-
-
+    <!--Bootstrap (MIT license) -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -88,5 +85,6 @@
         content: "{{site.uistring.tableofcontents}}"
          }
     </style>
+    <link rel="stylesheet" type="text/css" href="assets/css/prism.css">
 
 </head>

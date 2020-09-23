@@ -4,9 +4,10 @@ permalink: jekyllhowto-pdf.html
 sidebar: jekyllhowto
 product: Jekyll How-to Guide
 ---
-
-You can generate a PDF of your Jekyll project. The PDF uses [Prince XML](https://www.princexml.com/) to generate the PDF and allows you to configure which pages you want printed. The PDF output includes a table of contents for the entire guide, a mini-TOC on each section page, page numbers in cross references, and running headers and footers. The styling uses Bootstrap's CSS for print styles. You can see a sample here: [Jekyll How-to Guide (PDF)](pdf/jekyllhowto.pdf).
-
+<div class="summary">
+You can generate a PDF of your Jekyll project. The PDF uses <a href="https://www.princexml.com/">Prince XML</a> to generate the PDF and allows you to configure which pages you want printed. The PDF output includes a table of contents for the entire guide, a mini-TOC on each section page, page numbers in cross references, and running headers and footers. The styling uses Bootstrap's CSS for print styles. You can see a sample here: <a href="pdf/jekyllhowto.pdf">PDF Output</a>
+.
+</div>
 
 * TOC
 {:toc}

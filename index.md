@@ -1,5 +1,5 @@
 ---
-title: "GITe Docs"
+title: "DLI Docs"
 layout: indpage
 ---
 

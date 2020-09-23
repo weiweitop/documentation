@@ -1,39 +1,24 @@
 ## Topnav single links
-## if you want to list an external url, use url instead of url. the theme will apply a different link base.
+ ## if you want to list an external url, use url instead of url. the theme will apply a different link base.
 
 navbar_singleitems:
 - items:
-    - title: Docs Home
-      url: index.html
-    # - title: Contact
-    #   url: contact.html
+  - title: Docs home
+    url: index.html
+    
+  - title: Release notes
+    url: prodEnhanceDataTable.html
 
 
 
 navbar_dropdowns:
 - title: Topnav dropdowns
   folders:
-  - title: Products
-    folderitems:
-    - title: Product0
-      url: jekyllhowto-content-and-formatting.html
-    - title: Product0 Plus (ESS)
-      url: pmm.html
-    - title: Prod0 Web
-      url: jekyllhowto-content-and-formatting.html
-    - title: e-TAS
-      url: jekyllhowto-content-and-formatting.html
-
-- title: Topnav dropdowns
-  folders:
-  - title: Dev docs
-    folderitems:
-    - title: Coding Styles and Guidelines
-      url: /jekyllhowto-content-and-formatting.html
-    - title: Database Management
-      url: /index.html
-    - title: API Documentaton
-      url: /index.html
-
-
-
+    - title: Product docs
+      folderitems:
+        - title: Getting Started
+          url: /pmm.html
+        - title: Content and Formatting
+          url: /jekyllhowto-content-and-formatting.html
+        - title: Sidebar navigation
+          url: /jekyllhowto-sidebar-navigation.html

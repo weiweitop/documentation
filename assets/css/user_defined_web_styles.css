@@ -35,4 +35,55 @@ layout: null
 }
 /* left blank so you can overwrite this in your own project without copying the layout too */
 
+.summary {
+    font-size:122%;
+    color: #808080;
+    margin:20px 0px 20px 0px;
+    border-left: 5px solid #ED1951;
+    padding-left: 10px;
+}
 
+.summary:before {
+    content: "Summary: ";
+    font-weight: bold;
+}
+
+.prodSummary {
+    font-size:112%;
+    color: #808080;
+    margin:20px 0px 20px 0px;
+    border-left: 5px solid #ED1951;
+    padding-left: 10px;
+}
+
+.prodSummary:before {
+    content: "Summary: ";
+    font-weight: bold;
+}
+
+.tagSummary {
+    font-size:115%;
+    color: #808080;
+    margin:20px 0px 20px 0px;
+    border-left: 0px solid #5ad;
+    padding-left: 10px;
+}
+
+.tagSummary:before {
+    content: "Tags: ";
+    font-weight: bold;
+}
+
+
+.scope {
+    font-size:120%;
+    color: #808080;
+    margin:20px 0px 20px 0px;
+    border-left: 5px solid #ED1951;
+    padding-left: 10px;
+}
+
+.scope:before {
+    content: "Scope: ";
+    font-weight: bold;
+}

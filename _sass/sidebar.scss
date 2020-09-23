@@ -1,5 +1,6 @@
 .docnav {
   max-width: 225px;
+  
 }
 .docnav {
   padding-left: 0px;
@@ -7,12 +8,14 @@
   padding-right: 15px;
 }
 .docnav ul {
-  padding-left: 15px
+  padding-left: 15px	
+
 }
 .docnav li {
   list-style: none;
-  font: normal 12px "Open Sans", "Lucida Grande", "Helvetica Neue", Segoe UI;
+  font: normal 13.5px "Open Sans", "Lucida Grande", "Helvetica Neue", Segoe UI;
   border-bottom: 0px;
+  
 }
 .docnav li a:hover,
 .docnav li a:active {
@@ -70,7 +73,7 @@
 li.level1.open > ul > li.level1items.open a,
 li.level2.open > ul > li.level2items.open a,
 li.level3.open > ul > li.level3items.open a {
-  color: black;
+  color: #666;
   font-weight: bold;
 }
 li.level1.open > ul > li.level1items.open > a:before,
@@ -79,16 +82,24 @@ li.level3.open > ul > li.level3items.open > a:before {
   color: black;
 }
 .relatedResources {
-  font-size: 13px;
-  color: black;
+  font-size: 14px;
+  color: #1560bd;
   margin: 10px 0px;
 }
 .productTitle {
-  font-size: 18px;
+  font-size: 13.5px;
   font-weight: bold;
-  color: #333333;
   display: block;
-  margin-right: 8px;
+  background-color: #5699d3;
+  color: #ffffff;
+  width: 80%;
+  height: auto;
+  font: 13px verdana, sans-serif;
+  font-weight: bold;
+  padding-top: 3px;
+  padding-left: 20px;
+  padding-bottom: 3px;
+
 }
 hr.resourceSeparator {
   display: block;
@@ -180,13 +191,6 @@ ul#docnavsidebar li a:focus {
   }
 }
 
-// #sidebar {
-//   background-color: #f7f7f7;
-//   padding-bottom: 50px;
-//   padding-top: 50px;
-// }
-
-
 
 
 .mydocsidebar .input-group.search {
@@ -196,10 +200,11 @@ ul#docnavsidebar li a:focus {
 .mydocsidebar {
   padding-left: 10px;
   padding-bottom: 0px;
-  padding-top: 30px;
+  padding-top: 50px;
   position: fixed;
   height: 500px;
-  overflow-y: scroll;	
   width: 20%;
+  overflow-y: auto;
+
 
   }
