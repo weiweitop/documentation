@@ -8,8 +8,8 @@ https://dli-it.github.io/documentation/pmm.html
 
 3. **Datatable**: 
 
--- Displayiig links of pages in Posts, tags, and product meetadata of the markdownfiles 
+  -- Displayiig links of pages in Posts (Tags, and product metadata of the markdown files) 
 
--- https://dli-it.github.io/documentation/prodEnhanceDataTable.html
+  -- https://dli-it.github.io/documentation/prodEnhanceDataTable.html
 
 4. **Tags**: https://dli-it.github.io/documentation/missingDocNotification.html
