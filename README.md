@@ -1,6 +1,6 @@
 ## Jekyll Doc Project -- a theme for building documentation websites with Jekyll
 
-1. **Landing page**: https://dli-it.github.io/documentation/
+1. **Home page**: https://dli-it.github.io/documentation/
 
 2. **Doc page**: 
 Sidebar, TopNav, Summary, Breadcrumb, images, etc
