@@ -1,3 +1,12 @@
 ## Jekyll Doc Project -- a theme for building documentation websites with Jekyll
 
-This repo contains the Jekyll Doc Project theme, which is used for creating documentation projects with Jekyll. For information on getting started, see \_docs/jekyllhowto/Theme Instructions/jekyllhow-to-getting-started.md. The Theme Instructions folder contains all the documentation needed to work with this theme.
+**Landing page**: https://dli-it.github.io/documentation/
+
+**Doc page**: https://dli-it.github.io/documentation/pmm.html
+Sidebar, TopNav, Summary, Breadcrumb, images, etc
+
+**Datatable**: 
+Displayiig links of pages in Posts, tags, and product meetadata of the markdownfiles 
+https://dli-it.github.io/documentation/prodEnhanceDataTable.html
+
+**Tags**: https://dli-it.github.io/documentation/missingDocNotification.html
