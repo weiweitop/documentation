@@ -1,0 +1,15 @@
+I"?<div class="summary">The client required to add a validation message in the Loan Application screen to limit the loan amount based on the service period of the employees.</div>
+
+<h3 id="may-2019---14551">May 2019 - #14551</h3>
+
+<p>Execute an SP and set the Entity ID for bringing the validation message in the Loan Application Screen.</p>
+
+<p><img src="images/prod-enhance-image8.png" alt="" /></p>
+
+<p><em>Fig: Loan Application Screen showing the validation message</em></p>
+
+<p><br /></p>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+:ET

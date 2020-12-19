@@ -1,0 +1,213 @@
+I"!<div class="summary">The output for the sidebar navigation gets generated from the sidebar yaml file in the \_data folder. YAML files don't use markup tags but rather spacing to create syntax. Look carefully at the YAML syntax in the sample generic.yml  or jekyllhowto.yml files. The syntax for your YAML content must be correct in order for the files to be valid.
+</div>
+
+<ul id="markdown-toc">
+  <li><a href="#how-the-sidebar-works" id="markdown-toc-how-the-sidebar-works">How the Sidebar Works</a></li>
+  <li><a href="#sidebarentries" id="markdown-toc-sidebarentries">Entries in the Sidebar</a></li>
+  <li><a href="#adding-additional-resources" id="markdown-toc-adding-additional-resources">Adding Additional Resources</a></li>
+  <li><a href="#sidebar-object-hierarchy" id="markdown-toc-sidebar-object-hierarchy">Sidebar Object Hierarchy</a></li>
+  <li><a href="#level-requirements" id="markdown-toc-level-requirements">Level Requirements</a></li>
+  <li><a href="#customize-the-header" id="markdown-toc-customize-the-header">Customize the Header</a></li>
+</ul>
+
+<h2 id="how-the-sidebar-works">How the Sidebar Works</h2>
+
+<p>The theme contains a file called _includes/sidebar.html that uses “for” loops to iterate through the items in this YAML file and push the content into an HTML format. When Jekyll builds your site, the sidebar gets included into each page. This means each page has its own copy of the sidebar code when the site builds.</p>
+
+<h2 id="sidebarentries">Entries in the Sidebar</h2>
+
+<p>Each entry in the sidebar files includes four properties — <code>title</code>, <code>jurl</code>, <code>hurl</code>, and <code>ref</code>. These properties stand for the page title, Jekyll URL, hard-coded URL, and the Markdown referent for linking. Here’s an example:</p>
+
+<pre><code class="language-yaml">    - title: Sample1
+      jurl: /sample.html
+      hurl: /solutions/widgets/acme/docs/sample
+      ref: sample1
+</code></pre>
+
+<style>
+    .alert {
+  font-size: 110%;
+}
+</style>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The <code>hurl</code> value is optional. This is used only in systems where the relative URL may not work. Some server environments require the absolute, hard-coded URL to the page. If so, you can use this <code>hurl</code> value. (Unless you have an odd publishing system, you probably won’t use <code>hurl</code> and can omit it.)</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>title</code></td>
+      <td>The page title.</td>
+    </tr>
+    <tr>
+      <td><code>hurl</code></td>
+      <td>The hard-coded (absolute) URL to your content. (This is only required if you’re publishing to a system that requires hard-coded URLs. Otherwise, omit this.)</td>
+    </tr>
+    <tr>
+      <td><code>jurl</code></td>
+      <td>The Jekyll URL. Use a relative link that begins with a <code>/</code> and includes only page’s filename, not the folders. Use the “.html” file extension (even if your file has an .md extension in the source).</td>
+    </tr>
+    <tr>
+      <td><code>ref</code></td>
+      <td>The shortname used to create the Markdown link references. This is a friendly way to refer to the page. You use this value as the Markdown referent when inserting links in your content.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code>ref</code> property is like a variable used to refer to either the <code>hurl</code> or <code>jurl</code> property, depending on which configuration file you use when building your Jekyll project.</p>
+<h2 id="adding-additional-resources">Adding Additional Resources</h2>
+
+<p>If you want to add some additional resources, such as to forums or other documentation, you can add them in a Related Resources section below the sidebar.</p>
+
+<p>Here’s an example:</p>
+
+<pre><code class="language-yaml">###########################
+
+related_resources_title: Other Resources
+
+related_resources_list:
+
+- title: Forums
+  hurl: https://some.developer.forum.com/
+
+- title: More Documentation
+  hurl: https://more.documentation.company.com
+
+- title: Documentation Portal
+  hurl: https://my.documentation.portal
+</code></pre>
+
+<p>The sidebar will show this information below the sidebar.</p>
+
+<h2 id="sidebar-object-hierarchy">Sidebar Object Hierarchy</h2>
+
+<p>In addition to the properties required for each entry, sidebar entries must appear in the following hierarchy:</p>
+
+<pre><code class="language-yaml">
+folders:
+- title: Theme documentation
+  folderitems:
+
+  - title: Homepage
+    jurl: /index.html
+    hurl: https://docs.mycompany.com/index
+    ref: home
+
+  - title: Getting Started
+    jurl: /getting-started.html
+    hurl: https://docs.mycompany.com/getting-started.
+    ref: home
+
+- title: Sample Folder Title
+  folderitems:
+
+  - title: Sample1 level1
+    jurl: /sample.html
+    hurl: https://docs.mycompany.com/solutions/widgets/acme/docs/sample
+    ref: sample1
+
+  - title: Sample2 level1
+    jurl: /sample2.html
+    hurl: https://docs.mycompany.com/solutions/widgets/acme/docs/sample2
+    ref: sample12
+
+    subfolders:
+    - title: Another level deep
+      output: web
+      subfolderitems:
+
+      - title: Some content
+        jurl: /sublevel1.html
+        hurl: https://docs.mycompany.com/solutions/widgets/acme/docs/sublevel1
+        ref: sublevel1
+
+      - title: Some more content
+        jurl: /sublevel2.html
+        hurl: https://docs.mycompany.com/solutions/widgets/acme/docs/sublevel2
+        ref: sublevel2
+
+        subsubfolders:
+        - title: Last level deep
+          output: web
+          subsubfolderitems:
+
+          - title: Some content last level
+            jurl: /subsublevel1.html
+            hurl: https://docs.mycompany.com/solutions/widgets/acme/docs/subsublevel1
+            ref: sample
+
+          - title: Some more content last level
+            jurl: /subsublevel2.html
+            hurl: https://docs.mycompany.com/solutions/widgets/acme/docs/subsublevel2
+            ref: sample
+
+
+
+</code></pre>
+
+<p>As you can see, there’s a <code>folders</code> object that contains <code>folderitems</code>. Inside <code>folderitems</code> is another level called <code>subfolders</code>, which contains <code>subfolderitems</code>.</p>
+
+<p>Below <code>subfolders</code> is another level called <code>subsubfolders</code>, which contains <code>subssubfolderitems</code>. Each new level begins on a new line two spaces out from the previous one. The general hierarchy looks like this:</p>
+
+<pre><code>folders:
+  folderitems:
+    subfolders:
+      subfolderitems:
+</code></pre>
+
+<p>Don’t change any of these object names that indicate the levels. The theme’s template files use a <code>for</code> loop to iterate through this structure based on these object names.</p>
+
+<h2 id="level-requirements">Level Requirements</h2>
+
+<p>Note that you must have items at each level. If you want to have a folder that contains other folders and no individual items, you must add a <code>-</code> at that level. For example:</p>
+
+<pre><code class="language-yaml">
+folders:
+
+- title: My parent folder
+  folderitems:
+
+  -
+
+    subfolders:
+    - title: My child folder 1
+      output: web
+      subfolderitems:
+
+      - title: Some content
+        jurl: /sublevela.html
+        hurl: https://docs.mycompany.com/i/solutions/widgets/acme/docs/sublevela
+        ref: sublevela
+
+    - title: My child folder 2
+      output: web
+      subfolderitems:
+
+      - title: Some content
+        jurl: /sublevelb.html
+        hurl: https://docs.mycompany.com/i/solutions/widgets/acme/docs/sublevelb
+        ref: sublevelb
+
+</code></pre>
+
+<p>This structure looks like this:</p>
+
+<pre><code>├── My parent folder
+│   ├── My child folder 1
+│      └── sublevela.html
+│   ├── My child folder 2
+│      └── sublevelb.html
+</code></pre>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When you’re creating new levels, it’s easiest to copy the correct formatting and then adjust the values. Use the sample formatting included in the generic.yml file to copy and paste new levels. If you get the spacing wrong, when Jekyll builds the project, it will usually throw an error and note a mapping problem in your YAML file.</div>
+
+<h2 id="customize-the-header">Customize the Header</h2>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+:ET

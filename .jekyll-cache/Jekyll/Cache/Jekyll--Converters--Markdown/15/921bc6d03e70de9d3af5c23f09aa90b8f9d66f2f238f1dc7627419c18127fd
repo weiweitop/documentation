@@ -1,0 +1,140 @@
+I"\<div class="summary">The Performance management module in OmniHR Plus takes care of the
+entire performance management cycle from creating performance plan
+period to final rating on employee appraisals.
+</div>
+<ul id="markdown-toc">
+  <li><a href="#process-overview" id="markdown-toc-process-overview">Process overview</a></li>
+  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a>    <ul>
+      <li><a href="#create-performance-plan" id="markdown-toc-create-performance-plan">Create performance plan</a></li>
+      <li><a href="#create-and-setup-entities" id="markdown-toc-create-and-setup-entities">Create and setup entities</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="process-overview">Process overview</h1>
+<p>See below an overview of the performance management process in ESS.</p>
+
+<table>
+<colgroup>
+<col width="8%" />
+<col width="70%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr>
+<th>Sl. No</th>
+<th>Process</th>
+<th>Menu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>1.</p>
+</td>
+<td>
+<p>Creation of performance plan and corresponding period.</p>
+</td>
+<td>In OmniHR</td>
+</tr>
+<tr>
+<td>
+<p>2.</p>
+</td>
+<td>
+<p>Competency creation</p>
+</td>
+<td>
+<p>Competency master menu</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>3.</p>
+</td>
+<td>
+<p>Assign competencies to employees&rsquo; designation or any entity which has been set to be used as designation in the <strong>Performance management</strong> module.</p>
+</td>
+<td>
+<p>Competency assignment menu</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>4.</p>
+</td>
+<td>
+<p>Manager/ main appraiser assigns a performance plan to employees.</p>
+</td>
+<td>
+<p>Plan Assignment menu</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="prerequisites">Prerequisites</h1>
+
+<p>This section describes prerequisites for setting up and managing the
+<strong>Performance Management</strong> module in ESS. Please find below the list of
+the things, which you need to do before you get started with the
+<strong>Performance Management</strong> module in ESS.</p>
+
+<h2 id="create-performance-plan">Create performance plan</h2>
+
+<p>You should create performance plan and corresponding periods in OmniHR. It is based on these plan periods that employees start creating
+their appraisal plans.</p>
+
+<p>To create a performance plan period, follow the steps below:</p>
+
+<ol>
+  <li>
+    <p>Go to <strong>ESS Configuration</strong> &gt;&gt; <strong>Administration</strong> 
+<strong>Performance plan.</strong></p>
+  </li>
+  <li>
+    <p>To switch to edit mode, click the <strong>Edit</strong> button.</p>
+
+    <p>A new row appears where you can enter the details.</p>
+  </li>
+  <li>
+    <p>Provide the following details in their respective field.</p>
+
+    <ol>
+      <li>
+        <p>Performance plan code</p>
+      </li>
+      <li>
+        <p>Description</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>To create periods under the performance plan, keep the plan selected
+and in the period creation pane on the bottom, provide the following
+details in their respective field.</p>
+
+    <ol>
+      <li>
+        <p>Start Date</p>
+      </li>
+      <li>
+        <p>End Date</p>
+      </li>
+      <li>
+        <p>Description</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Save your entries.</p>
+  </li>
+</ol>
+
+<h2 id="create-and-setup-entities">Create and setup entities</h2>
+
+<p>The following entities have to be created in OmniHR:</p>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+:ET

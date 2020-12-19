@@ -1,0 +1,2793 @@
+I"=�<hr />
+<p>title: Product enhancements main
+sidebar: release
+permalink: prod-enhancements.html
+layout: post
+description: This document is intended to briefly explain both generic and client-specific features implemented in HR Works &amp; HR Works Plus.
+product: HRW, ESS
+tags: Generic
+—</p>
+
+<div class="scope">
+This document is intended to briefly explain both generic and client-specific features implemented in HR Works &amp; HR Works Plus.
+</div>
+
+<h1 id="hr-works">HR Works</h1>
+<h2 id="administration">Administration</h2>
+
+<h3 id="missing-document-notification-to-employee-and-hr">Missing document Notification to employee and HR</h3>
+
+<h3 id="june-2019---14555">June 2019 - #14555</h3>
+
+<p>The client required to send notification to HR and employees in case of missing documents.</p>
+
+<p>For implementing this the following steps were followed.</p>
+
+<ol>
+  <li>
+    <p>Added a new category named “Missing Personal Record Notification” in Email settings.</p>
+  </li>
+  <li>
+    <p>Execute the REPX file for the Custom Report.</p>
+  </li>
+  <li>
+    <p>Run three scripts for displaying the custom report created in the email settings and for displaying the new category created in the email settings.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image3.png" alt="" /></p>
+</blockquote>
+
+<p><em>Fig: Email settings</em></p>
+
+<h2 id="option-to-copy-master-and-application-details-from-existing-company">Option to copy master and application details from existing company</h2>
+
+<h3 id="dec-2018-----9976">Dec 2018  - # 9976</h3>
+
+<p>The client wants to clone the following items (data, fields, settings, etc.) from an existing company to the new company they are creating.</p>
+
+<ul>
+  <li><strong>Data, fields and settings to be cloned</strong>: card types, card master, sequence control, action form, application parameters etc.</li>
+</ul>
+
+<p>For this option to appear in HR Works, two different scripts have to be executed in the HR Works database.</p>
+
+<ol>
+  <li>
+    <p>Script to create <strong>Company Creation</strong> menu. This will insert a new screen (Company Creation) in the <strong>Administration</strong> module » <strong>System Management</strong> section.</p>
+  </li>
+  <li>
+    <p>Script to create new value types (screen selections)</p>
+  </li>
+</ol>
+
+<p>Once the above scripts are executed, can make a clone of the existing company from the <strong>Compony Creation</strong> screen. From the <strong>Data to Copy</strong> dropdown field of the <strong>Company Creation</strong> screen, users can select the items they want to copy from the existing company to the new company they are creating.<br />
+<img src="images/prod-enhance-image4.png" alt="" /></p>
+
+<p>On successful completion of the company creation process, the following message appears:<br />
+<img src="images/prod-enhance-image5.png" alt="" /></p>
+
+<h1 id="payroll-management">Payroll Management</h1>
+
+<h2 id="validation-for-ts-on-payroll-process">Validation for TS on payroll process</h2>
+
+<h3 id="july-2019---15852">July 2019 - #15852</h3>
+
+<p>A new validation was added in the payroll processing. If daily time sheet of the employees is missing for any day, then the payroll for the employee must be in hold.</p>
+
+<p><img src="images/prod-enhance-image6.png" alt="" /></p>
+
+<p><em>Figure: Validation shown while processing payroll</em></p>
+
+<h2 id="balance-compensatory-off-need-to-payout-during-final-settlement">Balance Compensatory Off need to payout during Final Settlement</h2>
+
+<h3 id="june-2019---14875">June 2019 - #14875</h3>
+
+<p>The client required to payout the balance compensatory off to the employee when an employee resign. Following steps are executed to implement this.</p>
+
+<p>In Application parameter, LV-1 Tab, a new parameter named “Compensatory Settlement Paycode” was introduced.</p>
+
+<p>Execute a script to enable the parameter.</p>
+
+<p><img src="images/prod-enhance-image7.png" alt="" /></p>
+
+<p><em>Fig: PAF Screen showing Settle Outstanding Compensatory Off during separation</em></p>
+
+<h2 id="loan-amount-limit-based-on-employee-service">Loan Amount limit based on employee service</h2>
+
+<h3 id="may-2019---14551">May 2019 - #14551</h3>
+
+<p>The client required to add a validation message in the Loan Application screen to limit the loan amount based on the service period of the employees.</p>
+
+<p>Execute an SP and set the Entity ID for bringing the validation message in the Loan Application Screen.</p>
+
+<p><img src="images/prod-enhance-image8.png" alt="" /></p>
+
+<p><em>Fig: Loan Application Screen showing the validation message</em></p>
+
+<h2 id="approved-ot-to-pay-through-off-cycle-payroll">Approved OT to Pay through Off cycle Payroll</h2>
+
+<h3 id="may-2019---14550">May 2019 - #14550</h3>
+
+<p>Initially OT payments were processed through the monthly payroll sheet. Now the client required to approve the OT payments through the Off cycle Payroll.</p>
+
+<p>For this a new parameter was introduced in the Application parameter, named ‘OT Integration From ESS’ in the ESSTS-1 tab in the HRW + Application parameters. The value of the Parameter must be set as ‘OT Entry (Off cycle)’.</p>
+
+<p>Execute a query for enabling the Application parameter.</p>
+
+<p><img src="images/prod-enhance-image9.png" alt="" /></p>
+
+<p><em>Figure: HRW + Application parameter Screen</em></p>
+
+<h2 id="option-to-restrict-payroll-period-visibility-in-the-final-settlement-screen">Option to restrict payroll period visibility in the final settlement screen</h2>
+
+<h3 id="may-2019---14880">May 2019 - #14880</h3>
+
+<p>Currently in the Final Settlement Screen, pay period combo box list all the pay period starting from the system. The client required to restrict the visibility of the payroll period in the Final Settlement Screen.</p>
+
+<p>For this a new parameter called ‘Backdated Periods For Final Settlement’ was introduced in the PRL-1 tab in the Application parameter.</p>
+
+<p>This restrict the payroll period visibility based on a flag in the system. By default, it lists all the pay periods Or else the payroll visibility will be based on the number set in the Application parameter.</p>
+
+<p><img src="images/prod-enhance-image10.png" alt="" /></p>
+
+<h2 id="option-to-correct-attendance-data-from-payroll-module">Option to correct Attendance data from Payroll Module</h2>
+
+<h3 id="april-2019---14605">April-2019 - #14605</h3>
+
+<p>In HR Works payroll module, the details regarding the attendance such as overtime hours, shortage hours etc was not able to edit and the information from the attendance module was considered. Hence the client required to add a feature which enables to edit the attendance data if required from the payroll module and thus to calculate the payroll accurately.</p>
+
+<p>In order to achieve this, a new parameter is added in the PRL-1 Tab named OT Entry Batch for TAM Interface Employees.</p>
+
+<p>The new parameter contains three options which are</p>
+
+<p>1. Do not Allow - OT from Overtime Entry Batch will not be considered in payroll calculation.</p>
+
+<p>2. Add OT Batch OT to TAM OT - OT from Overtime Entry Batch will be added to OT from attendance data.</p>
+
+<p>3. Override TAM OT with OT Batch OT - OT from attendance will not be considered if OT entry exist in Overtime entry batch.</p>
+
+<p><img src="images/prod-enhance-image11.png" alt="" /></p>
+
+<p><em>Fig: Application parameter settings for Attendance correction from Payroll Module</em></p>
+
+<h2 id="separation-of-employees-without-salary-information">Separation of employees without salary information</h2>
+
+<h3 id="mar-2019---14441">Mar 2019 - #14441</h3>
+
+<p>Some of the clients want to separate the employees without completing the Payroll process and Final Settlement. In such cases Termination Date is updated at the time of employee separation approval.</p>
+
+<p>In order to implement this, following changes are made.</p>
+
+<p>In Application parameter, in HRW-1 tab, a new value named “Set Separation Date in Employee Master” was introduced with two options such as approval of Final Settlement and On Separation Action Form Approval if no Payroll Sheet exists for Employee.</p>
+
+<p>While selecting On Separation Action Form Approval if no Payroll Sheet exists for Employee from the Application parameter, it will check whether the employees in the employee separation Batch already have a payroll sheet and if not, it will update the Termination date or else will work as usual as the final settlement.</p>
+
+<p><img src="images/prod-enhance-image12.png" alt="" /></p>
+
+<p><em>Fig: Application parameter Settings</em></p>
+
+<h2 id="ot-report-template">OT Report Template</h2>
+
+<h3 id="march-2019---13897">March-2019 - #13897</h3>
+
+<p>An OT report was required for the client in the Wage type Based Timesheet report screen.</p>
+
+<p>For these two additional options was added in the Summary options in the Wage Type screen named as OT Sheet and OT Summary.</p>
+
+<p>For this execute a script for getting the OT options.</p>
+
+<p>Only one could be selected from OT Sheet and OT Summary at once during a specific month.</p>
+
+<p>The OT Sheet report will show the complete OT Data during the selected month with displaying the data of each day, whereas OT Summary shows the summarised data of the OT details.</p>
+
+<p><img src="images/prod-enhance-image13.png" alt="" /></p>
+
+<p>Fig: Wage Type Based Timesheet report</p>
+
+<h2 id="customization-on-salary-hold-and-release">Customization on Salary Hold and Release</h2>
+
+<h3 id="feb-2019-----11755">Feb 2019  - # 11755</h3>
+
+<p>In Salary Hold and Release, initially the total salary of an employee was hold till the month where the release hold is applied. It was not able to hold a Lumpsum amount or percentage of the employee salary for a particular month.</p>
+
+<p>The client needed the following changes in the Salary Hold and Release.</p>
+
+<ol>
+  <li>
+    <p>To hold the Lumpsum amount or Percentage of Net amount of the salary of a particular month.</p>
+  </li>
+  <li>
+    <p>To release the amount either through monthly payroll or off cycle payroll.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><strong>In order to implement this, following changes are made.</strong></p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>In the <strong>Salary Hold and Release</strong> screen, a new option to select the Hold period is added.</p>
+  </li>
+  <li>
+    <p>A query is executed in the DB.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><strong>Salary Hold:</strong></p>
+
+  <p>While selecting the Batch Type as Hold Salary, a new check box and Hold period is displayed.</p>
+</blockquote>
+
+<ol>
+  <li>For Holding the salary for a particular period. Click the check box and enter the hold period.</li>
+</ol>
+
+<blockquote>
+  <p><strong>Salary Release</strong></p>
+
+  <p>While selecting the Batch Type as Release Hold, a new option to select the Release method will be displayed.</p>
+</blockquote>
+
+<ol>
+  <li>Select either Normal Payroll or Off cycle Payroll as the Release method.</li>
+</ol>
+
+<blockquote>
+  <p>Further, release the batches, through Off cycle payroll, if the payment option is Off cycle. Or else process the settlement through normal Payroll sheet.</p>
+
+  <p><img src="images/prod-enhance-image14.png" alt="" /></p>
+</blockquote>
+
+<p><em>Figure: Salary Hold in Salary Hold and Release</em></p>
+
+<h2 id="upload-option-in-cost-allocation-setup">Upload option in Cost Allocation Setup</h2>
+
+<h3 id="oct-2018-11912">Oct 2018 (#11912)</h3>
+
+<p>Cost Allocation transaction did not have <strong>Upload data from Excel</strong> option. This option has been added to the cost allocation transaction screen with the following features.</p>
+
+<ul>
+  <li>
+    <p>Generate Excel Template: As with other transactions with Excel upload option, cost allocation transaction also requires that an excel template be generated into which users can add cost allocation details of employees and then upload it. The generated excel template will have separate columns for every project so that the users can enter project-wise cost allocation data. Note that Project is one of the positional entities in the client DB.</p>
+  </li>
+  <li>
+    <p>Upload from Excel: Users can enter employee’s cost allocation details into the generated excel template and then upload it to proceed with rest of the transaction process.</p>
+  </li>
+</ul>
+
+<h2 id="loan-repayment-installments-amount-deduction-during-leave-settlement">Loan Repayment Installments Amount Deduction during Leave Settlement</h2>
+
+<h3 id="july-2018-10375">July 2018 (#10375)</h3>
+
+<p>Usually, when an employee goes for leave, his loan repayment amount for leave start month is only deducted while processing leave settlement. But now, with this new feature, the loan repayment amount can be deducted for not only the leave start month but also for leave end month as per settings done in Application parameter. Furthermore, there is an additional functionality where if the days in next month falls less than 15 days, then the deduction is not taken.</p>
+
+<p>In order to achieve this functionality, a new parameter <strong>Loan Installment Deductions in Leave Settlement</strong> is added in the <strong>Application parameter&gt; LOAN-1</strong> tab. It consists of three options as:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Sl. No</th>
+
+<th>Parameter</th>
+
+<th>Description</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Loan Deductions till Payroll End Date of Leave Start Date</td>
+
+<td>
+
+By default, the parameter is set to ‘Loan Deductions till Payroll End Date of Leave Start Date’. Loan deduction in leave settlement works as normal in this case.
+
+For instance, if an employee is going for leave from May 15<sup>th</sup> to June 15<sup>th</sup>, then if this parameter is set, then the loan repayment amount for the month of May only is deducted.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Loan Deductions till Payroll End Date of Leave To Date</td>
+
+<td>
+
+Loan amount is deducted till the payroll end date of the ‘Leave to date’ month.
+
+For instance, if an employee is going for leave from May 15<sup>th</sup> to June 15<sup>th</sup>, then if this parameter is set, then the loan repayment amount for the month of May and June is deducted.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Loan Deductions till Payroll End Date of Leave To Date (Cutoff 15th)</td>
+
+<td>
+
+Loan amount is deducted till the payroll end date month of the Leave to date only if the settlement to date falls after 15th day of the Leave to date.
+
+In this case, if the ‘Leave to date’ falls within 15<sup>th</sup> date of the next month, loan amount is deducted only for previous month.
+
+For instance, if an employee is going for leave from May 15<sup>th</sup> to June 15<sup>th</sup>, then if this parameter is set, then the loan repayment amount for the month of May will be deducted and if the leave to date falls below 15<sup>th</sup> of next month, then the amount is not deducted for the month of June.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>The deducting of loan repayment amount while performing leave settlement will be done on the basis of the value assigned for this parameter.<br />
+<img src="images/prod-enhance-image15.png" alt="" /></p>
+
+<h1 id="leave-and-accrual-management">Leave and Accrual Management</h1>
+
+<h2 id="year-end-leave-balance-in-vacation-accrual-report">Year End leave balance in Vacation accrual report</h2>
+
+<h3 id="july-2019---15626">July 2019 - #15626</h3>
+
+<p>The client required to add additional field in the Vacation Accrual Report named Pending Leaves and Year End Leave balance.</p>
+
+<p>Pending leave displays the leave that need to be deducted for the year.</p>
+
+<p>Year End Leave Balance displays the balance leave for the selected year.</p>
+
+<p>For implementing the change, execute a SQL query.</p>
+
+<p>In the RPT-1 Tab of Application parameter, Set the value for ‘Additional fields in Vacation Accrual Report’.</p>
+
+<p><img src="images/prod-enhance-image16.png" alt="" /></p>
+
+<p><em>Figure: Vacation Accrual Report showing Pending leaves and Year end leave balance</em></p>
+
+<h2 id="training-cost-recovery-through-final-settlement">Training cost recovery through Final Settlement</h2>
+
+<h3 id="june-2019---14554">June 2019 - #14554</h3>
+
+<p>The client required to deduct the training cost during the final settlement. The training provided to the employees are tracked in the HR Works under the Personal Records. When an employee resigns before one year of training taken date, the amount of training cost is deducted during the employee’s final settlement.</p>
+
+<p>The training details stored in the HR Works are Effective Date, Training Type, Training subject and Training cost.</p>
+
+<p>In order to implement the feature, execute the custom SP.</p>
+
+<h2 id="show-leave-from-date-and-leave-to-date-in-the-leave-settlement-screen">Show Leave From Date and Leave To Date in the leave settlement screen</h2>
+
+<h3 id="may-2019---15232">May 2019 - #15232</h3>
+
+<p>Initially the Leave Settlement Screen did not showcase the From Date and To Date information regarding the leave. Therefore, the client required to include the Leave From Date and Leave To Date in the Leave Settlement Screen.</p>
+
+<p><img src="images/prod-enhance-image17.png" alt="" /></p>
+
+<p><em>Fig: Leave Settlement screen</em></p>
+
+<h2 id="two-levels-of-approval-during-leave-settlement">Two levels of approval during leave settlement.</h2>
+
+<h3 id="feb-2019-----12491">Feb 2019  - # 12491</h3>
+
+<p>In HR Works, there was a parameter (Multilevel AWF) by which users can set approval workflow for all common transactions.</p>
+
+<p>The client requires a different workflow to be set for leave settlement transaction. For this a new parameter ‘ M<strong>ultilevel AWF on Leave Settlement</strong> ‘ is added in Application parameter AWF1 Tab.</p>
+
+<h2 id="air-ticket-encashment-report">Air ticket encashment report</h2>
+
+<h3 id="feb-2019---13263">Feb-2019 - #13263</h3>
+
+<p>Initially, air ticket encashment report was not generated.</p>
+
+<p>The client required to avail the Air ticket encashment report through the pay slip.</p>
+
+<p>For implementing this change, import REPX file and execute XML file.</p>
+
+<p>For creating the Air Ticket Encashment report, follow the steps below:</p>
+
+<ol>
+  <li>
+    <p>In the Air Ticket Availment screen, Select the ‘Off Cycle Payroll’ as the Availment Option. This will allow to complete the availment process through the Off-cycle screen.</p>
+  </li>
+  <li>
+    <p>While printing Pay slip select the report type as Air ticket Encashment and select Type as Off Cycle.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image18.png" alt="" /></p>
+
+  <p><em>Figure: Payslip screen</em></p>
+</blockquote>
+
+<h2 id="vacation-eligibility-based-on-service-days">Vacation eligibility based on service days.</h2>
+
+<h3 id="dec-2018-----12943">Dec 2018  - # 12943</h3>
+
+<p>For the client, for a few employees, vacation days or eligibility will change as per the service days of employee.</p>
+
+<p>Below lists the slab for accrual.</p>
+
+<ul>
+  <li>
+    <p>0-3 Years &gt; 22 working Days</p>
+  </li>
+  <li>
+    <p>3-6 Years &gt; 24 working Days</p>
+  </li>
+  <li>
+    <p>6-10 Years &gt; 26 working Days</p>
+  </li>
+  <li>
+    <p>10-20 Years &gt; 28 working Days</p>
+  </li>
+</ul>
+
+<p>20 Years and above &gt; 30 working Days</p>
+
+<p>Leave Days will be accrued on Pro-data basis, which means if an employee’s slab changes at the mid of a month. His/ her balance should be calculated pro-data basis.</p>
+
+<p><strong>Example</strong>: If an employee completes the 3 years by 15th of June, his leave accrual should be 15 days with 22 working days and rest with 24 working Days.</p>
+
+<p>In both ESS and HR Works Leave application, leave balance need to show as per the above accrual method. The client needs to show the leave balance as of leave start date</p>
+
+<p>For this, a new parameter (<strong>Apply Prorata Calculation in Vacation</strong>) is added to <strong>Application parameter »</strong> <strong>LV-1</strong>. If the value of this parameter is set to ‘Yes’, leave days will be accrued based on pro-data basis. Leave balance in leave application will be shown as per this accrual method.</p>
+
+<h2 id="leave-settlement-pay-on-calendar-days">Leave Settlement pay on Calendar days</h2>
+
+<h3 id="dec-2018-----11866">Dec 2018  - # 11866</h3>
+
+<p>Vacation pay is calculated based on the calculation criteria set in vacation codes alone. The client requires that it should be calculated based on the daily rate policy applicable to the employee.</p>
+
+<p>To customize the system as per client’s requirement, a new application parameter (<strong>Leave Advance Pay Calculation</strong>) is added to the <strong>LV-1</strong> tab of the <strong>Application parameter</strong>. If its value is set as <strong>Daily Rate Basis Till Leave To Date</strong>, then the vacation pay calculation in leave settlement will change and new calculation will be as follows:</p>
+
+<p>Vacation pay = sum (salary for pay components in vacation pay from leave start period to leave to date) - sum (salary for pay components in vacation pay from leave start period to leave from date)</p>
+
+<h2 id="leave-settlement-recovery-changes">Leave settlement Recovery changes</h2>
+
+<h3 id="oct-2018-11068"><strong>**</strong>Oct 2018 (#11068)**</h3>
+
+<p>In HR Works, when an employee goes on vacation and requests for Leave salary advance, he/ she will be paid the salary till the leave start date and leave salary for the leave days. The leave salary consists of gross salary excluding COLA, OTHER and MOBILE allowance. These allowances will be paid for the leave days along with month end payroll. Leave salary paid to the employee will be considered as leave salary advance and it will be recovered from the subsequent payrolls.</p>
+
+<p>In case if an employee has got any additional payments such as OT, Bonus or allowances (COLA, OTHER and MOBILE), those payments will be made only after recovering the leave salary advance paid to the employee. The client now requires that the recovery be made only from the paid leave salary components and if any additional payments are there, they should not be touched and have to be paid as usual.</p>
+
+<p>Example:</p>
+
+<p><strong>Employee Salary</strong>- Basic: 500, HRA: 200, TRA: 50, OTH: 50</p>
+
+<p><strong>Leave</strong> – 16th May 2018 to 19 June 2018 (25 days)</p>
+
+<p><strong>Off days</strong> – FRI-SAT</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>HR works process</th>
+
+<th>New process</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+
+Leave Settlement calculation
+
+Salary till 15th May = 373.33 BHD
+
+Leave Salary for 25 days = 625 BHD
+
+Net pay = 998.33 BHD Leave Salary Advance = 998.33 BHD
+
+June Payroll
+
+Salary for June = 800 BHD
+
+OT payable in June = 35 BHD
+
+Total Payable in June = 835 BHD
+
+Leave Salary advance Recovery = 835 BHD
+
+Net Pay for June = 0 BHD Leave Salary Advance = 998.33 -835 =163.33 BHD
+
+July Payroll
+
+Salary for the July = 800 BHD (considering employee returned on time)
+
+OT payable in July= 30 BHD
+
+Total Payable in July= 830 BHD
+
+Leave Salary Advance recovery = 163.33 BHD
+
+Net Pay for July = 666.67 BHD
+
+Leave Salary advance = 163.33 – 163.33= 0 BHD
+
+</td>
+
+<td>
+
+Leave Settlement calculation
+
+Salary till 15th May = 373.33 BHD
+
+Leave Salary for 25 days = 625 BHD
+
+Net pay = 998.33 BHD Leave Salary Advance = 998.33 BHD
+
+June Payroll
+
+Salary for June = 800 BHD
+
+OT payable in June = 35 BHD
+
+Total Payable in June = 835 BHD
+
+Leave Salary advance Recovery = 750 (BASIC+ HRA + TRA) +23.33 (OTHER allowance for 15 days) =773.33 BHD
+
+Net Pay for June = 61.67 BHD Leave Salary Advance = 998.33 -773.33 =225 BHD
+
+July Payroll
+
+Salary for the July = 800 BHD (considering employee returned on time)
+
+OT payable in July= 30 BHD
+
+Total Payable in July= 830 BHD
+
+Leave Salary Advance recovery = 225 BHD
+
+Net Pay for July = 605 BHD
+
+Leave Salary advance = 225 – 225= 0 BHD
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p><strong>Summary of Changes</strong></p>
+
+<p>The following changes are made</p>
+
+<ol>
+  <li>
+    <p><strong>Application parameter</strong> A new parameter ‘<strong>Enable Pay Codewise Leave Advance Recovery Setup</strong>’ is added in the <strong>LV-1</strong> tab of the <strong>Application parameter</strong> screen. Default value will be ‘<strong>No’</strong>. In order to meet client requirement and to enable the <strong>Pay Pay Code-wise Leave Advance Recovery Setup</strong> tab, the parameter value should be set to Yes.<br />
+<img src="images/prod-enhance-image19.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Vacation Codes screen:<br />
+The <strong>Pay Code-wise Leave Advance Recovery Setup</strong> tab displays the following:</p>
+
+    <ol>
+      <li>
+        <p>All payable earning codes which are not a part of Accrual Components will be displayed</p>
+      </li>
+      <li>
+        <p>An additional component named ‘Salary Arrear’.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<blockquote>
+  <p>For each earning code, any of the following Recovery Amount options can be set</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p><strong>Full Amount</strong> (this will be the default option. If this is selected, then the full amount corresponding to the pay code will be subject to recovery).</p>
+  </li>
+  <li>
+    <p><strong>Amount up to the amount Paid in Leave Settlement.</strong> (if this option is selected then only the amount paid in the corresponding leave settlement will be subject to recovery)<br />
+<img src="images/prod-enhance-image20.png" alt="" /></p>
+  </li>
+</ol>
+
+<p><strong>Note</strong>: The <strong>Pay Codewise Leave Advance Recovery Setup</strong> tab will appear only if the <strong><em>Recovery Amount</em></strong> options are active in the db.</p>
+
+<h2 id="vacation-availment-based-on-accrual-average">Vacation Availment Based on Accrual Average</h2>
+
+<h3 id="oct-2018-10176"><strong>Oct 2018 (#10176)</strong></h3>
+
+<p>Currently the daily rate calculation method for vacation encashment is based on the <strong>Daily Rate Calculation Basis</strong> selection on the <strong>Vacation Scheme</strong> menu. The client now requires an option to set daily rate calculation method for vacation encashment based on vacation accrual average (ie Daily rate = total accrual amount/ total accrual days). For this a new dropdown field (<strong>Vacation Encashment Calculation Method</strong>) is added to the <strong>Vacation Scheme</strong> settings. Users can select any of the following two options from the <strong>Vacation Encashment Calculation Method</strong> dropdown field<strong>.</strong></p>
+
+<ol>
+  <li>
+    <p><strong>Based On Current Daily Rate</strong>: current functionality/ default setting</p>
+  </li>
+  <li>
+    <p><strong>Based On Vacation Accrual Average</strong>: Daily rate = total accrual amount/ total accrual days</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image21.png" alt="" /></p>
+
+<p>Another requirement of the client is to have an option to specify how arrears are recalculated against salary revisions. For this, a new dropdown field (<strong>Accrual Amount Arrear Recalculation on Salary Revision</strong>) is added to the <strong>Vacation Scheme</strong> menu from which any of the following options can be selected as required:</p>
+
+<ul>
+  <li>
+    <p><strong>For Full Accrual Days Balance:</strong> current functionality/ Default setting</p>
+  </li>
+  <li>
+    <p><strong>From Salary Revision Effective Date</strong>: recalculate accrual only from salary revision period</p>
+  </li>
+  <li>
+    <p><strong>No Calculation</strong>: no recalculation of accruals on salary changes</p>
+
+    <p><img src="images/prod-enhance-image22.png" alt="" /></p>
+  </li>
+</ul>
+
+<h2 id="leave-split-up-based-on-leave-balance">Leave split up based on leave balance</h2>
+
+<h3 id="july-2018-10175">July 2018 (#10175)</h3>
+
+<p>Normally, if an employee is delayed from annual leave, system will be extending the leave with annual leave itself. But, if the employee doesn’t have sufficient annual leave balance, then the system will split up the leave extension in to two- one with available annual leave balance and the rest with unpaid leave (salary will be zero and accruals are excluded for these days).</p>
+
+<p>This functionality is achieved by introducing a new parameter <strong>Default Leave Type in Leave Return Screen for Delayed Return if Balance Exceeds</strong> in Leave Master for leaves having leave type category ‘Adjust Vacation Balance’ <img src="images/prod-enhance-image23.png" alt="" /></p>
+
+<p>While creating Leave Return, the user can create a new leave based on ‘default leave type in leave return screen for delayed leave’ if employee have enough leave balance. Otherwise, return leave will be split in to two leaves, first leave days will be leave balance days, second leave will be difference between total leave days and leave balance. User will not be able to modify this leave data.</p>
+
+<h2 id="time-lieu-expiration">Time Lieu Expiration</h2>
+
+<h3 id="july-2018-8245">July 2018 (#8245)</h3>
+
+<p>There was no expiry for employee’s Time in Liew hours. On the <strong>Application parameter&gt;LV-1 tab,</strong> a new parameter (<strong>Cut-off for availing Compensatory Off Balance)</strong> is added to set a cut-off value so that the Time in Lieu hours will expire after a predefined value (Days).</p>
+
+<p><img src="images/prod-enhance-image24.png" alt="" /><br />
+The values available for selection are listed below. These values refer to the time period for the expiration of the compensatory off. For instance, If the value is set as 30 days, the employee will have to avail this compensatory off within this 30 days’ time, otherwise it will get expired and so it will not be available for him.</p>
+
+<ul>
+  <li>
+    <p>30 Days</p>
+  </li>
+  <li>
+    <p>60 Days</p>
+  </li>
+  <li>
+    <p>Till end of Next Month</p>
+  </li>
+  <li>
+    <p>Till end of next 2 months</p>
+  </li>
+  <li>
+    <p>Till end of Current Month</p>
+  </li>
+</ul>
+
+<p><strong>Max -ve allowed Compensatory-Off Balance</strong> parameter in <strong>Application parameter&gt;LV-1</strong> tab is used to validate the leave days while taking the compensatory off Type Leave.</p>
+
+<p>For instance, on assigning a value 5 for this parameter, while applying for compensatory off, even though the leave balance is 17, an additional 5 leaves also can be applied.<img src="images/prod-enhance-image25.png" alt="C:\Users\LENOVO\AppData\Local\Temp\SNAGHTML38435d0c.PNG" /></p>
+
+<h2 id="probation-notification-with-attachment">Probation notification with Attachment</h2>
+
+<h3 id="july-2018-9955">July 2018 (#9955)</h3>
+
+<p>Here the customization requirement was such that an email notification should be send to the Line Manager and head of department 30 days before the probation end date with Probation evaluation form. The header details of Probation need to be filled based on employee’s data. The probation notification to Managers should only be send once.</p>
+
+<p>The solution approach is done in the following manner:</p>
+
+<ul>
+  <li>
+    <p>This feature is handled by introducing a new alert type in Alert Configuration screen - ‘Probation Alert Prior to</p>
+  </li>
+  <li>
+    <p>Probation End Date’.</p>
+  </li>
+  <li>
+    <p>The custom report should be made for Probation Report and this will be available for selection in Alert</p>
+  </li>
+  <li>
+    <p>Configuration.</p>
+  </li>
+</ul>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+  <li>
+    <p>Alert functionality is moved from <strong>HRW License Manager</strong> to <strong>Email Attendance Details</strong> service.</p>
+  </li>
+  <li>
+    <p>A new key is added in HRW License Manager and Email Attendance Details – <strong>EnableAlert</strong> which will be <strong>true in former and false in later (by default</strong>). This parameter, if set as true, Alert functionality will be working as usual. This key <strong>should not be</strong> set as true in both services.</p>
+  </li>
+  <li>
+    <p>The probation report uses <strong>Report Emailer</strong> application for mail sending, like the Attendance Report emailing functionality. So the URL to Report Emailer exe should be set in service’s config file.</p>
+  </li>
+  <li>
+    <p>The key <strong>TimeInterval</strong> used in License Manager is also added in Email Attendance Details service (default as 1)</p>
+  </li>
+</ul>
+
+<p><img src="images/prod-enhance-image26.PNG" alt="" /></p>
+
+<h2 id="dashboard">Dashboard</h2>
+
+<h3 id="july-2018-5266">July 2018 (#5266)</h3>
+
+<p>Development of Dashboard Module in HRW. This include the following sub modules:</p>
+
+<ul>
+  <li>
+    <p><strong>Widget Creation</strong>: This screen is mainly used to create a dashboard widget of any type.</p>
+  </li>
+  <li>
+    <p><strong>Dashboard Designer</strong>: Once the widget is created, the user can design the dashboard.</p>
+  </li>
+  <li>
+    <p><strong>Dashboard Viewer</strong>: Finally, the dashboard can be viewed from Dashboard Viewer screen.</p>
+
+    <ul>
+      <li>
+        <p>The dashboard viewer working is based on the settings in widget creation and the design in the dashboard designer page.</p>
+      </li>
+      <li>
+        <p>The filter option in Dashboard viewer is based on the filter option of each widgets in widget screen.</p>
+      </li>
+      <li>
+        <p>The dashboard user can filter the dashboard from the filter option set in widget screen.</p>
+      </li>
+      <li>
+        <p>If the filter selection is checked in ‘Is user overridable’, then the user can select all available filter options otherwise user can apply only the selected filter options in the widget screen.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="common">Common</h1>
+
+<h2 id="employee-detail-report-without-salary">Employee Detail report without Salary</h2>
+
+<h3 id="july-2019---16094">July 2019 - #16094</h3>
+
+<p>In some companies, some of the members in the HR team do not have the access to salary of the employees. Hence, the client required to view the employee detail report without the salary information.</p>
+
+<p>For implementing this feature, execute an SQL.</p>
+
+<p><img src="images/prod-enhance-image27.png" alt="" /></p>
+
+<h2 id="send-ict-form-on-employee-creation">Send ICT form on Employee creation</h2>
+
+<h3 id="may-2019---14851">May 2019 - #14851</h3>
+
+<p>The client requires to send an ICT form to the IT department head while a new employee is created in the system. In this format we are not sending employee details.</p>
+
+<p>For this, a new view is created. Execute the view.</p>
+
+<p>In Card Types » Other Cards, create the fields to Upload and attach the files in the Card Master and name the action form as NEWEMP.</p>
+
+<p>Crete the workflow for sending the email and link it with the action form.</p>
+
+<p><img src="images/prod-enhance-image28.png" alt="" /></p>
+
+<h2 id="dashboard-items">Dashboard Items</h2>
+
+<h3 id="march-2019---13835">March-2019 - #13835</h3>
+
+<p>The client required to view the below details in the Dashboard window.</p>
+
+<ul>
+  <li>
+    <p>Pending Leave details upon which leave settlement is not processed.</p>
+  </li>
+  <li>
+    <p>Pending separated employee details, whose final settlement is not processed.</p>
+  </li>
+  <li>
+    <p>Upcoming Leaves of 30 days, where leave start date is within 30 days from today.</p>
+  </li>
+  <li>
+    <p>Alert Details of Company Document.</p>
+  </li>
+  <li>
+    <p>Alert details of Employee Document.</p>
+  </li>
+</ul>
+
+<p>Changes based on the customised SP</p>
+
+<p><img src="images/prod-enhance-image29.png" alt="" /></p>
+
+<p><em>Fig: Dashboard Viewer</em></p>
+
+<h2 id="transaction-period-option-as-same-feature-available-in-tas">Transaction Period option (as same feature available in TAS)</h2>
+
+<h3 id="march-2019---14031">March-2019 - #14031</h3>
+
+<p>The transaction period of the reports is customised in this point. The requirement of the client was to view the transaction period in three different ways such as Today, Previous working Day and Period. However more options for selecting the transaction period has added in this point. This change is applicable in both HR Works and HR Work Plus in the general transaction screen and report screens.</p>
+
+<p>The changes are made as follows.</p>
+
+<ol>
+  <li>
+    <p>Three new parameters named ‘Default Date Range in Transaction &amp; Reports’, ‘Default From Date’ and ‘Default To Date’ are added in the TAM-1 tab in the Application parameter.</p>
+  </li>
+  <li>
+    <p>Execute a script for enabling the newly added parameters and its selections.</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image30.png" alt="" /></p>
+
+<p><em>Fig: Application parameter Settings</em></p>
+
+<h2 id="company-wise-employee-strength-report">Company Wise Employee Strength Report</h2>
+
+<h3 id="march-2019---12954">March-2019 - #12954</h3>
+
+<p>The client requires to view the Company wise employee strength indicating the number of employees working, absent, on annual leave and E-Leave. Follow the below steps.</p>
+
+<ol>
+  <li>
+    <p>Run the SP (In the SP you can change the leave which you need to filter.)</p>
+  </li>
+  <li>
+    <p>In the Custom Report Designer, create the Template and set Report Source and set the parameters.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image31.png" alt="" /></p>
+
+  <p><em>Figure: Report showing employee strength</em></p>
+</blockquote>
+
+<h2 id="employee-head-count-report">Employee Head Count Report</h2>
+
+<h3 id="march-2019---12953">March-2019 - #12953</h3>
+
+<p>The client required to view the number of employees working in each project separately.</p>
+
+<p>Therefore, a report was developed showcasing the project name, project manager and number of employees by grouping the employees based on the destination.</p>
+
+<ol>
+  <li>
+    <p>Execute the SP for getting the head count details.</p>
+  </li>
+  <li>
+    <p>In the Administration Module, in the Custom Report Designer, create the Template and set Report Source as the Custom SP and set the Custom Report Module with required module.</p>
+  </li>
+  <li>
+    <p>Set the required parameters of Custom SP and the data types in User Entry Values.</p>
+  </li>
+  <li>
+    <p>To view the report, Select Document Template and set parameters for the template and Preview.</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image32.png" alt="" /></p>
+
+<blockquote>
+  <p><em>Figure: Report showing employee strength in each project</em></p>
+</blockquote>
+
+<h2 id="additional-field-in-employee-profile-report">Additional Field in Employee Profile Report</h2>
+
+<h3 id="march-2019---14269">March-2019 - #14269</h3>
+
+<p>In the Employee Profile Report, there was no option to add the photo of the employee. As per the client requirement Employee Profile Report was customised by adding the option to add the Photo of the employee, gratuity as on date and leave balance as on date.</p>
+
+<p>In order to implement this, an XML file and REPX file must be executed.</p>
+
+<p>The fields required in the Report Template screen is saved through the XML file.</p>
+
+<p>The format for the report is designed in the REPX file.</p>
+
+<p><img src="images/prod-enhance-image33.png" alt="" /></p>
+
+<p><em>Figure: Employee Profile Report</em></p>
+
+<h2 id="entity-headcount-report">Entity Headcount Report</h2>
+
+<h3 id="feb-2019---13464">Feb-2019 - #13464</h3>
+
+<p>The client maintains Designation, Department and Grade as the positional entities. There was no provision to get the head count of the employees by these entities in form of a report. Therefore, a new report named Entity Headcount report in which entity wise head count can be viewed is introduced.</p>
+
+<p>Changes based on view and xml</p>
+
+<p><img src="images/prod-enhance-image34.png" alt="" /></p>
+
+<p><em>Figure: Custom Reports- Common</em></p>
+
+<h2 id="dash-board-to-show-pending-approval-items">Dash Board to show Pending Approval Items</h2>
+
+<h3 id="feb-2019-----12361">Feb 2019  - # 12361</h3>
+
+<p>Initially, Pending Approvals were listed in the Pending Action Screen in the Administrative module on the basis of the access rights. Now, the client needed a dashboard that shows pending approval items with the user, when logged into the HR Works. Need to show the dashboard as landing page. These changes are made as below:</p>
+
+<ol>
+  <li>
+    <p>A new menu ‘<strong>Dashboard Pending Actions</strong>’ is added to HRW</p>
+  </li>
+  <li>
+    <p>Changes based on SP</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image35.png" alt="" /></p>
+
+<p><em>Fig: Dashboard viewer</em></p>
+
+<h2 id="employee-report-with-specific-format">Employee Report with specific format</h2>
+
+<h3 id="dec-2018-----13628">Dec 2018  - # 13628</h3>
+
+<p>The client needs to generate employee report in specific format in HR Works. A new field (Date of birth) has been added to personal record report.</p>
+
+<p><img src="images/prod-enhance-image36.png" alt="" /></p>
+
+<h2 id="file-upload-restriction-in-document-upload">File upload restriction in document upload</h2>
+
+<h3 id="dec-2018-----12051">Dec 2018  - # 12051</h3>
+
+<p>The client wanted to set the maximum upload file size for the following:</p>
+
+<ol>
+  <li>
+    <p>Employee photograph upload (in Employee Master data screen)</p>
+  </li>
+  <li>
+    <p>Fields with its datatype set as file in Personal Records fields</p>
+  </li>
+</ol>
+
+<p>For employee photograph upload, a new parameter named <strong>Maximum Size of Employee Photo in KBs</strong> is introduced on the <strong>Application parameter » HRW-1</strong> tab. Users can specify the maximum upload limit for employee photograph in kilobytes.</p>
+
+<p>For the fields on the personal records field groups for which you want to have file upload size limit, do the following:</p>
+
+<ul>
+  <li>
+    <p>A query needs to be executed in the HR Works DB, in which the type and size of the file to be uploaded can be specified.</p>
+  </li>
+  <li>
+    <p>Once the query is executed, an appropriate value will be available for selection in the <strong>Validations</strong> dropdown field against any of the personal records fields provided it’s data type is set as <em>File</em>.</p>
+  </li>
+</ul>
+
+<h2 id="employee-status-oct-2018-11056">Employee status <strong>Oct 2018 (#11056)</strong></h2>
+
+<p>Currently the status of employees such as terminated, separated, absconding, and on leave are system generated statuses meaning they are generated by the system based on the respective transaction. In order to track employee’s current and last status, the client requires additional statuses such as Cancelled, Left country, Run away, and Police case to be set for their employees.</p>
+
+<p>For this, a new field is provided in the Employee master for users to update the status with effective date. Status needs to be updated even if the employee is separated. The Employee list now shows employee’s system generated status as well as the status that is set manually.</p>
+
+<p>Based on XML change</p>
+
+<h2 id="service-day-in-employee-master">Service day in employee Master</h2>
+
+<p><strong>Oct 2018 (#11912)</strong></p>
+
+<p>Employee master should show service days as of the current date in Year/s Month/s Day/s format. Date should be displayed on the employee’s master screen below his/ her age.</p>
+
+<p>A new parameter is added so that users can specify the format in which service days is displayed (<strong>Application parameter » HRW-1 » Service Days Display Format</strong>).</p>
+
+<p><img src="images/prod-enhance-image37.png" alt="" /></p>
+
+<p>If an employee is terminated or is included in employee separation transaction (Payroll Action form) and if the effective date on the separation record is less than the current date, then his/ her service period is calculated and displayed as follows:</p>
+
+<p>No. of service days (Current Date - Hire Date) + 1) till the effective date .</p>
+
+<h2 id="select-all-option-in-the-personal-record-change-action-form">Select all option in the personal record change action form</h2>
+
+<h3 id="july-2018-10647">July 2018 (#10647)</h3>
+
+<p>Implemented Select ‘all’ option for personal record action form on employee list grid. Maximum 5 Employees personal records can be updated through manual entry. The user can generate excel template for all employees and upload the personal record.</p>
+
+<p><img src="images/prod-enhance-image38.png" alt="" /></p>
+
+<h2 id="organization-chart-design">Organization Chart Design</h2>
+
+<h3 id="july-2018-7971">July 2018 (#7971)</h3>
+
+<ul>
+  <li>
+    <p>Added new column named ‘Organization Chart By’ in Organization Chart Types screen.</p>
+  </li>
+  <li>
+    <p>Entities with ‘This Employee’ data type is shown in this column.</p>
+  </li>
+  <li>
+    <p>The value of this column is used for the new JSON Organization chart.</p>
+  </li>
+  <li>
+    <p>Setting the ‘Organization Chart By’ value will also enables you to filter the data that needs to be shown in Chart by different Entities within an Entity Type. (Image 1)</p>
+  </li>
+  <li>
+    <p>These selections are shown in Selected Values column.</p>
+  </li>
+  <li>
+    <p>We can show / hide the nodes by clicking on the green arrows in the organization chart. (Image2)</p>
+  </li>
+  <li>
+    <p>Entity Type with Sort order 1 is shown in the organization chart.</p>
+  </li>
+</ul>
+
+<p><img src="images/prod-enhance-image39.png" alt="" /></p>
+
+<p>Image 1</p>
+
+<p><img src="images/prod-enhance-image40.png" alt="" /></p>
+
+<p>Image 2</p>
+
+<h1 id="reports">Reports</h1>
+
+<h2 id="missing-document-report">Missing Document Report</h2>
+
+<h3 id="july-2018-10782">July 2018 (#10782)</h3>
+
+<p>New Report has to be generated for obtaining missing document of employee based on document type. We have added a new report Missing Personal Records. Here, on selecting corresponding document types missing cases will be displayed on previewing.</p>
+
+<p><img src="images/prod-enhance-image41.png" alt="" /></p>
+
+<h2 id="company-name-in-reports-with-export-friendly-option">Company name in reports with Export Friendly option</h2>
+
+<h3 id="july-2018-10111">July 2018 (#10111)</h3>
+
+<p>Company name and report title are now included for the following screens where export friendly print option is used:</p>
+
+<ul>
+  <li>
+    <p>Attendance Integration</p>
+  </li>
+  <li>
+    <p>Cost Allocation Report</p>
+  </li>
+  <li>
+    <p>Payroll Sheet</p>
+  </li>
+  <li>
+    <p>Employee Details</p>
+  </li>
+  <li>
+    <p>Indemnity Accruals</p>
+  </li>
+  <li>
+    <p>Leave Report</p>
+  </li>
+  <li>
+    <p>Air Ticket Accrual</p>
+  </li>
+  <li>
+    <p>Period Summary Report</p>
+  </li>
+  <li>
+    <p>Salary Register</p>
+  </li>
+  <li>
+    <p>Salary Transfer Details Report</p>
+  </li>
+  <li>
+    <p>User Defined Accrual Register</p>
+  </li>
+  <li>
+    <p>Vacation Accruals</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image42.png" alt="" /></p>
+</blockquote>
+
+<h2 id="company-document-in-expiry-report">Company document in expiry report</h2>
+
+<h2 id="july-2018-10141">July 2018 (#10141)</h2>
+
+<p>We have provided a new screen for company records and in this screen the Company Document Expiry details will be displayed and in Document Expiry report the Employee Document Expiry details will only be displayed. The setup and configuration are all the same as that of Employee document expiry screen and the data are displayed based on alert in each report screen.</p>
+
+<p>The format of the report is embedded here:</p>
+
+<p><img src="images/prod-enhance-image44.png" alt="" /></p>
+
+<h1 id="payroll-reports">Payroll Reports</h1>
+
+<h2 id="employee-distribution-report">Employee Distribution Report</h2>
+
+<h3 id="may-2019---6948">May 2019 - #6948</h3>
+
+<p>The client required a new report named Employee Distribution Report which is a two-dimensional entity report where the entities are taken from the positional and personal entities.</p>
+
+<p>Execute a query for enabling the report.</p>
+
+<p><img src="images/prod-enhance-image45.png" alt="" /></p>
+
+<p><em>Fig: Employee Distribution Report</em></p>
+
+<h2 id="account-no-and-remarks-in-pay-slip">Account No and remarks in pay slip</h2>
+
+<h3 id="dec-2018-----14045">Dec 2018  - # 14045</h3>
+
+<p>Client requires that the following two more details be shown in their pay slip</p>
+
+<p>1. Account no (entered in the employee &gt; Payment details &gt; Account No</p>
+
+<p>2. Loan Remarks in the deduction part (remarks which is entered through loan application)</p>
+
+<p>This is implemented by executing xml script in the db.</p>
+
+<h2 id="budgetary-report-for-company-records">Budgetary Report for Company Records</h2>
+
+<h3 id="dec-2018-----12535">Dec 2018  - # 12535</h3>
+
+<p>The client has a field for displaying amount, which they maintain as the expiry document budget amount, for all items on their company records menu. These data can be viewed as a report when they generate the <strong>Company Document Expiry</strong> report from the Payroll Management module » Reports section. The client wants to have the total amount for each item on the Company records displayed in the <strong>Company Document Expiry</strong> report which shows the total of all the values in the respective <strong>Amount</strong> field.</p>
+
+<p><img src="images/prod-enhance-image46.png" alt="C:\Users\ADARSH~1.ADA\AppData\Local\Temp\SNAGHTML2e899d7f.PNG" /></p>
+
+<h2 id="all-company-consolidated-report">All company Consolidated report</h2>
+
+<h3 id="dec-2018-----12677">Dec 2018  - # 12677</h3>
+
+<p>The client who has multiple company set up in their DB wants the following:</p>
+
+<p>Now, on the Common » Company Records menu, users can view the company records of the company they have logged into. The client requires that the users should be able to view the company records data of all the companies in the database regardless of the company they have logged into. For this, user can now configure the Custom Reports in the following manner:</p>
+
+<ul>
+  <li>
+    <p>A few Stored procedures need to be executed in the HR Works DB. Separate SPs are created for every item on the Company Records menu. Only when you execute the SP meant for an item, the respective view will be available for selection in the <strong>Report Source</strong> dropdown field on the <strong>Custom Report Designer</strong> screen.</p>
+  </li>
+  <li>
+    <p>On the <strong>Administration » System Management » Custom Report Designer</strong> screen, a new report will be created by selecting appropriate values from the <strong>Report Source</strong> field. The values that you select here appear as result of executing the respective Stored Procedure in the HR Works DB.<br />
+<img src="images/prod-enhance-image47.png" alt="" /></p>
+  </li>
+  <li>
+    <p>From the Custom Reports Module dropdown field, select the module in which you want to have the <strong>Custom Reports</strong> menu appear.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image48.png" alt="" /></p>
+
+  <p><img src="images/prod-enhance-image49.png" alt="" /></p>
+</blockquote>
+
+<h2 id="absent-details-in-pay-slip">Absent details in pay slip</h2>
+
+<h3 id="oct-2018-12250"><strong>Oct 2018 (#12250)</strong></h3>
+
+<p>For one of the clients, the interface period is set as <em>21st of previous month to 20th of current month</em> (see <strong>Application parameter » TAM-1 » Absent Leave Integration Period</strong> parameter). The client requires that the reprocess records also be treated as absent. Changes have been implemented so that for whichever date the employee has reprocess (missing IN/ Out), those dates will be shown as absent in his/ her pays lip. The system will show the from date and to date of the days having reprocess as absence in employee’s pay slip in its leave section.</p>
+
+<h2 id="salary-pay-out-report">Salary Pay-out report</h2>
+
+<h3 id="july-2018-10489">July 2018 (#10489)</h3>
+
+<p>Added new report “Salary Pay –out”</p>
+
+<p>The report is included in existing Payment Summary Report. It is done as an XML change. Data will be shown in two grids which can be printed in Excel document.</p>
+
+<p><img src="images/prod-enhance-image50.png" alt="" /></p>
+
+<p><img src="images/prod-enhance-image51.png" alt="" /></p>
+
+<h2 id="custom-separated-employee-report">Custom Separated Employee Report</h2>
+
+<h3 id="july-2018-10487">July 2018 (#10487)</h3>
+
+<p>New Custom report is added through Report Template Designer. Execute the xml in order to include this report.</p>
+
+<p><img src="images/prod-enhance-image52.png" alt="" /></p>
+
+<h2 id="headerfooter-data-withwithout-column-headers---wps">Header/Footer data with/without column headers - WPS</h2>
+
+<h3 id="july-2018-10727">July 2018 (#10727)</h3>
+
+<p>Usually in case of reports like WPS, report format for Header-Footer were pre-defined and couldn’t be changed. Now with this feature we can make changes using XML file.</p>
+
+<h2 id="to-implement-printable-version-of-change-control-report">To implement Printable Version of Change Control Report</h2>
+
+<h3 id="july-2018-8259">July 2018 (#8259)</h3>
+
+<p>Added new <strong>Change control report</strong> Format.</p>
+
+<p>In this format Company, Business Unit, Division and Department details (show only code) will show after the employee name column.</p>
+
+<ul>
+  <li>
+    <p>In Earning Deduction Batch, add New Column “Type” to show the Pay Component type Earning or Deduction. Rename the Existing “Type” field as “Component”</p>
+  </li>
+  <li>
+    <p>In Overtime Entry, please show the amount also</p>
+  </li>
+  <li>
+    <p>Please show the destination in Air Ticket Availment</p>
+  </li>
+</ul>
+
+<p>All these requirements have been implemented in the report. Changes are done using XML and customized SP.</p>
+
+<p><img src="images/prod-enhance-image53.jpeg" alt="" /></p>
+
+<h2 id="employee-document-for-all-companies-in-single-report">Employee document for all companies in single report</h2>
+
+<h3 id="july-2018-10143">July 2018 (#10143)</h3>
+
+<p>Now we have an option to print the employee documents and company documents for all companies from the login company. Two customised SPs are used to show all Company document and Employee documents through the Custom Report Designer. On selecting the required SPs from the combo selection and by enabling respective menu Reports can be viewed.</p>
+
+<p><img src="images/prod-enhance-image54.png" alt="" /></p>
+
+<h2 id="configurable-separator-for-csv-and-text-file-formats">Configurable separator for CSV and Text file formats</h2>
+
+<h3 id="july-2018-10726">July 2018 (#10726)</h3>
+
+<p>Usually in case of reports like WPS, the report format along with the separators used for differentiating items where pre-defined and couldn’t be changed. But now, by implementing this feature, the separators can be configured for both csv and text file. This is done by executing xml.</p>
+
+<p><img src="images/prod-enhance-image55.png" alt="" /></p>
+
+<p><img src="images/prod-enhance-image56.png" alt="" /></p>
+
+<h2 id="position-entity-codes-to-be-added-in-column-chooser">Position Entity Codes to be added in column chooser</h2>
+
+<h3 id="july-2018-11032">July 2018 (#11032)</h3>
+
+<p>The requirement is to add Position Entity Codes in column chooser for the following reports:</p>
+
+<blockquote>
+  <p>• Salary Audit Report – Variance</p>
+
+  <p>• Overtime Report</p>
+
+  <p>• Loan deduction List Report</p>
+
+  <p>• Indemnity Accrual Reports</p>
+
+  <p>• Air Ticket Accrual Report</p>
+
+  <p>• Vacation Accrual Report</p>
+
+  <p>• UDA Accrual Report</p>
+</blockquote>
+
+<p>The feature is implemented in all of the above reports except salary audit report.</p>
+
+<h2 id="to-show-the-contents-of-remarks-field-of-an-earning-deduction-batch-in-the-payroll-comparison-report">To show the contents of remarks field of an Earning Deduction Batch in the Payroll Comparison report</h2>
+
+<h3 id="july-2018-10882">July 2018 (#10882)</h3>
+
+<p>Earlier in payroll comparison report comment field for earning deduction record it will display comment ‘EarningDeduction.</p>
+
+<p>Now it will show the actual remarks we have entered through Earning deduction screen.</p>
+
+<h1 id="time-and-attendance-module">Time and Attendance Module</h1>
+
+<h2 id="day-wise-ot-payable-report">Day Wise OT Payable Report</h2>
+
+<h3 id="july-2019---15038">July 2019 - #15038</h3>
+
+<p>The client required a report that list the OT payable amount for each day. For this, a new grid was introduced in the OT Calculation Report Screen.</p>
+
+<p>For implementing the change, execute a XML for enabling the Day Wise OT Payable Report.</p>
+
+<p><img src="images/prod-enhance-image57.png" alt="" /></p>
+
+<h2 id="total-ot-payable-report">Total OT Payable Report</h2>
+
+<h3 id="july-2019---15039">July 2019 - #15039</h3>
+
+<p>The client required a report that list the total payable OT amount. Hence, in the Period Summary Report new columns named OT Amount, Total OT Amount and Basic salary was added.</p>
+
+<p>For implementing the change, follow the steps below:</p>
+
+<p>Execute the Report Template to enable the Total OT Payable report.</p>
+
+<p><img src="images/prod-enhance-image58.png" alt="" /></p>
+
+<h2 id="adjust-shortage-hours-with-over-time-during-payroll-calculation">Adjust Shortage hours with Over Time during Payroll calculation</h2>
+
+<h3 id="july-2019---15108">July 2019 - #15108</h3>
+
+<p>A new functionality for adjusting the shortage hours with the overtime is introduced in HR Works. Shortage hours is adjusted from overtime hours in an order of Holiday OT, Off day OT and Normal OT during payroll calculation and the remaining OT hours only will be paid. Further, this functionality must be linked on Department level.</p>
+
+<p>Changes based on customized SP.</p>
+
+<p><img src="images/prod-enhance-image59.png" alt="" /></p>
+
+<h2 id="new-report---attendance-summary-report-in-hr-works">New Report - Attendance Summary Report in HR Works</h2>
+
+<h3 id="july-2019---15424">July 2019 - #15424</h3>
+
+<p>The client required to create the Attendance Summary Report in a new format.</p>
+
+<p>For implementing the changes on the Attendance Summary Report, follow the steps below:</p>
+
+<ol>
+  <li>
+    <p>Execute a query for enabling the menu.</p>
+  </li>
+  <li>
+    <p>Import REPX in the Custom Report Designer.</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image60.png" alt="" />_<br />
+Figure: Attendance Summary Report_</p>
+
+<h2 id="absent-report-emailing">Absent Report Emailing</h2>
+
+<h3 id="may-2019---14615">May 2019 - #14615</h3>
+
+<p>The client required to send the Absent Summary Report via email to the supervisors and HR.</p>
+
+<p>For this, Run the script for custom report designer.</p>
+
+<p>Run the script for email settings.</p>
+
+<p>Run the script for identifying the Entity Types.</p>
+
+<p>Import the REPX file for the report.</p>
+
+<p><img src="images/prod-enhance-image61.png" alt="" /></p>
+
+<p><em>Figure: Absent Report Generated</em></p>
+
+<h2 id="list-refreshment-allowance-in-consolidated-attendance-report">List Refreshment Allowance in Consolidated attendance Report</h2>
+
+<h3 id="march-2019---13346">March-2019 - #13346</h3>
+
+<p>The client required to view the details of the refreshment allowance of the employees in the Consolidated Attendance report which was not included in the report.</p>
+
+<blockquote>
+  <p>Created new XML’ConsolidatedRPTTemplate’ Report template for showing ‘ Refreshment allowance’.</p>
+
+  <p><img src="images/prod-enhance-image62.png" alt="" /></p>
+
+  <p><em>Fig: Consolidated Attendance Report showing Refreshment allowance</em></p>
+</blockquote>
+
+<h2 id="project-details-in-consolidated-attendance-report">Project Details in Consolidated Attendance Report</h2>
+
+<h3 id="feb-2019----12955">Feb 2019 - # 12955</h3>
+
+<p>The Project Details of the employees were not recorded in the Consolidated Attendance Report. Now the client requires the project information to be listed in Consolidated Attendance report. They also need the provision to list multiple project information, in case the employee has worked on one or more projects for a day. For this, an XML script is executed in the DB. Given below is a screenshot of the <strong>Consolidated Attendance Report</strong> once the changes were implemented.</p>
+
+<p><img src="images/prod-enhance-image63.png" alt="" /></p>
+
+<h2 id="handling-off-day-following-an-absent-day">Handling OFF day following an absent day</h2>
+
+<h3 id="feb-2019---13434">Feb 2019 - #13434</h3>
+
+<p>Initially, while calculating the attendance of an employee, all the off days were considered as the OFF day.</p>
+
+<p>The client needed to calculate the attendance in the following way:</p>
+
+<ol>
+  <li>
+    <p>If an employee is absent on the day just before an OFF day that OFF day should to be considered as Absent.</p>
+  </li>
+  <li>
+    <p>If there are consecutive off days after the Absent day, all the OFF days should be considered as absent day.</p>
+  </li>
+</ol>
+
+<p>These changes are made as below.</p>
+
+<ol>
+  <li>
+    <p>In the <strong>Policy Code</strong> Screen, two new fields were added named as ‘Weekly Off Following Absent Days’ &amp; ‘Public Holiday Following Absent Days’ in the in the Weekly Off /Public Holiday Parameters section.</p>
+  </li>
+  <li>
+    <p>New field display will be based on the query</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image64.png" alt="" /></p>
+
+<p><em>Fig: Policy Code Screen</em></p>
+
+<h2 id="yearly-weekly-off-limit">Yearly Weekly OFF Limit</h2>
+
+<h3 id="feb-2019---14036">Feb-2019 - #14036</h3>
+
+<p>Initially, while calculating the attendance of the employees, all the Weekly Off days where considered as Weekly Off irrespective of any limits.</p>
+
+<p>The client needed to set the Weekly Off days limit for a calendar year to all the employees. After the Weekly Off Day limit, the leaves must be considered as absent.</p>
+
+<p>These changes are made as below.</p>
+
+<ol>
+  <li>
+    <p>In the <strong>Personal Records</strong>, add a new field named ‘Weekly Off Limit’ which contains the Effective Date, Limit and Remarks.</p>
+  </li>
+  <li>
+    <p>A query is executed in the DB for activating the functionality</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image65.png" alt="" /></p>
+
+<p><em>Figure: Weekly Off Limit</em></p>
+
+<h1 id="tam-reports">TAM Reports</h1>
+
+<h2 id="list-terminal-information-in-attendance-reports">List Terminal Information in Attendance Reports</h2>
+
+<h3 id="march-2019---14431">March-2019 - #14431</h3>
+
+<p>The client needed to list the terminal Information in the Attendance Reports.</p>
+
+<p>In order to implement this, the following steps were followed.</p>
+
+<p>For displaying the terminal information in the Consolidated Attendance Report, four additional field were added named as MachineID_IN, MachineID_OU, MachineID_IN_2, MachineID_OU_2 in the xml template. The header named could be changed according to the need of the clients. Moreover, the IN terminals and OUT Terminal details were introduced in the report.</p>
+
+<p>Created new XML’ConsolidatedRPTTemplate’ Report template for showing ‘terminal information’.</p>
+
+<p><img src="images/prod-enhance-image66.png" alt="" /></p>
+
+<p><em>Fig: Consolidated Attendance Report with Terminal Information</em></p>
+
+<h2 id="list-ot-payable-hours-in-attendance-reports">List OT Payable Hours in Attendance Reports</h2>
+
+<h3 id="march-2019---14430">March 2019 - #14430</h3>
+
+<p>The attendance report does not list the details of the OT payable hours. The client required to display the details of the OT Payable hours in the Attendance Reports.</p>
+
+<p>The changes are made as follows.</p>
+
+<p>Updated XML ‘ConsolidatedRPTTemplate’ Report template for showing ‘ OT Payable hours’</p>
+
+<p><img src="images/prod-enhance-image67.png" alt="" /></p>
+
+<p><em>Fig: Consolidated Attendance Report showing OT details</em></p>
+
+<h2 id="break-permission-report">Break Permission Report</h2>
+
+<h3 id="dec-2018-----12814">Dec 2018  - # 12814</h3>
+
+<p>As per the client’s requirement, a new report (Break Permission Report) is added to the <strong>Reports</strong> section of the Time and Attendance Management module. In this report, users can view the following:</p>
+
+<ul>
+  <li>
+    <p>break details which are entered through the Employee Break permissions transaction in HR Works</p>
+  </li>
+  <li>
+    <p>break permissions requests made through View Calendar transaction in HRW Web.</p>
+  </li>
+</ul>
+
+<p>The following steps need to be followed to implement this report.</p>
+
+<p>A query is provided, which when executed in the HRW database, will enable the creation of a break permission report template on the <strong>Report Template Design</strong> screen. Once you create the Break Permission Report, it will appear in the <strong>Reports</strong> section of <strong>Time and Attendance</strong> module.</p>
+
+<p><img src="images/prod-enhance-image68.png" alt="" /></p>
+
+<h2 id="periodic-summary-report-for-emailing">Periodic Summary Report for Emailing</h2>
+
+<h3 id="dec-2018-----12896">Dec 2018  - # 12896</h3>
+
+<p>The client wants the same periodic summary report in excel format in HR Works to be sent over email as an alert which will be generated monthly from the system.</p>
+
+<p>Changes done by executing scripts (xml).</p>
+
+<p><img src="images/prod-enhance-image69.png" alt="" /></p>
+
+<h2 id="email-template-for-attendance-exception">Email Template for Attendance Exception</h2>
+
+<h3 id="dec-2018-----13178">Dec 2018  - # 13178</h3>
+
+<p>Client requires that all exceptions for the previous week to be send as attendance exception email alert. Changes based on XML and repx file need to be imported.</p>
+
+<p><img src="images/prod-enhance-image70.png" alt="" /></p>
+
+<h2 id="new-time-card-report-for-jordan-company">New Time Card report for Jordan Company</h2>
+
+<h3 id="nov-2018-----12886">Nov 2018  - # 12886</h3>
+
+<p>The Time Card report in HR Works web used to show employee name and code together in row and beneath that the time card details of the employees as shown below.</p>
+
+<p><img src="images/prod-enhance-image71.png" alt="" /></p>
+
+<p>It also did not show Branch, Location, and Department, which are positional entities in the client’s DB. As per the client’s requirement, changes have been made so that the report now displays employee code and name in separate columns. The report also displays the Branch, Location, and Department of employees in the respective column. The image below represents the Time card report as it is displayed after the changes:</p>
+
+<p><img src="images/prod-enhance-image72.png" alt="" /></p>
+
+<p>The aforementioned changes to the report was made through the report template in HR Works.</p>
+
+<h2 id="break-details-in-consolidated-attendance-report">Break Details in Consolidated Attendance Report</h2>
+
+<h3 id="nov-2018-----12562">Nov 2018  - # 12562</h3>
+
+<p>The Consolidated attendance report in HR Works did not show the Break details such as (Break IN Time, Break OUT Time, and Break hours. As per the client’s requirement the report now displays these details. If the employee has multiple breaks for a given day, the report will show those details as well.</p>
+
+<p><img src="images/prod-enhance-image73.png" alt="" /></p>
+
+<p>The aforementioned changes to the report was made through the report template in HR Works.</p>
+
+<h2 id="new-format-for-consolidated-attendance-report-emailing">New format for consolidated attendance Report emailing</h2>
+
+<h3 id="july-2018-9514">July 2018 (#9514)</h3>
+
+<p>New Consolidated Attendance Report for Email reporting which includes split shift.</p>
+
+<p><img src="images/prod-enhance-image74.png" alt="" /></p>
+
+<h2 id="new-timesheet-report-format">New Timesheet Report Format</h2>
+
+<h3 id="august-2018-10740">August 2018 (#10740)</h3>
+
+<p>Added new timesheet report as shown below,</p>
+
+<p><img src="images/prod-enhance-image75.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>The report will be generated in excel format in the system as per the required format.</p>
+  </li>
+  <li>
+    <p>Shift - this row will show the employees assigned shift codes and Off Day code “O” for the date, if any leaves are present then leave code will be shown as well.</p>
+  </li>
+  <li>
+    <p>Working Hours- this row will show the regular shift hours for the specific shift.</p>
+  </li>
+  <li>
+    <p>Late Hours -this row will show the late arrival or early departure hours Late arrival + Early departure (i.e. Total deduction) for the date.</p>
+  </li>
+  <li>
+    <p>If the employee has any approved break permission for the date, then that approved hours is not considered as late IN or early OUT.</p>
+  </li>
+  <li>
+    <p>OTH - this row will show the pre- approved overtime hours matched with extra hours worked in the TAS for the date. If there is no pre- approval for the day, employee have overtime, but it is not shown here.</p>
+  </li>
+  <li>
+    <p>Total (OT) Single- this column will show the total normal day OT hours for the month.</p>
+  </li>
+  <li>
+    <p>Total (OT) Double- this column will show the total of weekend day OT hours &amp; Holiday OT hours for the month.</p>
+  </li>
+  <li>
+    <p>Total (Late Hours) – this column for total late hours. (Late coming + early out).</p>
+  </li>
+  <li>
+    <p>There are no headers like month, department, section etc. Month and year are shown as per the format. E.g.: Jan-18</p>
+  </li>
+  <li>
+    <p>Excel file name will be defined as Month and Year (MMYYYY).</p>
+  </li>
+  <li>
+    <p>Contains only one common header for all employees like Emp. No, Name, Type, Period, Total (OT) Single, Total (OT) Double, Total (Late Hours) etc.</p>
+  </li>
+  <li>
+    <p>The requirements are incorporated as XML change.</p>
+  </li>
+</ul>
+
+<h2 id="report-for-meal-eligibility">Report for meal eligibility</h2>
+
+<h3 id="july-2018-9388">July 2018 (#9388)</h3>
+
+<p>New report for the eligible meals for the employees. Currently we are defining the meal eligibility and visitor meal eligibility in personal records screen of each employee. This eligibility needs to be shown in the report for each day.</p>
+
+<p>The report is implemented in the following manner:</p>
+
+<ul>
+  <li>Created New Report (Meal Eligibility Report) in TAM Reports module.</li>
+</ul>
+
+<p><img src="images/prod-enhance-image76.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>To select Date range, it contains the <strong>from date</strong> button and the <strong>To Date</strong> button.</p>
+  </li>
+  <li>
+    <p>Order of Grid column headers (<strong>Break Fast, Lunch, and Dinner</strong>) based on order from the Card Master screen (<strong>Other Cards -&gt; Meal Types</strong>).</p>
+  </li>
+</ul>
+
+<p><img src="images/prod-enhance-image77.png" alt="" /></p>
+
+<p><strong>Case 1</strong>: If Employee (Employee code = 13404) has Meal Eligibility – <strong>Meal combinations (BF – LN - DN)</strong>, and for the same day he has Visitor Meal Eligibility <strong>(Meal type – Break Fast, Number of Visitor Meal =4)</strong> then, Report shows <strong>Breakfast -4, Lunch -1, Dinner -1</strong></p>
+
+<ul>
+  <li>Visitor Meal Eligibility is displayed only when <strong>Visitor Card</strong> is set as <strong>Yes</strong>.</li>
+</ul>
+
+<h1 id="services">Services</h1>
+
+<h2 id="general-email-service">General Email Service</h2>
+
+<h3 id="july-2018-7694">July 2018 (#7694)</h3>
+
+<p>General Email Service using <strong>DLIHRMailService</strong> is implemented for the following email modules:</p>
+
+<ul>
+  <li>
+    <p>Email Settings in HR Works</p>
+
+    <ul>
+      <li>
+        <p>Attendance Exception</p>
+      </li>
+      <li>
+        <p>Attendance Report</p>
+      </li>
+      <li>
+        <p>Employee Self Service</p>
+      </li>
+      <li>
+        <p>Previous Day Attendance Summary</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>View Calendar Requests and Approval in HR Works Web</p>
+  </li>
+  <li>
+    <p>Payslip emailing in HR Works</p>
+  </li>
+  <li>
+    <p>Transaction Email Alert in HR Works</p>
+  </li>
+  <li>
+    <p>Document Alert in HR Works License Manager and Email Attendance Details services (supports multi DB configurations in Email Attendance Details)</p>
+  </li>
+  <li>
+    <p>OT Pre-Approval Emailing in HR Works Web</p>
+  </li>
+  <li>
+    <p>Email Functionalities in HR Works Plus</p>
+  </li>
+</ul>
+
+<h2 id="license-manager">License Manager</h2>
+
+<h3 id="july-2018-126">July 2018 (#126)</h3>
+
+<p>It is the License Manager utility which determines the Access Control, Menu Visibility and other core constituents of the system. These settings are configured in the utility file to suit to various customer needs. In addition, the number of entities that can be created in the Card Type screen, number of users that can access the system etc. can be restricted by assigning proper utility settings.</p>
+
+<h1 id="hr-works-plus">HR Works Plus</h1>
+
+<h1 id="administration-1">Administration</h1>
+
+<h2 id="user-interface-changes-to-hr-works-plus">User Interface Changes to HR Works Plus</h2>
+
+<h3 id="dec-2018--12841">Dec 2018 # 12841</h3>
+
+<p>Added new parameter in HSS<strong>-1</strong> tab of the <strong>HRW+ Application parameters</strong> screen.</p>
+
+<ol>
+  <li><strong>Default Skin</strong>: Changing the skin will change the appearance, theme palette and other user interface elements. Users can change the default skin set for ESS and/ or set any of the available skins by choosing the respective values from this dropdown. If no values are set for this parameter or None is selected as its value, the ESS will appear in the default skin.</li>
+</ol>
+
+<p><strong>Note</strong>: This can be done by any users having admin rights or having the required permissions to make these changes in HR Works. If you want to allow the employees/ ESS users also to change the theme set here or the default theme, see the details provided on the <strong>Allow Skin Change By Users</strong> parameter.<br />
+<img src="images/prod-enhance-image78.png" alt="" /></p>
+
+<ol>
+  <li>
+    <p><strong>Allow Skin Change By Users</strong>: We can set either Yes or No as the values for this parameter, which will decide whether to allow employees/ ESS users to change the skin of ESS application.<br />
+<img src="images/prod-enhance-image79.png" alt="" /></p>
+  </li>
+  <li>
+    <p><strong>Allow Banner Change By Users</strong>: By selecting Yes or No as the value for this parameter, you can allow or disallow ESS users to change the ESS banner.<br />
+<img src="images/prod-enhance-image80.png" alt="" /></p>
+  </li>
+</ol>
+
+<h2 id="change-in-validation-message-view">Change in Validation Message view</h2>
+
+<h3 id="dec-2018--12963">Dec 2018 # 12963</h3>
+
+<p>The validation messages that appear on transaction entry or processing are usually positioned at the bottom of the page/ form. Client wants it to customize it so that they can specify the position of all validation messages and also set the format like font size.</p>
+
+<p>The following are done for implementing these changes:</p>
+
+<ul>
+  <li>
+    <p>Added new parameter in <strong>HSS-1</strong> tab of the <strong>HRW+ Application parameters</strong> screen.</p>
+
+    <ol>
+      <li>
+        <p>The <strong>Form Validation Message</strong> parameter has the following options as its values which the user can select and specify the position of the validation message:</p>
+
+        <ul>
+          <li>
+            <p>In Bottom</p>
+          </li>
+          <li>
+            <p>In Center.</p>
+          </li>
+          <li>
+            <p>If nothing is set for this parameter or None is selected, the message appears at the bottom-right of the page/ form.</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image81.png" alt="" /></p>
+</blockquote>
+
+<ol>
+  <li>
+    <p><strong>Form Validation Message Font Size</strong>: Users can specify the font size of the message text as follows:</p>
+
+    <ul>
+      <li>
+        <p>Small</p>
+      </li>
+      <li>
+        <p>Medium</p>
+      </li>
+      <li>
+        <p>Large:</p>
+      </li>
+      <li>
+        <p>If no value is selected or None is selected for this parameter, the message text appears in the default font size.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image82.png" alt="" /></p>
+</blockquote>
+
+<h1 id="employee-profile">Employee Profile</h1>
+
+<h2 id="gross-salary-in-salary-details">Gross Salary in Salary details</h2>
+
+<h3 id="july-2018-10911">July 2018 (#10911)</h3>
+
+<p>Gross salary was not shown Payroll details of Employee profile in ESS. Now this has been implemented.</p>
+
+<p><img src="images/prod-enhance-image83.png" alt="" /></p>
+
+<h1 id="hr-portal">HR Portal</h1>
+
+<h2 id="separated-employee-report-in-hrw">Separated Employee Report in HRW+</h2>
+
+<h3 id="may-2019---13927">May 2019 - #13927</h3>
+
+<p>A new report for showcasing the details of the separated employees are created in ESS.</p>
+
+<p>Execute a query for enabling the report.</p>
+
+<p><img src="images/prod-enhance-image84.png" alt="" /></p>
+
+<p><em>Fig: Separated Employee Report</em></p>
+
+<h2 id="export-option-in-pay-slip">Export option in pay-slip</h2>
+
+<h3 id="jan-2019-13470">Jan 2019# 13470</h3>
+
+<p>Users were not able to export pay slips from ESS. As per client’s requirement export option has been brought in for pay slips in ESS. Now the users can export the pay slip into PDF and/ or excel file formats.</p>
+
+<h2 id="reports-to-be-added-in-ess">Reports to be added in ESS</h2>
+
+<h3 id="july-2018-7951">July 2018 (#7951)</h3>
+
+<p>Added the following reports into ESS.</p>
+
+<ul>
+  <li>
+    <p>Employee Master Report</p>
+  </li>
+  <li>
+    <p>Document Expiry</p>
+  </li>
+  <li>
+    <p>Salary Audit</p>
+  </li>
+  <li>
+    <p>Salary Register</p>
+  </li>
+  <li>
+    <p>Salary Increment</p>
+  </li>
+  <li>
+    <p>Loan Enquiry Report</p>
+  </li>
+  <li>
+    <p>Final Settlement</p>
+  </li>
+  <li>
+    <p>Leave Report</p>
+  </li>
+  <li>
+    <p>Leave Balance Report</p>
+  </li>
+  <li>
+    <p>Salary Transfer Details Report</p>
+  </li>
+</ul>
+
+<h2 id="need-more-fields-in-field-chooser-of-hr-works-plus">Need more fields in “Field Chooser” of HR works Plus</h2>
+
+<h3 id="july-2018-9400">July 2018 (#9400)</h3>
+
+<p>Earlier Time IN and Time OUT fields were not shown in the Field chooser, now this functionality is implemented in ‘Time Card Report’ Screen.</p>
+
+<p><img src="images/prod-enhance-image85.png" alt="" /></p>
+
+<h2 id="option-to-show-pay-slip-in-hrw">Option to show pay slip in HRW+</h2>
+
+<h3 id="july-2018-11057">July 2018 (#11057)</h3>
+
+<p>Earlier only approved batches were able to view or generate payslip. Now even unapproved batches can be viewed in ESS with the help of a new parameter in HRW+ Application parameters <strong>‘Show Payslip in HR Works Plus’</strong> (HSS-1) with options, <strong>None/Always/Only for Approved Batches/Only after Payment Date</strong>. Display of Payslip is controlled based on this Parameter, However, default option will be ‘Only for Approved Batches’. This parameter will be hidden by default.</p>
+
+<p><img src="images/prod-enhance-image86.png" alt="" /></p>
+
+<h2 id="absent-report">Absent Report</h2>
+
+<h3 id="july-2018-9272">July 2018 (#9272)</h3>
+
+<p>A new report called as Absent report is integrated in the TAM Reports category of ESS.</p>
+
+<p><img src="images/prod-enhance-image87.png" alt="" /></p>
+
+<p><img src="images/prod-enhance-image88.png" alt="" /></p>
+
+<h2 id="need-day-name-column-in-hr-works-plus-consolidate-report">Need Day name column in HR works plus Consolidate report</h2>
+
+<h3 id="july-2018-10305">July 2018 (#10305)</h3>
+
+<p>The Day Name column can be introduced into the consolidated report by using template in the following manner.</p>
+
+<FIELD NAME="DayName" SHOWDEFAULT="" />
+
+<h2 id="logo-option-for-tam-reports">Logo option for TAM reports</h2>
+
+<h3 id="july-2018-9406">July 2018 (#9406)</h3>
+
+<p>Logo option is implemented in all HR Works and HR Works plus reports.</p>
+
+<h1 id="self-service">Self Service</h1>
+
+<h2 id="option-to-print-the-lc-request-details">Option to print the L&amp;C request details</h2>
+
+<h2 id="july-2019---15428">July 2019 - #15428</h2>
+
+<p>The client required to print the Letter and certificate instance form details and the approval details.</p>
+
+<p>For implementing the change, execute a query.</p>
+
+<p><img src="images/prod-enhance-image89.png" alt="" /></p>
+
+<h2 id="show-sub-company-value-on-prints">Show Sub Company Value on Prints</h2>
+
+<h3 id="july-2019---9179">July 2019 - #9179</h3>
+
+<p>In some organisations, different companies are separated by using an entity named Sub Company. In such companies, the client required to show the Sub Company details while printing the Loan, General Expense and Air Ticket.</p>
+
+<p>In order to implement the change, the parameter named ‘Default Report Header Entity’ in RPT-1 of HRW Application parameters was introduced in the ESS also.</p>
+
+<p><img src="images/prod-enhance-image90.png" alt="" /></p>
+
+<h2 id="next-approver-column-in-leave-application">Next Approver column in Leave Application</h2>
+
+<h3 id="july-2019---12979">July 2019 - #12979</h3>
+
+<p>The client required to add a new column in the Leave Application Widget of Request, Approval and proxy tabs in the leave Application Screen.</p>
+
+<p><img src="images/prod-enhance-image91.png" alt="" /></p>
+
+<h2 id="loan-budget-feature">Loan Budget Feature</h2>
+
+<h3 id="july-2019---14583">July 2019 - #14583</h3>
+
+<p>A loan budget feature is introduced in the system. The loan budget amount of the organisation is saved in the system. The approvers have the option to view the loan budget amount and total outstanding loan amount of the company. While approving a loan request, approvers must check whether the existing loan budget of the company is enough to meet the loan amount. Thus, approver can determine whether to approve the request or to keep pending the request.</p>
+
+<p>For implementing this change, follow the below steps:</p>
+
+<ol>
+  <li>
+    <p>Execute a query to enable the Application parameter. New parameters are introduced in the LOAN-1 Tab of Application parameter which are ‘Individual Loan Wise Limit’ and ‘Loan Budget Exceeding Validation’.</p>
+  </li>
+  <li>
+    <p>Execute a SP for implementing the validation feature.</p>
+  </li>
+  <li>
+    <p>Execute a query for enabling the parameter All Loan/Requested loan.</p>
+  </li>
+  <li>
+    <p>Execute SP for showing the company budget details.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image92.png" alt="" /></p>
+</blockquote>
+
+<h2 id="set-ceiling-amount-for-general-expense-request-screen">Set Ceiling amount for General Expense request screen</h2>
+
+<h3 id="july-2019---15148">July 2019 - #15148</h3>
+
+<p>The organisations will have several types of general expenses and each expense will have ceiling amount. The HR admin have the provision to set the ceiling amount for each general expense. The client required to show validation when the expense exceeds the ceiling amount.</p>
+
+<p>For implementing this change, a new parameter named ‘Ceiling amount for General Expense’ was introduced in the ‘General Expense-2’ tab in HRW + Application parameters.</p>
+
+<p>Execute a query to enable the parameter.</p>
+
+<p><img src="images/prod-enhance-image93.png" alt="" /></p>
+
+<h2 id="option-to-edit-the-ticket-cost">Option to edit the Ticket Cost</h2>
+
+<h3 id="june-2019----15050">June 2019 - # 15050</h3>
+
+<p>For the client, employees are availing the ticket as Company ticket. By default, the amount specified in the destination slab will be considered as the ticket cost. Unlike from HR Works, there is no option to edit the amount and provide the actual ticket cost in ESS.</p>
+
+<p>The following changes have been made by running a query in the DB in order to make the ticket amount visible and/or editable for either the requestor or for the approver or for both.</p>
+
+<ol>
+  <li>
+    <p>A new Parameter ‘<strong>Amend Air Ticket Availment</strong>’ is added onto the HSS-1 tab of the <strong>HRW+ Application parameters</strong>. Users can select the following options as required:</p>
+
+    <ol>
+      <li>
+        <p>Not Required</p>
+      </li>
+      <li>
+        <p>All Approvers</p>
+      </li>
+      <li>
+        <p>Final Approver</p>
+      </li>
+      <li>
+        <p>Air ticket amount should not be visible for Requester and for the Approvers who do not have Amend right.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image94.png" alt="C:\Users\Anandhu\AppData\Local\Temp\SnagitTemp\Snag_39c9f616.png" /></p>
+
+<h2 id="option-to-print-lc-before-the-final-approval">Option to print L&amp;C before the final approval</h2>
+
+<h3 id="june-2019----15233">June 2019 - # 15233</h3>
+
+<p>The client needs to enable print option for Letters and certificates, even if the request is not fully approved. To enable this change a script needs to be run in the HR Works DB and then from the <strong>HSS RPT</strong> tab of the <strong>HRW+</strong> <strong>Application parameters</strong> screen print option needs to be enabled.</p>
+
+<p><img src="images/prod-enhance-image95.jpeg" alt="" /></p>
+
+<h2 id="ticket-print-detail-june-2019----15267">Ticket Print Detail <strong>June 2019 - # 15267</strong></h2>
+
+<p>The client required to show the travel details such as From Date, To Date and destination details in the ticket request while printing from ESS.</p>
+
+<p>For implementing this, execute a script.</p>
+
+<p><img src="images/prod-enhance-image96.png" alt="" /></p>
+
+<p><em>Fig: Print of Air Ticket Request with travel details</em></p>
+
+<h2 id="option-to-escalate-the-request-approval-pending-for-time-period">Option to escalate the request approval pending for time period</h2>
+
+<h3 id="june-2019---14371">June 2019 - #14371</h3>
+
+<p>Currently there is no option to escalate the pending approvals in HR Works or ESS. Hence a new feature to escalate the pending approvals is requested by the client. Now, in ESS, if an employee application request remains pending for approval for a long time, the employee can escalate the issue to the next approver.</p>
+
+<p>For implementing this change, a new column is added in the ‘Approval Workflow Settings’ Screen named “Escalation Type”.</p>
+
+<p>Execute a query for enabling the column.</p>
+
+<p><img src="images/prod-enhance-image97.png" alt="" /></p>
+
+<p><em>Fig: ‘Escalation Type’ column in Approval Workflow Settings</em></p>
+
+<h2 id="ess-leave-approval-change-fromtoresumption-date-by-hr">ESS Leave Approval Change from/to/Resumption Date by HR</h2>
+
+<h3 id="june-2019---14486">June 2019 - #14486</h3>
+
+<p>The client required to edit From / To/ Resumption date of the employee’s leave request by the supervisor dept head, HR officer and manager. Moreover, if the Resumption Date exceeds than the To Date, the leave days till the Resumption Date are considered as LOP. After the Resumption Date. Leave days are considered as Delayed Vacation.</p>
+
+<p>For implementing this feature, a new parameter named ‘Leave Type Between Leave To Date and Resumption Date’ is introduced in the LV-1 tab of the Application parameter.</p>
+
+<p>Similarly, a new parameter named ‘Amend Leave Application’ is introduced in the HRW+ Application parameters in which you can set who all can edit the leave application.</p>
+
+<p>Execute a query for enabling the parameters.</p>
+
+<p><img src="images/prod-enhance-image98.png" alt="" /></p>
+
+<p><em>Figure: Leave Application screen with Resumption Date field</em></p>
+
+<h2 id="employee-basic-info-in-all-screen">Employee Basic Info in All screen</h2>
+
+<h3 id="march-2019---14082">March-2019 - #14082</h3>
+
+<p>The client required to view the basic information of the employees such as division, department and designation in the leave application.</p>
+
+<p>For this, a new tab named ‘Profile’ was generated in the Options next to the Workflow and Transaction history. Execute the query for activating this Profile tab.</p>
+
+<p><img src="images/prod-enhance-image99.png" alt="" /></p>
+
+<p><em>Fig: Leave application displaying employee details</em></p>
+
+<h2 id="leave-encashment">Leave Encashment</h2>
+
+<h3 id="april-2019---14488">April-2019 - #14488</h3>
+
+<p>It was not able to edit the details regarding the leave encashment of the employees. The client required to edit the number of days and to approve the leave encashment through the off-cycle payroll.</p>
+
+<ol>
+  <li>
+    <p>For this, two new parameters were added in the HSS 1 tab of the HRW + Application parameter named ‘Amend Leave Encashment’ and ‘Default Settlement method for Vacation Encashment’.</p>
+  </li>
+  <li>
+    <p>The options included in the ‘Amend Leave Encashment’ are Not Required, All Approvers and Final Approver and the options included in ‘Default Settlement method for Vacation Encashment’ are Off-cycle payroll and Payroll sheet.</p>
+  </li>
+  <li>
+    <p>Run the query for enabling these parameters.</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image100.png" alt="" /></p>
+
+<p><em>Fig: HRW + Application parameter Settings for Leave Encashment through Off-Cycle payroll</em></p>
+
+<h2 id="need-to-show-the-employee-details-in-misc-request-print">Need to show the employee details in MISC request Print</h2>
+
+<h3 id="march-2019---14105">March-2019 - #14105</h3>
+
+<p>The client required to view the employee details while printing the MISC request.</p>
+
+<ol>
+  <li>
+    <p>Execute the four views for displaying the details such as division, location, department and designation.</p>
+  </li>
+  <li>
+    <p>Also, execute a query for getting the report ID.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image101.png" alt="" /></p>
+
+  <p><em>Fig: MISC print showing employee details</em></p>
+</blockquote>
+
+<h2 id="block-loan-application-during-probation">Block Loan Application during Probation</h2>
+
+<h3 id="march-2019---14210">March-2019 - #14210</h3>
+
+<p>Initially, it was able to apply for loan for all the employees including the employees in probation. However, the client needs to block the loan application for the employees in probation.</p>
+
+<p>For this, a new parameter named, ‘Block Loan During Probation’ was added in the LOAN-1 Tab of Application parameter which is linked at loan level. When this parameter value is set as Yes, a validation message will appear while applying for the loan.</p>
+
+<p>Execute a script for enabling the newly created parameter.</p>
+
+<p><img src="images/prod-enhance-image102.png" alt="" /></p>
+
+<p><em>Fig: New parameter in Application parameter</em></p>
+
+<h2 id="off-day-validation">OFF Day Validation</h2>
+
+<h3 id="feb-2019---13437">Feb-2019 - #13437</h3>
+
+<p>In HR Works Plus, there was no any validation with respect to the minimum number of days that is required between two off days while creating Employee Daily Roster. As per the client’s requirement, a new option for setting a minimum gap between the OFF days of the employees is introduced.</p>
+
+<p>For this a new Parameter named ‘<strong>Minimum Days Gap Between Off Days</strong>’ is added in the <strong>ESSTAM-1</strong> tab of the <strong>HRW + Application parameters</strong>. Users can enter the required minimum gap between the OFF days as the value of this parameter.</p>
+
+<p><img src="images/prod-enhance-image103.png" alt="" /></p>
+
+<p><em>Figure: Setting ‘Minimum Days Gap Between Off Days’ in HRW + Application parameters</em></p>
+
+<h3 id="text-in-loan-request-screen">Text in loan request screen</h3>
+
+<h3 id="jan2019--13397">Jan2019 # 13397</h3>
+
+<p>As per clients request changes were made to display the following text in the ESS Loan Request page.</p>
+
+<p>“I hereby accept the T&amp;C of this loan”</p>
+
+<h2 id="leave-application">Leave Application</h2>
+
+<h2 id="role-delegation-through-leave-for-all-employees">Role delegation through leave for all employees</h2>
+
+<h3 id="jan-2019--13605-application">Jan 2019 # 13605 application</h3>
+
+<p>Currently Role delegation option in leave application is appearing for transaction approvers only. The client wants the Role Delegation details to be displayed for concerned employees as well in view only mode in the leave application record.</p>
+
+<p>This is now implemented in the following manner:</p>
+
+<p>A new parameter (Role Delegation Validation in Leave Request) is added to the <strong>HSS-1</strong> tab of the <strong>HRW+ Application parameter</strong> screen in HRW.</p>
+
+<p>Role Delegation option can be enabled for all employees by setting ‘Mandatory At 1st Approval’ as the value of <strong>Role Delegation Validation in Leave Request</strong> parameter. For all other selections, Role delegation in Leave Request will be displayed only for approvers.</p>
+
+<h2 id="leave-application-template-changes">Leave Application template changes</h2>
+
+<h3 id="jan-2019--13492">Jan 2019 # 13492</h3>
+
+<p>In the leave application template view in ESS, the client wanted to have some new fields and to remove some other fields.</p>
+
+<p>Two views are executed in the DB to make this change</p>
+
+<h2 id="role-delegation-through-leave-application">Role delegation through leave application</h2>
+
+<h3 id="dec-2018--11127">Dec 2018 # 11127</h3>
+
+<p>When role delegation request is placed with and through the leave application transaction, the leave request is approved first, then the role delegation request is sent to the delegate for acceptance.</p>
+
+<p>The client needs to have control over the sequence in which the leave and role delegation requests are processed as follows:</p>
+
+<p>When an employee places role delegation request with and through the leave application request:</p>
+
+<ol>
+  <li>
+    <p>The delegate should accept role delegation request.</p>
+  </li>
+  <li>
+    <p>Leave Request should be approved through work flow.</p>
+  </li>
+  <li>
+    <p>If leave request is rejected by approvers, the role delegation should be cancelled.</p>
+  </li>
+</ol>
+
+<p>To implement these changes, the following are done:</p>
+
+<ul>
+  <li>
+    <p>A new parameter (<strong>Role Delegation Validation in Leave Request</strong>) is added to the <strong>HSS-1</strong> tab of the <strong>HRW + Application parameters</strong> screen. Users can set any of the following values for this parameter:</p>
+
+    <ul>
+      <li>
+        <p><strong>Not Mandatory</strong>: When this is selected, approvers can approve the leave application transaction regardless of the acceptance or rejection of role delegation request.</p>
+      </li>
+      <li>
+        <p><strong>Mandatory At 1st Approval</strong>: When this is selected, it becomes mandatory that the role delegation request be accepted before the first-level approver can approve the leave application. The system displays a validation message whenever the first-level approver tries to approve the leave application if the role delegation is not accepted.</p>
+      </li>
+      <li>
+        <p><strong>Mandatory At Final Approval</strong>: When this is selected, all approvers other than the final-level approver can approve the leave application regardless of the status of role delegation request. But it becomes mandatory that the role delegation request be accepted before the final-level approver approves the leave application. The system displays a validation message whenever the final-level approver tries to approve the leave application if the role delegation is not accepted.</p>
+
+        <p><strong>Note</strong>: In case if the role delegation request is not accepted or rejected by the delegate, the leave application too will be rejected.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/prod-enhance-image104.png" alt="" /></p>
+
+<h2 id="hide-save-option-in-leave-application">Hide Save option in Leave Application</h2>
+
+<h3 id="dec-2018--12963-1">Dec 2018 # 12963</h3>
+
+<p>The client does not require the Save option for leave application transactions in ESS. Users should only be able to submit a leave application for approval after providing the required information.</p>
+
+<p>To get this working, a new check box field (<strong>Allow to save Leave Applications</strong>) is added to the <strong>ESS Leave Parameters</strong> tab in Leave Master. ESS users can save the leave application form only if this check box is selected. Otherwise they won’t be able to save the form but can submit the form for approval or cancel it.</p>
+
+<p><img src="images/prod-enhance-image105.png" alt="" /></p>
+
+<h3 id="option-to-print-leave-application-before-approval">Option to print leave application before approval</h3>
+
+<h4 id="nov-2018-----11762">Nov 2018  - # 11762</h4>
+
+<p>The client wanted to print the leave application record from ESS in a specific template. This allows all approvers to take print out of leave application before final approval.</p>
+
+<p>For this, an REPX file was created and it is then imported into the Custom Report Designer in HR Works. The user can now modify the template as required from the Custom Report Designer menu in HR Works.</p>
+
+<h3 id="attachment-option-for-approver-in-leave-application">Attachment Option for Approver in Leave application</h3>
+
+<h4 id="nov-2018-----11760">Nov 2018  - # 11760</h4>
+
+<p>The client wanted to have attachment option on leave application so that approvers can attach files while approving/ rejecting the leave application of employees. For this, a new parameter ‘<strong>EntityID (User Defined Fields For Leave Approval)</strong>’ is added to <strong>HRW+ Application parameter » HSS-1</strong> tab. Users can create user defined field group on the Card Types » User Defined tab where they create and define fields and their data types and then set that user defined field group as the value of <strong>EntityID (User Defined Fields For Leave Approval)</strong> parameter<strong>.</strong> Refer to the screenshots below<strong>:</strong></p>
+
+<p><img src="images/prod-enhance-image106.png" alt="" /></p>
+
+<p>The above image shows the user defined fields, which are created on the <strong>Card Types » User Defined</strong> tab<strong>.</strong> Note that three Attachments fields viz Attachment, Attachment2, and Attachment3 are created with ‘File’ as their data type.</p>
+
+<p><img src="images/prod-enhance-image107.png" alt="" /></p>
+
+<p>The above image shows how the user defined field group that was created on the Card Types screen is set as the value of <strong>EntityID (User Defined Fields For Leave Approval)</strong> parameter in <strong>HRW+ Application parameters » HSS-1</strong> tab.</p>
+
+<p>Once the above settings are saved, the approvers now will have the above-mentioned user defined fields on the leave application form. See the image below:</p>
+
+<p><img src="images/prod-enhance-image108.png" alt="" /></p>
+
+<h3 id="sick-leave-settlement-changes">Sick Leave Settlement changes</h3>
+
+<h4 id="oct-2018-----11531">Oct 2018  - # 11531</h4>
+
+<p>When an employee selects the leave type on the leave request form in ESS, he/ she can view his/ her leave balance and related information as follows:</p>
+
+<ol>
+  <li>Clicking on the <strong>View Details</strong> link will show the leave balance and related information in a popup window as follows.</li>
+</ol>
+
+<p><img src="images/prod-enhance-image109.png" alt="" /><br />
+<strong>Note</strong>: The <strong>View Details</strong> link appears after the employee selects the leave type from the <strong>Leave Type</strong> drop down field.</p>
+
+<p>Before implementing the changes requested by the client, when employees apply for any leave such as sick leave for which leave limit scheme is set, they can only view the split up of leave days (Entitled, availed, and balance) based on the previous leave requests. The data shows was not updated on the leave data (From date, To date, and/ or number of days) entered on the current leave request form.</p>
+
+<p>A new parameter (<strong>Show Leave Days Split up for Leave Limit Scheme</strong>) is introduced in the <strong>ESS-1</strong> tab of the <strong>ESS Application parameter</strong>. Users can set the parameter value to <strong>Yes</strong> or <strong>No</strong> which tells whether to allow the employees to view the split up of leave days (Entitled, availed, and balance) against the days of leave specified in the leave form.</p>
+
+<p>When set to <strong>Yes</strong>, employees view their leave balance against the applied leave day(s) as well as the split up of leave days based on the leave limit scheme as follows.</p>
+
+<ul>
+  <li>
+    <p>In addition to the <strong>View Details</strong> link, a new link (Leave Days Split Up Details) appears on selecting the leave type.</p>
+  </li>
+  <li>
+    <p>Clicking on the <strong>Leave Days Split Up Details</strong> link will show the split up of leave days against the number of leave day the employee has specified in the current leave request form. This means that the leave split up details are updated dynamically based on the Leave Type, From date and To date selections made by the employee.</p>
+  </li>
+</ul>
+
+<p><img src="images/prod-enhance-image110.png" alt="" /></p>
+
+<h3 id="select-all-option-in-leave-return">Select All Option in Leave Return</h3>
+
+<h4 id="oct-2018-----10910">Oct 2018  - # 10910</h4>
+
+<p>On the <strong>Proxy</strong> tab of the <strong>Leave Return</strong> screen, from the <strong>Select Employee</strong> dropdown above the <strong>Leave Application Pending Return Date</strong> grid, users had to select the employees for whom he/ she is acting as proxy so that the <strong>Leave Application Pending Return Date</strong> grid lists the leave application records (without return date) of the selected employee/s. As per the new requirement this selection is removed and instead of that the <strong>Leave Application Pending Return Date</strong> grid now lists all leave application records (without return date) of all employees for whom the logged in user is acting as proxy.</p>
+
+<h2 id="change-in-miscellaneous-application">Change in miscellaneous application</h2>
+
+<h3 id="oct-2018-----11385">Oct 2018  - # 11385</h3>
+
+<p>Based on the client’s requirement, miscellaneous application menu in Works plus need to be redirected to a new link in a new tab. That is, when the user clicks on the miscellaneous application menu, a new tab needs to be open instead of the standard menu.</p>
+
+<h2 id="hss-hlb170d-amendments-in-loan-application">HSS-HLB/170d-Amendments in Loan Application</h2>
+
+<h3 id="july-2018-7782">July 2018 (#7782)</h3>
+
+<p>Payment History which was not present earlier is now shown as a last widget in the Loan Application screen, similar to those in Business Travel and General Expense. Now, the Employee can view when the loan has been disbursed, type of Settlement Method like Payroll/Off cycle/Outside and the Bank information too. Same is done in Approval &amp; Proxy- Employee Record Snapshot.</p>
+
+<h2 id="hss-tkf05---revoke-the-delegated-role">HSS-TKF/05 - Revoke the Delegated Role</h2>
+
+<h3 id="july-2018-7333">July 2018 (#7333)</h3>
+
+<p>Earlier in Role delegation we have options such as Submit and delete only.</p>
+
+<p>Based on client requirement new feature is added in Role Delegation as –</p>
+
+<ul>
+  <li>
+    <p>Revoke: This option can be used to cancel a role delegation transaction performed.</p>
+  </li>
+  <li>
+    <p>Change To Date: This will update the “To Date” in an existing role delegation transaction.</p>
+  </li>
+  <li>
+    <p>Change From Date. This will update the “From Date” in an existing role delegation transaction.</p>
+  </li>
+</ul>
+
+<p>These options are made available in the bulk action drop down. Once the action is selected, only those transaction will be filtered out which is fully approved and accepted by the Delegate.</p>
+
+<p><img src="images/prod-enhance-image111.png" alt="" /></p>
+
+<h2 id="annual-leave-and-cme-leave-validation">Annual Leave and CME Leave Validation</h2>
+
+<h3 id="july-2018-10641">July 2018 (#10641)</h3>
+
+<p>On applying for AL or CME leave certain validations need to be checked with in a Branch and within a Category. Validation should be shown for following scenarios:</p>
+
+<ul>
+  <li>
+    <p>Annual leave <strong>needs</strong> to be applied at least 2 weeks in advance of leave start date else leave application to be blocked. <strong>Similarly,</strong> CME leave needs to be applied at least 1 week in advance.</p>
+  </li>
+  <li>
+    <p>Doctors can only apply for Annual Leave maximum of 14 calendar day at a time.</p>
+  </li>
+  <li>
+    <p>Not more than 3 doctors can <strong>avail</strong> AL or CME on a <strong>same</strong> day.</p>
+  </li>
+  <li>
+    <p>Rule for doctors to take leave during same period is</p>
+
+    <ul>
+      <li>
+        <p>1st doctor who applies can take 14 days.</p>
+      </li>
+      <li>
+        <p>2nd doctor who applies in the same period can only take 7 days.</p>
+      </li>
+      <li>
+        <p>3rd doctor who applies in the same period can only apply less than 7 days.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>The rule applies only if the leave falls on same date.</p>
+  </li>
+  <li>
+    <p>The Validation shall be applied within a Branch within a category.</p>
+  </li>
+  <li>
+    <p>The rule shall be only applied for specific category of employees.</p>
+  </li>
+  <li>
+    <p>The rule shall not be applied during off peak days. i.e. June last week to Sep first week and Dec last week to 1st week of Jan.</p>
+  </li>
+</ul>
+
+<p><strong>The solution approach is done in the following manner:</strong></p>
+
+<ul>
+  <li>
+    <p>Five new parameters are added in T00-1 tab in HRW + Application parameters</p>
+  </li>
+  <li>
+    <p>AL Application Advance Period (Days) Parameter to validate AL request to be applied before a specific period.</p>
+  </li>
+  <li>
+    <p>Max. Leave Days for 2nd staff Application</p>
+  </li>
+  <li>
+    <p>Max. Leave Days for 3rd staff Application</p>
+  </li>
+  <li>
+    <p>(2 &amp; 3 determines the rule to be applied for various applications)</p>
+  </li>
+  <li>
+    <p>Off Season for Leave Validation. A season can be set for which the rules to need not be applied.</p>
+  </li>
+</ul>
+
+<p>Parameters to be set through Application <strong>Parameters (</strong>Multiple Entity). Validation to be applied through back end additional validation function while applying the leave.</p>
+
+<p><img src="images/prod-enhance-image112.png" alt="" /></p>
+
+<h2 id="export-option-in-time-sheet-requests">Export option in Time Sheet Requests</h2>
+
+<h3 id="july-2018-11087">July 2018 (#11087)</h3>
+
+<p>Following option are introduced in the Time sheet Menu.</p>
+
+<ul>
+  <li>
+    <p>Export to Excel option is implemented in the following Widgets of “Request, Approval and Proxy” pages- Employee List, Time Sheet Requests and Payment History.</p>
+  </li>
+  <li>
+    <p>In the Request, Approval and Proxy Page “Next Approver Column” is added in Time Sheet Requests Widget.</p>
+  </li>
+</ul>
+
+<p><img src="images/prod-enhance-image113.png" alt="" /></p>
+
+<h2 id="print-option-in-ess-screen">Print option in ESS screen</h2>
+
+<h3 id="july-2018-9741">July 2018 (#9741)</h3>
+
+<p>Print options in ESS screens are achieved by introducing a new tab HSSPRT-1 in HRW + Application parameters with values as ‘None/All Stages/ Approved Only’ (tab). If the parameter is set to None, print button to be made hidden. If it is set as All Stages, print to be enabled for all Stages and if it is Approved only, print to be enabled only for approved records.</p>
+
+<p>Print option in main screen for Leave Application screen has been removed.</p>
+
+<p><img src="images/prod-enhance-image114.png" alt="C:\Users\LENOVO\AppData\Local\Temp\SNAGHTMLef00806.PNG" /></p>
+
+<h1 id="clearance-form-and-exit-interview">Clearance Form and Exit Interview</h1>
+
+<h2 id="ability-to-see-all-clearance-form-request-by-other-users">Ability to see all clearance form request by other users</h2>
+
+<h3 id="may-2019---15145">May 2019 - #15145</h3>
+
+<p>Currently the clearance form could be seen only by the requested User. However, the user required to view and print all the clearance request to all the users.</p>
+
+<p>For this execute a query for enabling HRW+ Application parameter.</p>
+
+<h2 id="vacation-clearance-form-and-automatic-initiation">Vacation Clearance Form and Automatic Initiation</h2>
+
+<h3 id="may-2019---14581">May 2019 - #14581</h3>
+
+<p>The client required to automatically initiate the clearance form during a vacation request approval. The clearance form will be initiated after the final approval of the vacation request.</p>
+
+<p>For this a new parameter named ‘Auto Initiate Clearance Form On Vacation Final Approval’ was introduced in the HSS-1 Tab of the HRW + Application parameter. When the parameter is set to ‘Yes’ the clearrance form is automatically initiated.</p>
+
+<p>Execute a query for enabling the parameter.</p>
+
+<p><img src="images/prod-enhance-image115.png" alt="" /></p>
+
+<p><em>Figure: HRW + Application parameter Screen</em></p>
+
+<h2 id="asset-details-link-to-clearance-form">Asset Details link to Clearance form</h2>
+
+<h3 id="may-2019---14212">May 2019 - #14212</h3>
+
+<p>The client required to track the Employee Asset Details such as Asset Name, Asset No etc through the Employee Personal Records. When an employee gets separated, the clearance form must list the assets the which the employee had, but not returned. The assets in which the return date is null will be listed.</p>
+
+<p>For this Create assets in Card Types and set values in Card Master.</p>
+
+<p>Create Different assets for checklist in the Personal Records fields of Card Types, further create corresponding parameters under each asset and set the values for the employees.</p>
+
+<p>Execute a view for getting the details regarding the assets.</p>
+
+<p><img src="images/prod-enhance-image116.png" alt="" /></p>
+
+<p><em>Fig: Clearance Form showing Asset Details</em></p>
+
+<h2 id="provide-print-option-in-all-level-of-request-and-approval">Provide Print option in all level of request and approval</h2>
+
+<h3 id="may-2019---15150">May 2019 - #15150</h3>
+
+<p>All the request and approval screen contain the option to Print the form in all levels. Hence the user required an option to print the Clearance form in all the request and approval screen.</p>
+
+<p>Execute a query for enabling the clearance form in all request and approval screen.</p>
+
+<p>Set the HRW + Application parameter for printing.</p>
+
+<p><img src="images/prod-enhance-image117.png" alt="" /></p>
+
+<p><em>Figure: Clearance Form</em></p>
+
+<h1 id="time-and-attendance-module-1">Time and Attendance Module</h1>
+
+<h2 id="attendanceot-approval">Attendance/OT Approval</h2>
+
+<h3 id="july-2019---14576">July 2019 - #14576</h3>
+
+<p>A new feature to approve the Attendance/Overtime/Shortage of employees by the supervisor till the last approver to get it paid through payroll is introduced. If it is not approved, the OT or Attendance are not considered for payroll calculation.</p>
+
+<p>For implementing this change, follow the below steps:</p>
+
+<ol>
+  <li>Execute a query for enabling the screen</li>
+</ol>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image118.png" alt="" /></p>
+</blockquote>
+
+<h2 id="option-for-setting-up-the-daily-and-monthly-limit-for-excuse-hour">Option for setting up the Daily and Monthly Limit for Excuse hour</h2>
+
+<h3 id="july-2019---15125">July 2019 - #15125</h3>
+
+<p>The client required an option to set up the Daily and Monthly limit for Attendance regularisation request.</p>
+
+<p>Validation options are included in the Attendance Regularisation screen for break permission.</p>
+
+<p>For implementing the change, execute a query.</p>
+
+<p><img src="images/prod-enhance-image119.png" alt="" /></p>
+
+<h2 id="ot-approval-screen">OT Approval Screen</h2>
+
+<h3 id="june-2019----13438">June 2019 - # 13438</h3>
+
+<p>The client requires that the OT Approval screen similar to the one in eTAS should be added in HR Works Plus also. An option for converting the OT hours to Compo OFF should be added in this. If the employee applies for Compo OFF through the View Calendar Leave entry option, the balance against the accrued Compo OFF should be validated.</p>
+
+<p>The following needs to be done in order to get these changes:</p>
+
+<ol>
+  <li>
+    <p>A query needs to be executed in the HRW DB</p>
+  </li>
+  <li>
+    <p>Create wage type for present days and set the <strong>Wage Type Present Days</strong> parameter on <strong>Application parameter » TS-1</strong> tab.<br />
+<img src="images/prod-enhance-image120.png" alt="" /></p>
+  </li>
+  <li>
+    <p>After final approval from ESS; wage type-based time sheet batch will be created for each employee in submitted status, which in further needs to approved from HR Works wage type base time sheet screen.</p>
+  </li>
+</ol>
+
+<h2 id="availed-weekly-off-count-in-view-calendar">Availed Weekly OFF Count in View Calendar</h2>
+
+<h3 id="march-2019---13545">March-2019 - #13545</h3>
+
+<p>In the Attendance Regularisation screen, in the Time and Attendance Module, the calendar view of the details was included in the screen. Now the client required to add the details of the availed weekly off details in the screen.</p>
+
+<p>Therefore, the number of Availed Weekly Off till the selected month is included in the Attendance Regularisation screen.</p>
+
+<p><img src="images/prod-enhance-image121.png" alt="" /></p>
+
+<p><em>Fig: Attendance Regularisation screen displaying Availed Weekly Off</em></p>
+
+<h2 id="automatically-create-break-permissions-in-view-calendar">Automatically create break permissions in view calendar</h2>
+
+<h3 id="march-2019---13431">March-2019 - #13431</h3>
+
+<p>In the Attendance Regularisation screen, Break Permission was enabled manually by the employees. The client required to automatically create the break permission the view calendrer screen.</p>
+
+<ol>
+  <li>
+    <p>A new parameter is added in the HRW + Application parameter in the ESSTAM-1 tab named ‘Enable Auto Break Permission’.</p>
+  </li>
+  <li>
+    <p>Run a query for enabling the Parameter.</p>
+  </li>
+  <li>
+    <p>When ‘Enable Auto Break Permission’ parameter is set to true, a new button named ‘Create Break Permissions’ appears in the Attendance Regularisation screen near the ‘Add New’ button.</p>
+  </li>
+  <li>
+    <p>While selecting the ‘Applicability’ as Break Permission, the break permission records will populate automatically.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image122.png" alt="" /></p>
+
+  <p><em>Fig: Automatic Break permission button in Attendance Regularisation Screen</em></p>
+</blockquote>
+
+<h2 id="shift-search-option">Shift Search Option</h2>
+
+<h3 id="feb-2019---13436">Feb-2019 - #13436</h3>
+
+<p>In ESS, users were not able to search the <strong>Shift List</strong> grid for shifts with shift parameters/ data such as such as sift code, description, shift start time and shift end time on the <strong>Employee Daily Roster</strong>. This functionality is introduced as per the requirement by the client.</p>
+
+<p>Now a new parameter (<strong>Show Shift List in Employee Daily Roster</strong>) is added in the <strong>ESSTAM-1</strong> tab of the <strong>HRW + Application parameters</strong>. If the value of this option is set As True, then the shift search Option will be enabled in the <strong>Shift Lists</strong> grid on the ESS <strong>Employee Daily Roster</strong> page as follows.</p>
+
+<p><img src="images/prod-enhance-image123.png" alt="" /></p>
+
+<p><em>Figure: Shift list in the Employee Daily Roster</em></p>
+
+<h2 id="shift-schedule-upload">Shift Schedule Upload</h2>
+
+<h3 id="feb-2019---13433">Feb-2019 - #13433</h3>
+
+<p>In the Daily Roster Grid, the option for assigning the shift schedule for each day were provided, but assigning the shift for each working hour was not present. The client required the option for assigning the shift for each hour through an excel sheet. The steps for the same is explained below.</p>
+
+<p>In the <strong>Daily Roster</strong> grid of the <strong>Employee Daily Roster</strong> page, a new combo box named ‘<strong>Roaster Type</strong>’ is added.</p>
+
+<ol>
+  <li>
+    <p>While selecting ‘Shift Schedule Upload’, select one Date and Upload the created Excel File.</p>
+  </li>
+  <li>
+    <p>The shift timings are entered in the Excel sheet in the <strong>xlsx</strong> format.</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image124.png" alt="" /></p>
+
+<p><em>Figure: Updated Daily Roaster Screen</em></p>
+
+<p><img src="images/prod-enhance-image125.png" alt="" /></p>
+
+<p><em>Figure: Excel Sheet of Shift Schedule Upload</em></p>
+
+<h2 id="time-sheet">Time sheet</h2>
+
+<h3 id="feb-2019---13330">Feb-2019 - #13330</h3>
+
+<p>The client required employee timesheet option which they didn’t have in the ESS. They also need the following customizations in their timesheet:</p>
+
+<ul>
+  <li>
+    <p>Employees require to fill their Time sheet for a month based on which Cost Allocation report will be generated.</p>
+  </li>
+  <li>
+    <p>Validation and conditions are require for the data entry.</p>
+  </li>
+</ul>
+
+<p>To implement this,</p>
+
+<ol>
+  <li>
+    <p>In the HR Works, in the <strong>TS1</strong> tab of the Application parameter Menu, a new selection named ‘<strong>Time Sheet Entity 4’</strong> is added.</p>
+  </li>
+  <li>
+    <p>In the <strong>ESSTS-1</strong> Tab, make the appropriate selections.</p>
+  </li>
+  <li>
+    <p>In the <strong>Wage Type Master</strong> screen, create the Wage Type for Full Day, Half Day, Leave, Holiday and Off Day.</p>
+  </li>
+  <li>
+    <p>A query needs to be executed in the DB by specifying the Wage Type ID.</p>
+  </li>
+  <li>
+    <p>In the <strong>TS-1</strong> tab of <strong>Application parameter</strong>, the corresponding value for Wage Type of Weekly Off and Public Holiday should be specified.</p>
+  </li>
+  <li>
+    <p>Execute the <a href="https://dli-apps.sourcerepo.com/redmine/dli/attachments/download/38138/AppParamEnablingQry.sql">script</a> to enable the following two parameters in the <strong>Application parameter</strong> » <strong>ESSTS-1</strong> tab and set the corresponding value to them.</p>
+  </li>
+  <li>
+    <p>In ESS, <strong>HR Portal » Report Centre</strong>, Run the Time Sheet by entering the From Date and To date.</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image126.png" alt="" /></p>
+
+<p><em>Figure: Time Sheet Report</em></p>
+
+<h2 id="cost-allocation-report">Cost Allocation Report</h2>
+
+<h3 id="feb-2019---13332">Feb-2019 - #13332</h3>
+
+<p>Refer to Redmine ticket#13330 to know more about the particulars of time sheet mentioned in this section.</p>
+
+<p>The client requires the cost allocation report generated for the employees from the data entered in the Time Sheet.</p>
+
+<p>To implement this,</p>
+
+<ol>
+  <li>
+    <p>A query needs to be executed to enable the menu.</p>
+  </li>
+  <li>
+    <p>Select the Cost Allocation Report, Enter the From Date and To Date. You can run the report, clear the report, and save the report.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><img src="images/prod-enhance-image127.png" alt="" /></p>
+</blockquote>
+
+<p><em>Figure: Cost Allocation Report</em></p>
+
+<h2 id="view-calendar-request-validations">View Calendar Request Validations</h2>
+
+<h3 id="jan2019--13432">Jan2019 # 13432</h3>
+
+<p>The client requires that the following validations be added in View Calendar Request transaction while submitting Break Permissions/ Regularization requests. These validations should be enabled or disabled based on some flag in the <strong>Request Master</strong>.</p>
+
+<p>• Missing IN/ OUT request should not be submitted for Absent Days</p>
+
+<p>• If the selected date is back dated and attendance status of that date is “Absent” or “ReProcess”, Break Permission request should not be submitted. The existing option of submitting break permissions request for future dates should be available.</p>
+
+<h2 id="auto-marking">Auto Marking</h2>
+
+<h3 id="jan2019--13429">Jan2019 # 13429</h3>
+
+<p>Client wants to show Absent entries in View Calendar as Auto. For this, a new parameter (<strong>Auto Marking</strong>) is added in <strong>HRW+ Application parameters</strong> (<strong>ESSTAM</strong>-). Users can select True/ False. If set to True, all absent entries in View calendar will be marked as Auto.</p>
+
+<p>Users can set this parameter at entity-level and employee- level.</p>
+
+<h2 id="hiding-day-type-in-view-calendar">Hiding Day Type in View Calendar</h2>
+
+<h3 id="jan2019--13430">Jan2019 # 13430</h3>
+
+<p>As per the client’s requirement, In <strong>View Calendar Request &gt; Break Permissions</strong> transaction form, “Start Day Type” &amp; “End Day Type” should not be visible if both the Start Day Type and End Day Type configured in <strong>Shift Master</strong> is “Today”. If the employee is trying to select future dates, either daily, weekly or company level roster should be considered for finding out the shift code for the day.</p>
+
+<p>For this, a new checkbox field (<strong>Hide</strong> <strong>Day</strong> <strong>Type)</strong> is added in <strong>Attendance Permission Types</strong> screen, under the <strong>Break Permission Parameters</strong> section. If this checkbox is selected for any permission type, Start Day Type &amp; End Day Type fields will be hidden in the break permission area.</p>
+
+<h2 id="color-change-for-modified-transactions-in-attendance-regularization">Color change for modified transactions in attendance regularization</h2>
+
+<h3 id="jan-2019--13744">Jan 2019 # 13744</h3>
+
+<p>The <strong>Approval</strong> tab page of the <strong>Attendance Regularization</strong> page shows all original transactions as well as the modified ones. The client required that the font color of all modified transactions needs to be changed to red so that the users can distinguish between the original transactions and modified transactions.</p>
+
+<h2 id="executive-dashboard">Executive Dashboard</h2>
+
+<h3 id="july-2018-6251">July 2018 (#6251)</h3>
+
+<p>An executive dashboard is designed as per user requirement. By default, the record is filtered on the basis of location. Sample Executive Dashboard will be as shown below:</p>
+
+<p><img src="images/prod-enhance-image128.png" alt="" /></p>
+
+<p>It consists of fields like Required Hours, Total Hours, Regular Hours, Total Wasted Hours, Overtime Hours, Approved Hours, Violation Hours, Absent Employees, Late IN Employees, Early OUT Employees, Approved Requests, Rejected Violations, Productivity, Violations.</p>
+
+<h2 id="to-have-an-option-to-export-the-transaction-list-data-to-excel-from-attendance-regularization-screen">To have an option to export the transaction list data to excel from Attendance Regularization screen</h2>
+
+<h3 id="july-2018-10831">July 2018 (#10831)</h3>
+
+<p>As per the requirement, an export option is implemented in proxy tab of attendance regularization screen for the transaction list widget and added next approver column in the grid.</p>
+
+<p><img src="images/prod-enhance-image129.png" alt="" /></p>
+
+<h1 id="general">General</h1>
+
+<h2 id="restrict-the-attachment-size-in-all-request-page-to-100-kb">Restrict the attachment size in all request page to 100 KB</h2>
+
+<h3 id="july-2018-6350">July 2018 (#6350)</h3>
+
+<p>Normally the attachment is ESS can hold size less than or equal to 8kb. Now, the attachment size in all request page can be specifically given by assigning a value for a <strong>Maximum Size of Attachment in KBs</strong> parameter in HSS-1 tab of HRW+Application parameter screen. The parameter includes values like 100kb, 200kb, 300kb.</p>
+
+<p><img src="images/prod-enhance-image130.png" alt="C:\Users\LENOVO\AppData\Local\Temp\SNAGHTMLefea8d6.PNG" /></p>
+
+<h2 id="print-option-in-ess-requests-for-approvers">Print option in ESS requests for Approvers</h2>
+
+<h3 id="july-2018-7163">July 2018 (#7163)</h3>
+
+<p>Print option is implemented for all Approval level users also. Approvers can print with all approver’s comments after his approval. Currently this is implemented only in Leave Application and General Expense screen.</p>
+
+<p><img src="images/prod-enhance-image131.png" alt="C:\Users\LENOVO\AppData\Local\Temp\SNAGHTMLf2f4ae9.PNG" /></p>
+
+<h2 id="hss-hlb224--to-include-intermediate-letters-and-words-in-proxy-name-filter">HSS-HLB/224- To include intermediate letters and words in proxy name filter</h2>
+
+<h3 id="july-2018-10954">July 2018 (#10954)</h3>
+
+<p>The requirement here is to list out the name of the employee even when it is searched with an intermediate word wherever search functionality is implemented. This functionality works fine with strings and texts but not applicable in case of numerals as well as dropdown lists.</p>
+
+<h1 id="news-letter">News Letter</h1>
+
+<h2 id="attachment-option-in-news-letter">Attachment option in News letter</h2>
+
+<h3 id="march-2019---14582">March-2019 - #14582</h3>
+
+<p>Currently in news letter there was no option to attach any files. Thus, the client required to customise the newsletter to add the attachment.</p>
+
+<p>For this,</p>
+
+<ol>
+  <li>
+    <p>In the News Letter Entity, add a new parameter with data type as File in Card Types.</p>
+  </li>
+  <li>
+    <p>The attachment for the corresponding News Letter could be attached in the Card Master screen which will be visible in the News Letter Screen in ESS.</p>
+  </li>
+</ol>
+
+<p><img src="images/prod-enhance-image132.png" alt="" /></p>
+
+<p><em>Fig: Settings in the Card Master</em></p>
+
+<h1 id="amm-module">AMM Module</h1>
+
+<p><strong>Accommodation Management</strong> is a new module incorporated in ESS in order to manage and allocate camps, rooms and issue other items for employees. Some of the major screens in it are:</p>
+
+<h2 id="camp-master">Camp Master</h2>
+
+<h3 id="july-2018-9733">July 2018 #9733</h3>
+
+<p><strong>Camp Master</strong> is a major screen in accommodation management through which the various details like location of the camp, number of rooms included in the camp and the number of beds accommodated in each room are managed.</p>
+
+<h2 id="item-category">Item Category</h2>
+
+<h3 id="july-2018-9918">July 2018 #9918</h3>
+
+<p><strong>Item Category</strong> screen will be used for defining Utilities (Uniform, Helmet, Gloves, Mattress, Pillow, Pillow Cover, Safety Shoes, Blankets, etc.). The details that would be there in the system are as follows: -</p>
+
+<ul>
+  <li>
+    <p>Category Code</p>
+  </li>
+  <li>
+    <p>Description</p>
+  </li>
+  <li>
+    <p>Frequency of Issuance: « (Lifetime, 6 Months, and 12 Months Etc.) Based on Employee Category - Staff, Labour, Driver, etc.»</p>
+  </li>
+</ul>
+
+<h2 id="item-master">Item Master</h2>
+
+<h3 id="july-2018-9919">July 2018 #9919</h3>
+
+<p><strong>Item Master</strong> is a screen through which the various items in a category can be maintained and manipulated.</p>
+
+<h2 id="room-allotment">Room Allotment</h2>
+
+<h3 id="july-2018-9735">July 2018 #9735</h3>
+
+<p><strong>Room Allotment</strong> is used to assign Camp/ Room / Bed to Employees. This would also handle the case of Re- Allotments / Transfer of employee from one camp/ room/ bed to another.</p>
+
+<h2 id="stock-receipt">Stock Receipt</h2>
+
+<h3 id="july-2018-9920">July 2018 #9920</h3>
+
+<p><strong>Stock Receipt</strong> is a screen through which the various stocks received by each camp are entered with effective date.</p>
+
+<h1 id="rmm-module">RMM Module</h1>
+
+<p>Recruitment Management System includes following sub modules:</p>
+
+<ul>
+  <li>
+    <p><strong>Recruitment Budget Period</strong> will be created in the HR Works in which users can create different Recruitment Budget periods, which defines the periods for which Recruitment Budgeting for recruitment are performed. The time period for Recruitment Budgeting can be specified using the fields “Start Date” and “End Date”.</p>
+  </li>
+  <li>
+    <p><strong>Recruitment Budget</strong> functionality facilitates the process of allocating Budget for various designations as a part of Recruitment in a company. Budget needs to be prepared before the commencement of a Budget Period.</p>
+  </li>
+  <li>
+    <p>A <strong>Job Description</strong> template is a master which carries various designation related information. For Example, “Job Description Template” will contain – (a) Job Description (b) Suggested Salary (3) Qualification Required (4) Experience required, etc. In addition, it can be created for specific Location, Department etc.</p>
+  </li>
+  <li>
+    <p><strong>Manpower Requisition</strong> enables a department to create a new vacancy request against the budget created.</p>
+  </li>
+  <li>
+    <p><strong>Publish Vacancy</strong> is a transaction for converting approved vacancy requests into advertisement.</p>
+  </li>
+  <li>
+    <p>All activated vacancies from Publish Vacancy will be populated in the <strong>Current Opening</strong> section.</p>
+  </li>
+</ul>
+
+<p>The System Process Flow of Recruitment Management System is given below:</p>
+
+<p><img src="images/prod-enhance-image133.png" alt="Activity Diagram - Rove RMS Ver 1" /></p>
+
+:ET

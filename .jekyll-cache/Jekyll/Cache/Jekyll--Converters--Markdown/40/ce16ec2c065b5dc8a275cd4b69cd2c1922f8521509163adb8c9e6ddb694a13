@@ -1,0 +1,29 @@
+I"~<h3 id="tags-intro">Tags intro</h3>
+
+<p>Tags help us navigate and find relevant pages. Clicking on a tag     will take you to a page that lists all docs containing that tag.</p>
+
+<p><strong>Example</strong>: <br /> 
+Clicking on <code>HR works tag</code> will take you to a page listing all posts tagged with Hr-works.
+<img src="images/tag.png" alt="" /></p>
+
+<p><img src="images/tag1.png" alt="" /></p>
+
+<h3 id="june-2019---14555">June 2019 - #14555</h3>
+<div class="prodSummary">The client required to send notification to HR and employees in case of missing documents.</div>
+
+<p>To implement this, the following are done.</p>
+<ol>
+  <li>Added a new category named “Missing Personal Record Notification” in Email settings.</li>
+  <li>Execute the REPX file for the Custom Report.</li>
+  <li>Run three scripts for displaying the custom report created in the email settings and for displaying the new category created in the email settings.</li>
+</ol>
+
+<p><img src="images/prod-enhance-image3.png" alt="" /></p>
+
+<p><em>Fig: Email settings</em></p>
+
+<p><br /></p>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+:ET

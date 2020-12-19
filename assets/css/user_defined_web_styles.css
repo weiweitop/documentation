@@ -36,7 +36,7 @@ layout: null
 /* left blank so you can overwrite this in your own project without copying the layout too */
 
 .summary {
-    font-size:122%;
+    font-size:110%;
     color: #808080;
     margin:20px 0px 20px 0px;
     border-left: 5px solid #ED1951;
@@ -87,3 +87,78 @@ layout: null
     content: "Scope: ";
     font-weight: bold;
 }
+
+.note6 {
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background-color: #f6f7f8;
+    background-repeat: no-repeat;
+    border: solid 1px #f0f7fb;
+    border-radius: 6px;
+    line-height: 21px;
+    overflow: hidden;
+    padding: 13px 13px;
+    font-size: 105%;
+    border-left: 5px solid rgb(29, 91, 138);
+}
+
+.note6::before {
+    content: "Notes \A \A";
+    font-weight: bold;
+    color: rgb(29, 91, 138);
+    white-space: pre-wrap;
+  }
+
+
+
+  .newToc { 
+      font-size: 100%; 
+      color: #808080; 
+      margin: 20px 0px 20px 0px; 
+    }
+
+#markdown-toc {
+    border: 1px solid #aaa;
+    padding: 1.5em;
+    list-style: decimal;
+    display: inline-block;
+}
+
+#markdown-toc::before {
+    content: "Contents";
+    font-weight: bold;
+}
+
+
+#markdown-toc ul {
+       list-style: decimal;
+   }
+
+
+
+div#toc {
+    padding: 10px !important;
+    border: 1px solid #aaa !important;
+    display: inline-block !important;
+}
+
+// Adding 'Contents' headline to the TOC
+#markdown-toc::before {
+    content: "Contents";
+    font-weight: bold;
+}
+
+
+.my-list-class li {
+ font-size:90% !Important;
+}
+
+.my-list-class {
+  list-style-type: upper-alpha;
+}
+
+.my-sublist-class: {
+  list-style-type: lower-alpha;
+}
+
+

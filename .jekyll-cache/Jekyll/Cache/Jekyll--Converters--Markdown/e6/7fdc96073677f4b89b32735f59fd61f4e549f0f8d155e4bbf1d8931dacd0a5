@@ -1,0 +1,31 @@
+I"<h3 id="dec-2018-----9976">Dec 2018  - # 9976</h3>
+<div class="prodSummary">The client wanted to clone the items such as data, fields, and settings from an existing company to the new company they are creating.</div>
+
+<p><strong>Data, fields and settings to be cloned</strong>: <em>Card types</em>, <em>Card master</em>, <em>Sequence controls</em>, <em>Action form</em>, <em>Application parameters</em> etc.</p>
+
+<p>To enable this optionn, two different scripts have to be executed in the HR Works database.</p>
+
+<ol>
+  <li>
+    <p>Script to create <strong>Company Creation</strong> menu.</p>
+
+    <p>This will insert a new screen named <code>Company creation</code> in the <strong>Administration</strong> module » <strong>System Management</strong> section.</p>
+  </li>
+  <li>
+    <p>Script to create new value types <code>(screen selections).</code></p>
+
+    <p>Once the above scripts are executed, users can make a clone of the existing company from the <strong>Compony Creation</strong> screen.</p>
+
+    <p>From the <strong>Data to Copy</strong> dropdown field of the <strong>Company Creation</strong> screen, users can select the items they want to copy from the existing company to the new company they are creating.<br />
+<img src="images/prod-enhance-image4.png" alt="" /></p>
+
+    <p>On successful completion of the company creation process, the following message appears:<br />
+<img src="images/prod-enhance-image5.png" alt="" /></p>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+:ET

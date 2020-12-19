@@ -9,6 +9,13 @@
     <meta name="description" content="{% if page.content %}{{ page.content | truncatewords: 30 | strip_html }} {% else %}{{site.uistring.description}}{% endif %}" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
+    <meta name="lang:search.language" content="en">
+    <meta name="lang:search.pipeline.stopwords" content="True">
+    <meta name="lang:search.pipeline.trimmer" content="True">
+    <meta name="lang:search.result.none" content="No matching documents">
+    <meta name="lang:search.result.one" content="1 matching document">
+    <meta name="lang:search.result.other" content="# matching documents">
+    <meta name="lang:search.tokenizer" content="[\s\-]+">
     <link rel="icon"  type="image/x-icon" href="{{site.favicon}}">
 
     <!-- FontAwesome (GPL license) -->
@@ -19,6 +26,14 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <!-- Navgoco (BSD license)-->
     <script type="text/javascript" src="assets/js/jquery.navgoco.min.js"></script>
+	    <script type="text/javascript" src="assets/js/toc.js"></script>
+	<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+	
+
     <!-- Bootstrap (MIT license)-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Anchor JS (MIT license)-->
@@ -31,7 +46,11 @@
         });
         </script>
     {% endunless %}
-
+   <script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
     <script>
         $( document ).ready(function() {
             $("#docnavsidebar").navgoco({
@@ -63,18 +82,14 @@
     </script>
 
  <!-- For responsive button to toggle sidebar -->
-    <script>
-        $(document).ready(function() {
-            $('[data-toggle=offcanvas]').click(function() {
-                $('.row-offcanvas').toggleClass('active');
-            });
-        });
-    </script>
+
 
     <!-- User defined js -->
     <script src="assets/js/user_defined_javascript.js"></script>
     <script src="assets/js/prism.js"></script>
     <script src="assets/js/prism-line-numbers.js"></script>
+    <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+
     <!--Bootstrap (MIT license) -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->

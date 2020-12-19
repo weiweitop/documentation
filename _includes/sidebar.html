@@ -1,5 +1,11 @@
+<style>
+.mydocsidebar {
+width: 15% !Important;
+}
+</style>
+
 {% assign sidebar = site.data[page.sidebar] %}
-<div class="mydocsidebar">
+<div class="mydocsidebar" style="background-color: #f5f5f5">
 
 
 <div class="sidebar-inner">
@@ -51,7 +57,7 @@
 
             {% for subfolder in folderitem.subfolders %}
 
-            <li class="level2"><a class="subfoldersTitle" href="#">{{ subfolder.title }}</a>
+            <li class="level2"><a class="subfoldersTitle" href="{{subfolder.jurl | remove: "/" }}">{{ subfolder.title }}</a>
                 <ul style="display:none;">
                     {% for subfolderitem in subfolder.subfolderitems %}
 

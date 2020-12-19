@@ -7,10 +7,10 @@
   border-left-width: 5px;
   border-radius: 3px;
 }
-.calloutTitle {
+.bs-callout h4 {
   margin-top: 0;
   margin-bottom: 5px;
-  font-size: 16px;
+
 }
 .bs-callout p:last-child {
   margin-bottom: 0;
@@ -24,82 +24,69 @@
 .bs-callout-default {
   border-left-color: #777;
 }
-.bs-callout-default .calloutTitle {
+.bs-callout-default h4 {
   color: #777;
 }
 .bs-callout-primary {
   border-left-color: #428bca;
 }
-.bs-callout-primary .calloutTitle {
+.bs-callout-primary h4 {
   color: #428bca;
 }
 .bs-callout-success {
   border-left-color: #5cb85c;
 }
-.bs-callout-success .calloutTitle {
+.bs-callout-success h4 {
   color: #5cb85c;
 }
 .bs-callout-danger {
   border-left-color: #d9534f;
 }
-.bs-callout-danger .calloutTitle {
+.bs-callout-danger h4 {
   color: #d9534f;
 }
 .bs-callout-warning {
   border-left-color: #f0ad4e;
 }
-.bs-callout-warning .calloutTitle {
+.bs-callout-warning h4 {
   color: #f0ad4e;
 }
 .bs-callout-info {
   border-left-color: #5bc0de;
+
 }
-.bs-callout-info .calloutTitle {
+.bs-callout-info {
+  border-left-color: #5bc0de;
+}
+
+.bs-callout-feed {
+  border-left-color: #5bc0de;
+}
+.bs-callout-feed h4 {
   color: #5bc0de;
 }
-
-.alert code {
-  background: transparent;
+.alert, .callout {
+  overflow: hidden;
+}
+.alert-warning {
+  color: #444;
 }
 
-blockquote {
-    background-color: #eef7fa;
-    font-family: Segoe UI;
-    font-size: .9em;
-    margin: 0px;
-    padding: 1em;
+div.alert code, h2 code {
+  background-color: transparent !important;
+}
+/* without this, the links in these notes aren't visible.*/
+.alert a {
+  text-decoration: underline;
 }
 
-p.note {
-    background: #f1f1f1;
-    padding: 1em;
-    border-left: 1em solid orange;
+.note code, .alert code, .warning code, div#toc code, h2 code, h3 code, h4 code {
+  color: inherit;
+  padding: 0px;
+
 }
 
-p.tip {
-    background: #f1f1f1;
-    padding: 1em;
-    border-left: 1em solid deepskyblue;
+.alert {
+  margin-bottom:10px;
+  margin-top:10px;
 }
-
-p.warning {
-    background: #f1f1f1;
-    padding: 1em;
-    border-left: 1em solid red;
-}
-
-p.note::before {
-    content: "Note: ";
-    font-weight: bold;
-}
-
-p.tip::before {
-    content: "Tip: ";
-    font-weight: bold;
-}
-
-p.warning::before {
-    content: "Warning: ";
-    font-weight: bold;
-}
-/* end callout styles*/

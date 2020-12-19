@@ -16,7 +16,7 @@ li {
 @media (min-width: 767px)
 {
 p, .alert, pre, ol li ul li, ol li ol li {
-  max-width: 90%;
+  max-width: 100%;
 }
 
 }
@@ -337,11 +337,11 @@ ul#markdown-toc {
   padding-right: 7px;
 }
 
-ul#markdown-toc::before  {
-  font-size:18px;
-  padding-top:30px;
-  margin: 20px 0px 20px -30px;
-}
+//ul#markdown-toc::before  {
+//  font-size:18px;
+//  padding-top:30px;
+//  margin: 20px 0px 20px -30px;
+//}
 /* end mini toc */
 
 

@@ -1,0 +1,14 @@
+I"á<div class="prodSummary">A new validation was added in the payroll processing. If daily time sheet of the employees is missing for any day, then the payroll for the employee must be kept on hold.
+</div>
+
+<h3 id="july-2019---15852">July 2019 - #15852</h3>
+
+<p><img src="images/prod-enhance-image6.png" alt="" /></p>
+
+<p><em>Figure: Validation shown while processing payroll</em></p>
+
+<p><br /></p>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+:ET

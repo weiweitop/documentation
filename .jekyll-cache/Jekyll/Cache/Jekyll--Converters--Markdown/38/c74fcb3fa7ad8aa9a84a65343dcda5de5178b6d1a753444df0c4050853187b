@@ -1,0 +1,314 @@
+I"�<<div class="summary">
+You can generate a PDF of your Jekyll project. The PDF uses <a href="https://www.princexml.com/">Prince XML</a> to generate the PDF and allows you to configure which pages you want printed. The PDF output includes a table of contents for the entire guide, a mini-TOC on each section page, page numbers in cross references, and running headers and footers. The styling uses Bootstrap's CSS for print styles. You can see a sample here: <a href="pdf/jekyllhowto.pdf">PDF Output</a>
+.
+</div>
+
+<ul id="markdown-toc">
+  <li><a href="#generatecomprehensivepdf" id="markdown-toc-generatecomprehensivepdf">Generate a PDF of All Docs in a Sidebar</a></li>
+  <li><a href="#generate-a-pdf-of-a-single-page" id="markdown-toc-generate-a-pdf-of-a-single-page">Generate a PDF of a Single Page</a></li>
+  <li><a href="#modify-the-print-styles" id="markdown-toc-modify-the-print-styles">Modify the Print Styles</a></li>
+  <li><a href="#changepdfstyles" id="markdown-toc-changepdfstyles">Change the PDF Styles</a></li>
+  <li><a href="#change-the-pdfs-headers-or-footers" id="markdown-toc-change-the-pdfs-headers-or-footers">Change the PDF’s Headers or Footers</a></li>
+  <li><a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a></li>
+  <li><a href="#analyzing-the-output" id="markdown-toc-analyzing-the-output">Analyzing the Output</a></li>
+</ul>
+
+<h2 id="generatecomprehensivepdf">Generate a PDF of All Docs in a Sidebar</h2>
+
+<ol>
+  <li>Install Prince XML:
+    <ul>
+      <li><a href="https://www.princexml.com/doc/installing/#macos">MacOS instructions</a></li>
+      <li><a href="https://www.princexml.com/doc/installing/#windows">Windows instructions</a></li>
+    </ul>
+  </li>
+  <li>Create a configuration file for the PDF output. Copy the <strong>_config_pdf_jekyllhowto.yml</strong> file and rename it to match your project’s name (e.g., (<strong>_config_pdf_&lt;myproject&gt;.yml</strong>).</li>
+  <li>Open the configuration file and customize the following values:
+    <ul>
+      <li><code>print_title</code>: Appears on the PDF’s title page and running header.</li>
+      <li><code>print_subtitle</code>: Appears on the PDF’s title page.</li>
+      <li><code>sidebar</code>: Used to generate the table of contents and mini-TOC.</li>
+      <li><code>folderPath</code>: The folder path to your site output (for example, <code>/Users/tomjoht/projects/devcomm-appstore-v2/_site</code>). Prince needs this absolute path to access the files.</li>
+      <li><code>copyright_notice</code>: The copyright statement that you want to appear in the manual.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Open your sidebar data file and add the following section after <code>folders</code>:</p>
+
+    <pre><code class="language-yaml">folders:
+
+- title: Frontmatter
+  jurl: /frontmatter.html
+  type: frontmatter
+  pdf: true
+  folderitems:
+
+  - title: Title page
+    jurl: /pdf_title_page.html
+    pdf: true
+
+  - title: Copyright page
+    jurl: /pdf_copyright_page.html
+    pdf: true
+
+  - title: TOC page
+    jurl: /pdf_toc_page.html
+    pdf: true
+</code></pre>
+  </li>
+  <li>Add a new property for each section title and page called <code>pdf: true</code> for all the pages you want included in the PDF. Follow the example in the previous code sample. Alternatively, look at <strong>_data/jekyllhowto.yml</strong> file.</li>
+  <li>
+    <p>Organize your pages into subfolders by section. (Sections are the <code>folders</code> title that contains <code>folderitems</code>, or the <code>subfolders</code> title that contains <code>subfolderitems</code>, etc.)</p>
+
+    <p>For example, if your product nav has the folders “Getting Started” and “Configuration”, create folders inside the _docs folder named “Getting Started” and “Configuration”. Group the pages within those sections into those folders.</p>
+  </li>
+  <li>
+    <p>For each folder, add a new page that will serve as the mini-TOC for that section. Call it something that like **minitoc_<folder_name>.md**.</folder_name></p>
+
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> It might be helpful to organize your pages into subfolders by section. All files get flattened into the root directory when your site builds, so it doesn’t matter how many subfolders you use to organize your content.</div>
+  </li>
+  <li>
+    <p>Open up each mini-TOC file and add the following, customizing the frontmatter values for your own project:</p>
+
+    <pre><code class="language-yaml">---
+title: Get Started
+permalink: /iap-minitoc-get-started.html
+sidebar: in_app_purchasing
+---
+
+{% include pdfminitoc.html %}
+</code></pre>
+
+    <p>The <code>title</code> should be the same as the section title in your sidebar table of contents. The <code>permalink</code> should match your file name. The <code>sidebar</code> corresponds to your product sidebar.</p>
+
+    <style>
+.alert {
+  font-size: 110%;
+}
+</style>
+  </li>
+</ol>
+<p>&lt;/style&gt;</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Be careful with your file names here. If you mistype a file name, the PDF won’t build and you’ll have to sort out the cause of the error later. In fact, Prince is much more exacting about only generating a PDF if all listed assets are available. You’ll likely encounter some errors in the PDF generation process that stem from unavailable files or mistyped names in your sidebar data file. Think of these errors as helpful validation.</div>
+
+<ol>
+  <li>
+    <p>Open up your sidebar data file (in the _data folder) and add a <code>jurl</code> property for each <strong>section</strong> entry, like this:</p>
+
+    <pre><code class="language-yaml">- title: Jekyll Project Setup
+  jurl: /jekyllhowto-project-setup.html
+  pdf: true
+  folderitems:
+</code></pre>
+
+    <p>Point the <code>jurl</code> value to your mini-TOC file.See the _data/jekyllhowto.yml file for an example.</p>
+  </li>
+  <li>
+    <p>Open up the first file in your table of contents (after the Frontmatter section). Add <code>class: first</code> in the page’s frontmatter.</p>
+
+    <pre><code class="language-yaml">---
+title: Jekyll Project Setup
+permalink: /jekyllhowto-minitoc-project-setup.html
+sidebar: jekyllhowto
+class: first
+---
+</code></pre>
+
+    <p>This property will reset the numbering so that the first page begins on “1” (after the lower-roman number numbering for the TOC and frontmatter section.)</p>
+
+    <p>Before running Prince, we need to build an HTML-friendly output for Prince to consume. This HTML-friendly output will apply the layout that we want reflected in the print material.</p>
+  </li>
+  <li>
+    <p>Create a Jekyll server shortcut file to build the PDF-friendly output that the Prince script will consume. Copy <strong>serve_pdf_jekyllhowto.sh</strong> and customize the file name with your own project. Open the file and customize the PDF file name to match your PDF configuration file:</p>
+
+    <pre><code>jekyll serve --config _config_pdf_jekyllhowto.yml
+</code></pre>
+  </li>
+  <li>
+    <p>Create a build shortcut file to make it easy to run Prince to generate the PDF. Copy <strong>build_pdf_jekyllhowto.sh</strong> and customize the file name with your own project. Open the file and customize the PDF file name (change <code>jekyllhowto.pdf</code>):</p>
+
+    <pre><code>echo "Building the PDF ...";
+prince --javascript --input-list=_site/assets/prince-list.txt -o pdf/jekyllhowto.pdf;
+echo "Done. Look in the /pdf folder in your project directory.";
+</code></pre>
+
+    <p>The prince-list.txt file contains scripts that iterate through your sidebar data file and gather links to all the pages to consolidate in the PDF. The <code>-o</code> parameter specifies the file name and location Prince should write the PDF file to. If you’re having trouble with pages appearing, you can check prince-list.txt in your _site/assets output and make sure a valid link to the file exists on the page. The <code>--input-list</code> parameter in the above command is the input source for Prince.</p>
+  </li>
+</ol>
+
+<p><strong>Building the PDF</strong></p>
+
+<ol>
+  <li>
+    <p>From the command line, build the HTML output that uses your PDF configuration file:</p>
+
+    <pre><code class="language-sh">. serve_pdf_jekyllhowto.sh
+</code></pre>
+
+    <p>(Use the custom Jekyll server shortcut you created earlier.)</p>
+  </li>
+  <li>
+    <p>When the server preview finishes, open another tab and build the PDF:</p>
+
+    <pre><code class="language-sh">. build_pdf_jekyllhowto.sh
+</code></pre>
+
+    <p>You don’t need to have Jekyll server running to build the PDF. But it’s helpful in case you build the PDF and notice some issues you want to fix.</p>
+
+    <p>If successful, you’ll see a message like this:</p>
+
+    <pre><code>Building the PDF ...
+Done. Look in the /pdf folder in your project directory.
+</code></pre>
+
+    <p>(Actually, the message will appear even if the build is unsuccessful — it just lets you know the process finished.)</p>
+
+    <p>Look in the root directory of your project (not the _/site folder), look for your PDF.</p>
+  </li>
+</ol>
+
+<h2 id="generate-a-pdf-of-a-single-page">Generate a PDF of a Single Page</h2>
+
+<p>If you just want to create a simple PDF of one page in your docs, you can skip most of the steps in the previous section. To generate a PDF of a single doc:</p>
+
+<ol>
+  <li>Complete steps 1 through 3 in the previous section, <a href="#generatecomprehensivepdf">Generate a PDF of All Docs in a Sidebar</a>.</li>
+  <li>
+    <p>Build the HTML-friendly version of the site:</p>
+
+    <pre><code>jekyll serve --config _config_pdf_jekyllhowto.yml
+</code></pre>
+  </li>
+  <li>
+    <p>From the command line, navigate to the _site folder. Then run this:</p>
+
+    <pre><code>prince --javascript jekyllhowto-content-and-formatting.html -o pdf/jekyllhowto-content-and-formatting.pdf;
+</code></pre>
+
+    <p>In this case, the page being converted to PDF is jekyllhowto-content-and-formatting.html. Replace this with the page you want.</p>
+  </li>
+</ol>
+
+<h2 id="modify-the-print-styles">Modify the Print Styles</h2>
+
+<p>The print styles are defined in <strong>assets/css/pdf/printstyles.css</strong>. To overwrite the styles:</p>
+
+<ol>
+  <li>
+    <p>Copy the contents of <strong>printstyles.css</strong>, which is packaged in the gem.</p>
+
+    <p>To get the contents of the file, run <code>bundle show documentation-theme-jekyll-multioutput</code> from your Jekyll project directory. Go to the path shown and open the <strong>assets/css/pdf/printstyles.css</strong> file.</p>
+  </li>
+  <li>
+    <p>Copy and paste the contents of <strong>printstyles.css</strong> into a new file called <strong>user_defined_pdf_styles.css</strong>. Put <strong>user_defined_pdf_styles.css</strong> file into a folder called <strong>assets/css/pdf</strong> in your Jekyll project.</p>
+
+    <p>This will overwrite the <strong>user_defined_pdf_styles.css</strong> file (which is blank) in the gem’s files. This gem file is a placeholder intended to accommodate custom styles. It is referenced in the PDF layout files.</p>
+  </li>
+  <li>
+    <p>Change the styles as desired. See <a href="https://www.princexml.com/doc/9.0/properties/">CSS Properties</a> for a list of styles supported by Prince XML.</p>
+  </li>
+</ol>
+
+<h2 id="changepdfstyles">Change the PDF Styles</h2>
+
+<p>Does a style not look right? Do you want to customize the headers or footers for a specific page? You can do so by modifying the print stylesheet: <strong>assets/css/pdf/printstyles.css</strong>.</p>
+
+<p>You can simply add regular CSS here as you want. See <a href="https://www.princexml.com/doc/8.1/properties/">CSS Properties</a> on the Prince XML site for supported properties.</p>
+
+<h2 id="change-the-pdfs-headers-or-footers">Change the PDF’s Headers or Footers</h2>
+
+<ol>
+  <li>Follow the instructions in the previous section, <a href="#changepdfstyles">Change the PDF Styles</a>.</li>
+  <li>
+    <p>In your PDF configuration file (e.g., _config_pdf_jekyllhowto.yml), in the <code>defaults</code> section, add a <code>class</code> as a default to your <strong>/_docs</strong> and <strong>pages</strong>. For example:</p>
+
+    <pre><code class="language-yaml">defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: printpdf
+      class: myclass
+  -
+    scope:
+      path: ""
+      type: docs
+    values:
+      layout: printpdf
+      class: myclass
+</code></pre>
+
+    <p>This will add a default <code>class</code> property and value to your page’s frontmatter, like this:</p>
+
+    <pre><code class="language-yaml">---
+class: myclass
+---
+</code></pre>
+  </li>
+  <li>
+    <p>Open the <strong>user_defined_pdf_styles.css</strong> file and define the style like this:</p>
+
+    <pre><code class="language-css">body.myclass { page: myclass }
+@page myclass {
+    @top-left {
+        content: " ";
+    }
+    @top-right {
+        content: prince-script(datestamp);
+    }
+    @bottom-right {
+        content: counter(page, lower-roman);
+    }
+    @bottom-left {
+        content: prince-script(guideName);
+        font-size: 11px;
+    }
+}
+</code></pre>
+    <p>See the <a href="https://www.princexml.com/doc/9.0/page-selectors/">Page Selectors</a> topic in the Prince XML documentation for more details.</p>
+
+    <p>The <code>datestamp</code> and <code>guideName</code> functions are special Prince functions defined in the printpdf.html layout (packaged in the assets/pdf folder of the gem). Other JavaScript generated content is also possible. See the <a href="http://www.princexml.com/doc/8.1/script-func/">Prince XML site</a> for details.</p>
+  </li>
+</ol>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>If you see an error that Prince can’t load an input file, it means one of the files in the list is incorrectly named. For example, you might see this error after running your <code>. build_pdf_jekyllhowto.sh</code> command:</p>
+
+<pre><code>prince: /Users/tomjoht/projects/myapp/_site/jekyllhowto-minitoc-getting-started.html: error: can't open input file: No such file or directory
+</code></pre>
+
+<p>If you see this error, look to make sure the file appears in the _site directory and is properly named. Check the <code>permalink</code> name of the file as well as its name in the sidebar menu file (e.g., _data/jekyllhowto.yml).</p>
+
+<p>You might also get errors if you have JavaScript or non-allowed CSS syntax in your content.</p>
+
+<h2 id="analyzing-the-output">Analyzing the Output</h2>
+
+<p>Look at the PDF. Check the display of your tables, images, code samples, and other formatting. Look at the running header and footer, as well as the title page, table of contents, and mini-TOC pages. Does it all look good? If so, great.</p>
+
+<p>If you need to conditionalize some content so that it doesn’t appear in the guide, you can use an if condition like this:</p>
+
+<pre><code class="language-liquid">
+{% unless site.format == "pdf" %}
+This won't appear in the guide....
+{% endunless %}
+
+</code></pre>
+
+<p><code>unless</code> acts like a negative. You would read the above like this: Run this code <em>unless</em> site.format equals pdf.</p>
+
+<p>You can also conditionalize your content using this syntax:</p>
+
+<pre><code class="language-liquid">
+{% if site.format == "web" %}
+This won't appear in the guide....
+{% endif %}
+
+</code></pre>
+
+<p>The configuration file for the Jekyll and Hippo outputs contains <code>format: web</code>. The configuration file for PDFs contains <code>format: pdf</code>.</p>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+:ET

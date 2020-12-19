@@ -1,0 +1,241 @@
+I"Ò<div class="summary"><br />All enhancement docs that we create automatically get listed here with respective data.<br />We can any have columns other than product and tag columns if required.</div>
+<hr />
+
+<div class="datatable-begin"></div>
+
+<table>
+<thead>
+<tr>
+<th width="10">Product</th>
+<th width="50">Point [Title]</th>
+<th width="40">Tags</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td></td>
+<td><a href="/prodEnhanceCombine.html">Product enhancements collated</a></td>
+<td>
+<ul>
+
+    
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td>HRW, ESS</td>
+<td><a href="/prodEnhanceList.html">Product enhancement- List view</a></td>
+<td>
+<ul>
+
+    
+      
+      <a href="/tag/Generic"><nobr>Generic</nobr></a> | 	  
+    
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td>HRW, ESS</td>
+<td><a href="/prodEnhanceDataTable.html">Product enhancements (datatable)</a></td>
+<td>
+<ul>
+
+    
+      
+      <a href="/tag/Generic"><nobr>Generic</nobr></a> | 	  
+    
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td>HRW, ESS</td>
+<td><a href="/prod-enhancements.html">Product enhancements main</a></td>
+<td>
+<ul>
+
+    
+      
+      <a href="/tag/Generic"><nobr>Generic</nobr></a> | 	  
+    
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td>HRW</td>
+<td><a href="/tagsOnPages.html">Tags on pages</a></td>
+<td>
+<ul>
+
+    
+      
+      <a href="/tag/OmniHR"><nobr>OmniHR</nobr></a> | 	  
+    
+      
+      <a href="/tag/June-2019"><nobr>June-2019</nobr></a> | 	  
+    
+      
+      <a href="/tag/Email-settings"><nobr>Email-settings</nobr></a> | 	  
+    
+      
+      <a href="/tag/Notifications"><nobr>Notifications</nobr></a> | 	  
+    
+      
+      <a href="/tag/Custom-reports"><nobr>Custom-reports</nobr></a> | 	  
+    
+      
+      <a href="/tag/Administration"><nobr>Administration</nobr></a> | 	  
+    
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td>HRW</td>
+<td><a href="/missingDocNotification.html">Missing document notification to employee &amp; HR</a></td>
+<td>
+<ul>
+
+    
+      
+      <a href="/tag/HR-Works"><nobr>HR-Works</nobr></a> | 	  
+    
+      
+      <a href="/tag/June-2019"><nobr>June-2019</nobr></a> | 	  
+    
+      
+      <a href="/tag/Email-settings"><nobr>Email-settings</nobr></a> | 	  
+    
+      
+      <a href="/tag/Notifications"><nobr>Notifications</nobr></a> | 	  
+    
+      
+      <a href="/tag/Custom-reports"><nobr>Custom-reports</nobr></a> | 	  
+    
+      
+      <a href="/tag/Administration"><nobr>Administration</nobr></a> | 	  
+    
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td>HRW</td>
+<td><a href="/validationForTSonPayroll.html">Validation for TS on payroll process</a></td>
+<td>
+<ul>
+
+    
+      
+      <a href="/tag/HR-Works"><nobr>HR-Works</nobr></a> | 	  
+    
+      
+      <a href="/tag/July-2019"><nobr>July-2019</nobr></a> | 	  
+    
+      
+      <a href="/tag/Payroll-validation"><nobr>Payroll-validation</nobr></a> | 	  
+    
+      
+      <a href="/tag/Timesheet-data"><nobr>Timesheet-data</nobr></a> | 	  
+    
+      
+      <a href="/tag/Payroll-management"><nobr>Payroll-management</nobr></a> | 	  
+    
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td>HRW</td>
+<td><a href="/may019_14551.html">Loan Amount limit based on employee service</a></td>
+<td>
+<ul>
+
+    
+      
+      <a href="/tag/HR-Works"><nobr>HR-Works</nobr></a> | 	  
+    
+      
+      <a href="/tag/May-2019"><nobr>May-2019</nobr></a> | 	  
+    
+      
+      <a href="/tag/Loan-application"><nobr>Loan-application</nobr></a> | 	  
+    
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td>HRW</td>
+<td><a href="/copyMasterAndAppDetailsFromCompany.html">Option to copy master and application details from existing company</a></td>
+<td>
+<ul>
+
+    
+      
+      <a href="/tag/HR-Works"><nobr>HR-Works</nobr></a> | 	  
+    
+      
+      <a href="/tag/Dec-2018"><nobr>Dec-2018</nobr></a> | 	  
+    
+      
+      <a href="/tag/Company-creation"><nobr>Company-creation</nobr></a> | 	  
+    
+      
+      <a href="/tag/Copy-master-data"><nobr>Copy-master-data</nobr></a> | 	  
+    
+      
+      <a href="/tag/Administration"><nobr>Administration</nobr></a> | 	  
+    
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td>HRW</td>
+<td><a href="/June2019_14875.html">Balance compensatory off need to payout during final settlement</a></td>
+<td>
+<ul>
+
+    
+      
+      <a href="/tag/hololens"><nobr>hololens</nobr></a> | 	  
+    
+</ul>
+
+
+</td>
+</tr>
+
+
+</tbody>
+</table>
+
+<div class="datatable-end"></div>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+:ET

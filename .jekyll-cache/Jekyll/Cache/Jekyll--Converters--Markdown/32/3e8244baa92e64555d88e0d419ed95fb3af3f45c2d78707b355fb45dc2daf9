@@ -1,0 +1,15 @@
+I"ô<h3 id="tags-intro">Tags intro</h3>
+
+<p>Tags help us navigate and find relevant pages. Clicking on a tag     will take you to a page that lists all docs containing that tag.</p>
+
+<p><strong>Example</strong>: <br /> 
+Clicking on <code>OmniHR tag</code> will take you to a page listing all posts tagged with Hr-works.
+<img src="images/tag.png" alt="" /></p>
+
+<p><img src="images/tag1.png" alt="" /></p>
+
+<p><br /></p>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+:ET

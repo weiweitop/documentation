@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
+   {% include head.html %}
+   {% if page.datatable == true %}
+   <!-- Include the standard DataTables bits -->
+   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
-  {% include head.html %}
-  {% if page.datatable == true %}
-    <!-- Include the standard DataTables bits -->
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
-
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-      <script>
+   <script>
       $(document).ready(function(){
           $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
           $('table.display').DataTable( {
@@ -16,51 +15,80 @@
               searching: true
           });
        });
-    </script>
-    {% endif %}
-
-  <body class="{{page.layout}}">
-    {% include topnav.html %}
-    <div class="container">
-      <div class="row row-offcanvas row-offcanvas-left">
-        <!-- sidebar -->
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          {% include sidebar.html %}
-        </div>
-
-        <!-- main area -->
-        <div class="col-xs-12 col-sm-9 main">
-          <div class="subtitle">
-            {% include breadcrumb.html %}
-          </div>
-
-          {% if page.simple_map == true %}
-
-          <script>
-            $(document).ready(function () {
-              $(".box{{page.box_number}}").addClass("active");
-            });
-          </script>
-
-          {% include {{page.map_name}} %} {% endif %}
-
-          <h1>{{page.title}}</h1>
-
-          {% if site.github_button_location_below_title == true %} {% include
-          github_button.html %} {% endif %} {{content}} {% if
-          site.github_button_location_page_bottom == true %} {% include
-          github_button.html %} {% endif %} {% include disqus.html %}
-        </div>
-      </div>
-    </div>
-<hr>    <hr>
-
-
-  </body>
-  
-  <div class="footer">
-
-    {% include footer.html %}
+   </script>
+   {% endif %}
+   <body class="{{page.layout}}">
+      {% include topnav.html %}
+      <div class="container" style="margin: 0;width: 100%;">
+         <div class="row row-offcanvas row-offcanvas-left">
+            <!-- sidebar -->
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4 sidebar-offcanvas" id="sidebar" role="navigation">
+               {% include sidebar.html %}
+            </div>
+            <!-- main area -->
+        <div class="col-lg-8 col-md-6 col-sm-6 col-xs-4 main">
+               <div class="subtitle">
+                  {% include breadcrumb.html %}
+               </div>
+               {% if page.simple_map == true %}
+               <script>
+                  $(document).ready(function () {
+                    $(".box{{page.box_number}}").addClass("active");
+                  });
+               </script>
+               {% include {{page.map_name}} %} {% endif %}
+               <h1>{{page.title}}</h1>
+               {% if site.github_button_location_below_title == true %} {% include
+               github_button.html %} {% endif %} 
+               {% if page.summary %}
+               <div class="summary">{{page.summary}}</div>
+               {% endif %}
+                 <div id="markdown-content">
+    {{ content }}
   </div>
+			   
+			   {% if
+               site.github_button_location_page_bottom == true %} {% include
+               github_button.html %} {% endif %}
+               {% include disqus.html %}
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4 sidebar-offcanvas" id="sidebar" role="navigation">
+               <div class="mydocsidebar" style="background-color: #f5f5f5; width: 21%;">
+                  <div class="sidebar-inner">
+ <div id="toc"></div>
 
+					
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+   </body>
+   <script>addBackToTop({
+      backgroundColor: '#48b',
+      innerHTML: 'Back to Top',
+      textColor: '#fff'
+      })
+   </script>
+
+   <style>
+      #back-to-top {
+      border: 1px solid rgba(51, 51, 51, 0.192);
+      border-radius: 0;
+      font-family: sans-serif;
+      font-size: 14px;
+      width: 100px;
+      text-align: center;
+      line-height: 30px;
+      font-weight: bold;
+      height: 35px;
+      width: 110px;
+      }
+   </style>
+   <br><br>
+   <div class="footer">
+      {% include footer.html %}
+   </div>
+</html>
 </html>

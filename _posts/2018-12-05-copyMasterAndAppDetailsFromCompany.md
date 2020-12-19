@@ -5,7 +5,7 @@ permalink: copyMasterAndAppDetailsFromCompany.html
 product: HRW
 layout: post
 description: Request by client to enable copying items from an existing company while creating a new one. 
-tags: OmniHR Dec-2018 Company-creation Copy-master-data Administration   
+tags: HR-Works Dec-2018 Company-creation Copy-master-data Administration   
 ---
 
 ### Dec 2018  - # 9976
@@ -13,7 +13,7 @@ tags: OmniHR Dec-2018 Company-creation Copy-master-data Administration
 
 **Data, fields and settings to be cloned**: *Card types*, *Card master*, *Sequence controls*, *Action form*, *Application parameters* etc.
 
-To enable this optionn, two different scripts have to be executed in the OmniHR database.
+To enable this optionn, two different scripts have to be executed in the HR Works database.
 
    1.  Script to create **Company Creation** menu. 
        
