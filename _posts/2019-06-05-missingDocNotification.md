@@ -12,7 +12,7 @@ tags: HR-Works June-2019 Email-settings Notifications Custom-reports Administrat
 Tags help us navigate and find relevant pages. Clicking on a tag     will take you to a page that lists all docs containing that tag.
 
 **Example**: <br> 
-Clicking on `HR works tag` will take you to a page listing all posts tagged with Hr-works.
+Clicking on `HROn tag` will take you to a page listing all posts tagged with Hr-works.
 ![](images/tag.png)
  
 ![](images/tag1.png)

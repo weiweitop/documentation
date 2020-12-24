@@ -1,4 +1,4 @@
-I"E�<div class="prodSummary">The client required to payout the balance compensatory off to the employee when an employee resign. Following steps are executed to implement this.</div>
+I"E�<div class="prodSummary">The client required to payout the balance compensatory off to the employee when an employee resign. Following steps are executed to implement this.</div>
 
 <h3 id="june-2019---14875">June 2019 - #14875</h3>
 
@@ -19,7 +19,7 @@
 sidebar: release
 permalink: prod-enhancements.html
 layout: post
-description: This document is intended to briefly explain both generic and client-specific features implemented in HR Works &amp; HR Works Plus.
+description: This document is intended to briefly explain both generic and client-specific features implemented in HROn &amp; HROn Plus.
 product: HRW, ESS
 tags: Generic
 —</p>
@@ -28,7 +28,7 @@ tags: Generic
 The client required to payout the balance compensatory off to the employee when an employee resign. Following steps are executed to implement this.
 </div>
 
-<h1 id="hr-works">HR Works</h1>
+<h1 id="hr-works">HROn</h1>
 <h2 id="administration">Administration</h2>
 
 <h3 id="missing-document-notification-to-employee-and-hr">Missing document Notification to employee and HR</h3>
@@ -67,7 +67,7 @@ The client required to payout the balance compensatory off to the employee when 
   <li><strong>Data, fields and settings to be cloned</strong>: card types, card master, sequence control, action form, application parameters etc.</li>
 </ul>
 
-<p>For this option to appear in HR Works, two different scripts have to be executed in the HR Works database.</p>
+<p>For this option to appear in HROn, two different scripts have to be executed in the HROn database.</p>
 
 <ol>
   <li>
@@ -152,7 +152,7 @@ The client required to payout the balance compensatory off to the employee when 
 
 <h3 id="april-2019---14605">April-2019 - #14605</h3>
 
-<p>In HR Works payroll module, the details regarding the attendance such as overtime hours, shortage hours etc was not able to edit and the information from the attendance module was considered. Hence the client required to add a feature which enables to edit the attendance data if required from the payroll module and thus to calculate the payroll accurately.</p>
+<p>In HROn payroll module, the details regarding the attendance such as overtime hours, shortage hours etc was not able to edit and the information from the attendance module was considered. Hence the client required to add a feature which enables to edit the attendance data if required from the payroll module and thus to calculate the payroll accurately.</p>
 
 <p>In order to achieve this, a new parameter is added in the PRL-1 Tab named OT Entry Batch for TAM Interface Employees.</p>
 
@@ -376,9 +376,9 @@ For instance, if an employee is going for leave from May 15<sup>th</sup> to June
 
 <h3 id="june-2019---14554">June 2019 - #14554</h3>
 
-<p>The client required to deduct the training cost during the final settlement. The training provided to the employees are tracked in the HR Works under the Personal Records. When an employee resigns before one year of training taken date, the amount of training cost is deducted during the employee’s final settlement.</p>
+<p>The client required to deduct the training cost during the final settlement. The training provided to the employees are tracked in the HROn under the Personal Records. When an employee resigns before one year of training taken date, the amount of training cost is deducted during the employee’s final settlement.</p>
 
-<p>The training details stored in the HR Works are Effective Date, Training Type, Training subject and Training cost.</p>
+<p>The training details stored in the HROn are Effective Date, Training Type, Training subject and Training cost.</p>
 
 <p>In order to implement the feature, execute the custom SP.</p>
 
@@ -396,7 +396,7 @@ For instance, if an employee is going for leave from May 15<sup>th</sup> to June
 
 <h3 id="feb-2019-----12491">Feb 2019  - # 12491</h3>
 
-<p>In HR Works, there was a parameter (Multilevel AWF) by which users can set approval workflow for all common transactions.</p>
+<p>In HROn, there was a parameter (Multilevel AWF) by which users can set approval workflow for all common transactions.</p>
 
 <p>The client requires a different workflow to be set for leave settlement transaction. For this a new parameter ‘ M<strong>ultilevel AWF on Leave Settlement</strong> ‘ is added in Application parameter AWF1 Tab.</p>
 
@@ -456,7 +456,7 @@ For instance, if an employee is going for leave from May 15<sup>th</sup> to June
 
 <p><strong>Example</strong>: If an employee completes the 3 years by 15th of June, his leave accrual should be 15 days with 22 working days and rest with 24 working Days.</p>
 
-<p>In both ESS and HR Works Leave application, leave balance need to show as per the above accrual method. The client needs to show the leave balance as of leave start date</p>
+<p>In both ESS and HROn Leave application, leave balance need to show as per the above accrual method. The client needs to show the leave balance as of leave start date</p>
 
 <p>For this, a new parameter (<strong>Apply Prorata Calculation in Vacation</strong>) is added to <strong>Application parameter »</strong> <strong>LV-1</strong>. If the value of this parameter is set to ‘Yes’, leave days will be accrued based on pro-data basis. Leave balance in leave application will be shown as per this accrual method.</p>
 
@@ -474,7 +474,7 @@ For instance, if an employee is going for leave from May 15<sup>th</sup> to June
 
 <h3 id="oct-2018-11068"><strong>**</strong>Oct 2018 (#11068)**</h3>
 
-<p>In HR Works, when an employee goes on vacation and requests for Leave salary advance, he/ she will be paid the salary till the leave start date and leave salary for the leave days. The leave salary consists of gross salary excluding COLA, OTHER and MOBILE allowance. These allowances will be paid for the leave days along with month end payroll. Leave salary paid to the employee will be considered as leave salary advance and it will be recovered from the subsequent payrolls.</p>
+<p>In HROn, when an employee goes on vacation and requests for Leave salary advance, he/ she will be paid the salary till the leave start date and leave salary for the leave days. The leave salary consists of gross salary excluding COLA, OTHER and MOBILE allowance. These allowances will be paid for the leave days along with month end payroll. Leave salary paid to the employee will be considered as leave salary advance and it will be recovered from the subsequent payrolls.</p>
 
 <p>In case if an employee has got any additional payments such as OT, Bonus or allowances (COLA, OTHER and MOBILE), those payments will be made only after recovering the leave salary advance paid to the employee. The client now requires that the recovery be made only from the paid leave salary components and if any additional payments are there, they should not be touched and have to be paid as usual.</p>
 
@@ -492,7 +492,7 @@ For instance, if an employee is going for leave from May 15<sup>th</sup> to June
 
 <tr>
 
-<th>HR works process</th>
+<th>HROn process</th>
 
 <th>New process</th>
 
@@ -835,7 +835,7 @@ The values available for selection are listed below. These values refer to the t
 
 <h3 id="march-2019---14031">March-2019 - #14031</h3>
 
-<p>The transaction period of the reports is customised in this point. The requirement of the client was to view the transaction period in three different ways such as Today, Previous working Day and Period. However more options for selecting the transaction period has added in this point. This change is applicable in both HR Works and HR Work Plus in the general transaction screen and report screens.</p>
+<p>The transaction period of the reports is customised in this point. The requirement of the client was to view the transaction period in three different ways such as Today, Previous working Day and Period. However more options for selecting the transaction period has added in this point. This change is applicable in both HROn and HR Work Plus in the general transaction screen and report screens.</p>
 
 <p>The changes are made as follows.</p>
 
@@ -934,7 +934,7 @@ The values available for selection are listed below. These values refer to the t
 
 <h3 id="feb-2019-----12361">Feb 2019  - # 12361</h3>
 
-<p>Initially, Pending Approvals were listed in the Pending Action Screen in the Administrative module on the basis of the access rights. Now, the client needed a dashboard that shows pending approval items with the user, when logged into the HR Works. Need to show the dashboard as landing page. These changes are made as below:</p>
+<p>Initially, Pending Approvals were listed in the Pending Action Screen in the Administrative module on the basis of the access rights. Now, the client needed a dashboard that shows pending approval items with the user, when logged into the HROn. Need to show the dashboard as landing page. These changes are made as below:</p>
 
 <ol>
   <li>
@@ -953,7 +953,7 @@ The values available for selection are listed below. These values refer to the t
 
 <h3 id="dec-2018-----13628">Dec 2018  - # 13628</h3>
 
-<p>The client needs to generate employee report in specific format in HR Works. A new field (Date of birth) has been added to personal record report.</p>
+<p>The client needs to generate employee report in specific format in HROn. A new field (Date of birth) has been added to personal record report.</p>
 
 <p><img src="images/prod-enhance-image36.png" alt="" /></p>
 
@@ -978,7 +978,7 @@ The values available for selection are listed below. These values refer to the t
 
 <ul>
   <li>
-    <p>A query needs to be executed in the HR Works DB, in which the type and size of the file to be uploaded can be specified.</p>
+    <p>A query needs to be executed in the HROn DB, in which the type and size of the file to be uploaded can be specified.</p>
   </li>
   <li>
     <p>Once the query is executed, an appropriate value will be available for selection in the <strong>Validations</strong> dropdown field against any of the personal records fields provided it’s data type is set as <em>File</em>.</p>
@@ -1164,10 +1164,10 @@ The values available for selection are listed below. These values refer to the t
 
 <ul>
   <li>
-    <p>A few Stored procedures need to be executed in the HR Works DB. Separate SPs are created for every item on the Company Records menu. Only when you execute the SP meant for an item, the respective view will be available for selection in the <strong>Report Source</strong> dropdown field on the <strong>Custom Report Designer</strong> screen.</p>
+    <p>A few Stored procedures need to be executed in the HROn DB. Separate SPs are created for every item on the Company Records menu. Only when you execute the SP meant for an item, the respective view will be available for selection in the <strong>Report Source</strong> dropdown field on the <strong>Custom Report Designer</strong> screen.</p>
   </li>
   <li>
-    <p>On the <strong>Administration » System Management » Custom Report Designer</strong> screen, a new report will be created by selecting appropriate values from the <strong>Report Source</strong> field. The values that you select here appear as result of executing the respective Stored Procedure in the HR Works DB.<br />
+    <p>On the <strong>Administration » System Management » Custom Report Designer</strong> screen, a new report will be created by selecting appropriate values from the <strong>Report Source</strong> field. The values that you select here appear as result of executing the respective Stored Procedure in the HROn DB.<br />
 <img src="images/prod-enhance-image47.png" alt="" /></p>
   </li>
   <li>
@@ -1315,13 +1315,13 @@ The values available for selection are listed below. These values refer to the t
 
 <h3 id="july-2019---15108">July 2019 - #15108</h3>
 
-<p>A new functionality for adjusting the shortage hours with the overtime is introduced in HR Works. Shortage hours is adjusted from overtime hours in an order of Holiday OT, Off day OT and Normal OT during payroll calculation and the remaining OT hours only will be paid. Further, this functionality must be linked on Department level.</p>
+<p>A new functionality for adjusting the shortage hours with the overtime is introduced in HROn. Shortage hours is adjusted from overtime hours in an order of Holiday OT, Off day OT and Normal OT during payroll calculation and the remaining OT hours only will be paid. Further, this functionality must be linked on Department level.</p>
 
 <p>Changes based on customized SP.</p>
 
 <p><img src="images/prod-enhance-image59.png" alt="" /></p>
 
-<h2 id="new-report---attendance-summary-report-in-hr-works">New Report - Attendance Summary Report in HR Works</h2>
+<h2 id="new-report---attendance-summary-report-in-hr-works">New Report - Attendance Summary Report in HROn</h2>
 
 <h3 id="july-2019---15424">July 2019 - #15424</h3>
 
@@ -1476,7 +1476,7 @@ Figure: Attendance Summary Report_</p>
 
 <ul>
   <li>
-    <p>break details which are entered through the Employee Break permissions transaction in HR Works</p>
+    <p>break details which are entered through the Employee Break permissions transaction in HROn</p>
   </li>
   <li>
     <p>break permissions requests made through View Calendar transaction in HRW Web.</p>
@@ -1493,7 +1493,7 @@ Figure: Attendance Summary Report_</p>
 
 <h3 id="dec-2018-----12896">Dec 2018  - # 12896</h3>
 
-<p>The client wants the same periodic summary report in excel format in HR Works to be sent over email as an alert which will be generated monthly from the system.</p>
+<p>The client wants the same periodic summary report in excel format in HROn to be sent over email as an alert which will be generated monthly from the system.</p>
 
 <p>Changes done by executing scripts (xml).</p>
 
@@ -1511,7 +1511,7 @@ Figure: Attendance Summary Report_</p>
 
 <h3 id="nov-2018-----12886">Nov 2018  - # 12886</h3>
 
-<p>The Time Card report in HR Works web used to show employee name and code together in row and beneath that the time card details of the employees as shown below.</p>
+<p>The Time Card report in HROn web used to show employee name and code together in row and beneath that the time card details of the employees as shown below.</p>
 
 <p><img src="images/prod-enhance-image71.png" alt="" /></p>
 
@@ -1519,17 +1519,17 @@ Figure: Attendance Summary Report_</p>
 
 <p><img src="images/prod-enhance-image72.png" alt="" /></p>
 
-<p>The aforementioned changes to the report was made through the report template in HR Works.</p>
+<p>The aforementioned changes to the report was made through the report template in HROn.</p>
 
 <h2 id="break-details-in-consolidated-attendance-report">Break Details in Consolidated Attendance Report</h2>
 
 <h3 id="nov-2018-----12562">Nov 2018  - # 12562</h3>
 
-<p>The Consolidated attendance report in HR Works did not show the Break details such as (Break IN Time, Break OUT Time, and Break hours. As per the client’s requirement the report now displays these details. If the employee has multiple breaks for a given day, the report will show those details as well.</p>
+<p>The Consolidated attendance report in HROn did not show the Break details such as (Break IN Time, Break OUT Time, and Break hours. As per the client’s requirement the report now displays these details. If the employee has multiple breaks for a given day, the report will show those details as well.</p>
 
 <p><img src="images/prod-enhance-image73.png" alt="" /></p>
 
-<p>The aforementioned changes to the report was made through the report template in HR Works.</p>
+<p>The aforementioned changes to the report was made through the report template in HROn.</p>
 
 <h2 id="new-format-for-consolidated-attendance-report-emailing">New format for consolidated attendance Report emailing</h2>
 
@@ -1630,7 +1630,7 @@ Figure: Attendance Summary Report_</p>
 
 <ul>
   <li>
-    <p>Email Settings in HR Works</p>
+    <p>Email Settings in HROn</p>
 
     <ul>
       <li>
@@ -1648,22 +1648,22 @@ Figure: Attendance Summary Report_</p>
     </ul>
   </li>
   <li>
-    <p>View Calendar Requests and Approval in HR Works Web</p>
+    <p>View Calendar Requests and Approval in HROn Web</p>
   </li>
   <li>
-    <p>Payslip emailing in HR Works</p>
+    <p>Payslip emailing in HROn</p>
   </li>
   <li>
-    <p>Transaction Email Alert in HR Works</p>
+    <p>Transaction Email Alert in HROn</p>
   </li>
   <li>
-    <p>Document Alert in HR Works License Manager and Email Attendance Details services (supports multi DB configurations in Email Attendance Details)</p>
+    <p>Document Alert in HROn License Manager and Email Attendance Details services (supports multi DB configurations in Email Attendance Details)</p>
   </li>
   <li>
-    <p>OT Pre-Approval Emailing in HR Works Web</p>
+    <p>OT Pre-Approval Emailing in HROn Web</p>
   </li>
   <li>
-    <p>Email Functionalities in HR Works Plus</p>
+    <p>Email Functionalities in HROn Plus</p>
   </li>
 </ul>
 
@@ -1673,11 +1673,11 @@ Figure: Attendance Summary Report_</p>
 
 <p>It is the License Manager utility which determines the Access Control, Menu Visibility and other core constituents of the system. These settings are configured in the utility file to suit to various customer needs. In addition, the number of entities that can be created in the Card Type screen, number of users that can access the system etc. can be restricted by assigning proper utility settings.</p>
 
-<h1 id="hr-works-plus">HR Works Plus</h1>
+<h1 id="hr-works-plus">HROn Plus</h1>
 
 <h1 id="administration-1">Administration</h1>
 
-<h2 id="user-interface-changes-to-hr-works-plus">User Interface Changes to HR Works Plus</h2>
+<h2 id="user-interface-changes-to-hr-works-plus">User Interface Changes to HROn Plus</h2>
 
 <h3 id="dec-2018--12841">Dec 2018 # 12841</h3>
 
@@ -1687,7 +1687,7 @@ Figure: Attendance Summary Report_</p>
   <li><strong>Default Skin</strong>: Changing the skin will change the appearance, theme palette and other user interface elements. Users can change the default skin set for ESS and/ or set any of the available skins by choosing the respective values from this dropdown. If no values are set for this parameter or None is selected as its value, the ESS will appear in the default skin.</li>
 </ol>
 
-<p><strong>Note</strong>: This can be done by any users having admin rights or having the required permissions to make these changes in HR Works. If you want to allow the employees/ ESS users also to change the theme set here or the default theme, see the details provided on the <strong>Allow Skin Change By Users</strong> parameter.<br />
+<p><strong>Note</strong>: This can be done by any users having admin rights or having the required permissions to make these changes in HROn. If you want to allow the employees/ ESS users also to change the theme set here or the default theme, see the details provided on the <strong>Allow Skin Change By Users</strong> parameter.<br />
 <img src="images/prod-enhance-image78.png" alt="" /></p>
 
 <ol>
@@ -1831,7 +1831,7 @@ Figure: Attendance Summary Report_</p>
   </li>
 </ul>
 
-<h2 id="need-more-fields-in-field-chooser-of-hr-works-plus">Need more fields in “Field Chooser” of HR works Plus</h2>
+<h2 id="need-more-fields-in-field-chooser-of-hr-works-plus">Need more fields in “Field Chooser” of HROn Plus</h2>
 
 <h3 id="july-2018-9400">July 2018 (#9400)</h3>
 
@@ -1843,7 +1843,7 @@ Figure: Attendance Summary Report_</p>
 
 <h3 id="july-2018-11057">July 2018 (#11057)</h3>
 
-<p>Earlier only approved batches were able to view or generate payslip. Now even unapproved batches can be viewed in ESS with the help of a new parameter in HRW+ Application parameters <strong>‘Show Payslip in HR Works Plus’</strong> (HSS-1) with options, <strong>None/Always/Only for Approved Batches/Only after Payment Date</strong>. Display of Payslip is controlled based on this Parameter, However, default option will be ‘Only for Approved Batches’. This parameter will be hidden by default.</p>
+<p>Earlier only approved batches were able to view or generate payslip. Now even unapproved batches can be viewed in ESS with the help of a new parameter in HRW+ Application parameters <strong>‘Show Payslip in HROn Plus’</strong> (HSS-1) with options, <strong>None/Always/Only for Approved Batches/Only after Payment Date</strong>. Display of Payslip is controlled based on this Parameter, However, default option will be ‘Only for Approved Batches’. This parameter will be hidden by default.</p>
 
 <p><img src="images/prod-enhance-image86.png" alt="" /></p>
 
@@ -1857,7 +1857,7 @@ Figure: Attendance Summary Report_</p>
 
 <p><img src="images/prod-enhance-image88.png" alt="" /></p>
 
-<h2 id="need-day-name-column-in-hr-works-plus-consolidate-report">Need Day name column in HR works plus Consolidate report</h2>
+<h2 id="need-day-name-column-in-hr-works-plus-consolidate-report">Need Day name column in HROn plus Consolidate report</h2>
 
 <h3 id="july-2018-10305">July 2018 (#10305)</h3>
 
@@ -1869,7 +1869,7 @@ Figure: Attendance Summary Report_</p>
 
 <h3 id="july-2018-9406">July 2018 (#9406)</h3>
 
-<p>Logo option is implemented in all HR Works and HR Works plus reports.</p>
+<p>Logo option is implemented in all HROn and HROn plus reports.</p>
 
 <h1 id="self-service">Self Service</h1>
 
@@ -1944,7 +1944,7 @@ Figure: Attendance Summary Report_</p>
 
 <h3 id="june-2019----15050">June 2019 - # 15050</h3>
 
-<p>For the client, employees are availing the ticket as Company ticket. By default, the amount specified in the destination slab will be considered as the ticket cost. Unlike from HR Works, there is no option to edit the amount and provide the actual ticket cost in ESS.</p>
+<p>For the client, employees are availing the ticket as Company ticket. By default, the amount specified in the destination slab will be considered as the ticket cost. Unlike from HROn, there is no option to edit the amount and provide the actual ticket cost in ESS.</p>
 
 <p>The following changes have been made by running a query in the DB in order to make the ticket amount visible and/or editable for either the requestor or for the approver or for both.</p>
 
@@ -1975,7 +1975,7 @@ Figure: Attendance Summary Report_</p>
 
 <h3 id="june-2019----15233">June 2019 - # 15233</h3>
 
-<p>The client needs to enable print option for Letters and certificates, even if the request is not fully approved. To enable this change a script needs to be run in the HR Works DB and then from the <strong>HSS RPT</strong> tab of the <strong>HRW+</strong> <strong>Application parameters</strong> screen print option needs to be enabled.</p>
+<p>The client needs to enable print option for Letters and certificates, even if the request is not fully approved. To enable this change a script needs to be run in the HROn DB and then from the <strong>HSS RPT</strong> tab of the <strong>HRW+</strong> <strong>Application parameters</strong> screen print option needs to be enabled.</p>
 
 <p><img src="images/prod-enhance-image95.jpeg" alt="" /></p>
 
@@ -1993,7 +1993,7 @@ Figure: Attendance Summary Report_</p>
 
 <h3 id="june-2019---14371">June 2019 - #14371</h3>
 
-<p>Currently there is no option to escalate the pending approvals in HR Works or ESS. Hence a new feature to escalate the pending approvals is requested by the client. Now, in ESS, if an employee application request remains pending for approval for a long time, the employee can escalate the issue to the next approver.</p>
+<p>Currently there is no option to escalate the pending approvals in HROn or ESS. Hence a new feature to escalate the pending approvals is requested by the client. Now, in ESS, if an employee application request remains pending for approval for a long time, the employee can escalate the issue to the next approver.</p>
 
 <p>For implementing this change, a new column is added in the ‘Approval Workflow Settings’ Screen named “Escalation Type”.</p>
 
@@ -2092,7 +2092,7 @@ Figure: Attendance Summary Report_</p>
 
 <h3 id="feb-2019---13437">Feb-2019 - #13437</h3>
 
-<p>In HR Works Plus, there was no any validation with respect to the minimum number of days that is required between two off days while creating Employee Daily Roster. As per the client’s requirement, a new option for setting a minimum gap between the OFF days of the employees is introduced.</p>
+<p>In HROn Plus, there was no any validation with respect to the minimum number of days that is required between two off days while creating Employee Daily Roster. As per the client’s requirement, a new option for setting a minimum gap between the OFF days of the employees is introduced.</p>
 
 <p>For this a new Parameter named ‘<strong>Minimum Days Gap Between Off Days</strong>’ is added in the <strong>ESSTAM-1</strong> tab of the <strong>HRW + Application parameters</strong>. Users can enter the required minimum gap between the OFF days as the value of this parameter.</p>
 
@@ -2192,7 +2192,7 @@ Figure: Attendance Summary Report_</p>
 
 <p>The client wanted to print the leave application record from ESS in a specific template. This allows all approvers to take print out of leave application before final approval.</p>
 
-<p>For this, an REPX file was created and it is then imported into the Custom Report Designer in HR Works. The user can now modify the template as required from the Custom Report Designer menu in HR Works.</p>
+<p>For this, an REPX file was created and it is then imported into the Custom Report Designer in HROn. The user can now modify the template as required from the Custom Report Designer menu in HROn.</p>
 
 <h3 id="attachment-option-for-approver-in-leave-application">Attachment Option for Approver in Leave application</h3>
 
@@ -2471,7 +2471,7 @@ Figure: Attendance Summary Report_</p>
 
 <h3 id="june-2019----13438">June 2019 - # 13438</h3>
 
-<p>The client requires that the OT Approval screen similar to the one in eTAS should be added in HR Works Plus also. An option for converting the OT hours to Compo OFF should be added in this. If the employee applies for Compo OFF through the View Calendar Leave entry option, the balance against the accrued Compo OFF should be validated.</p>
+<p>The client requires that the OT Approval screen similar to the one in eTAS should be added in HROn Plus also. An option for converting the OT hours to Compo OFF should be added in this. If the employee applies for Compo OFF through the View Calendar Leave entry option, the balance against the accrued Compo OFF should be validated.</p>
 
 <p>The following needs to be done in order to get these changes:</p>
 
@@ -2484,7 +2484,7 @@ Figure: Attendance Summary Report_</p>
 <img src="images/prod-enhance-image120.png" alt="" /></p>
   </li>
   <li>
-    <p>After final approval from ESS; wage type-based time sheet batch will be created for each employee in submitted status, which in further needs to approved from HR Works wage type base time sheet screen.</p>
+    <p>After final approval from ESS; wage type-based time sheet batch will be created for each employee in submitted status, which in further needs to approved from HROn wage type base time sheet screen.</p>
   </li>
 </ol>
 
@@ -2583,7 +2583,7 @@ Figure: Attendance Summary Report_</p>
 
 <ol>
   <li>
-    <p>In the HR Works, in the <strong>TS1</strong> tab of the Application parameter Menu, a new selection named ‘<strong>Time Sheet Entity 4’</strong> is added.</p>
+    <p>In the HROn, in the <strong>TS1</strong> tab of the Application parameter Menu, a new selection named ‘<strong>Time Sheet Entity 4’</strong> is added.</p>
   </li>
   <li>
     <p>In the <strong>ESSTS-1</strong> Tab, make the appropriate selections.</p>
@@ -2783,7 +2783,7 @@ Figure: Attendance Summary Report_</p>
 
 <ul>
   <li>
-    <p><strong>Recruitment Budget Period</strong> will be created in the HR Works in which users can create different Recruitment Budget periods, which defines the periods for which Recruitment Budgeting for recruitment are performed. The time period for Recruitment Budgeting can be specified using the fields “Start Date” and “End Date”.</p>
+    <p><strong>Recruitment Budget Period</strong> will be created in the HROn in which users can create different Recruitment Budget periods, which defines the periods for which Recruitment Budgeting for recruitment are performed. The time period for Recruitment Budgeting can be specified using the fields “Start Date” and “End Date”.</p>
   </li>
   <li>
     <p><strong>Recruitment Budget</strong> functionality facilitates the process of allocating Budget for various designations as a part of Recruitment in a company. Budget needs to be prepared before the commencement of a Budget Period.</p>

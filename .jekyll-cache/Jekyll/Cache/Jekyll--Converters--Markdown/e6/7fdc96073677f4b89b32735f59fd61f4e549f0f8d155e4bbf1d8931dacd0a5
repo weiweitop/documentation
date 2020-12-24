@@ -3,7 +3,7 @@
 
 <p><strong>Data, fields and settings to be cloned</strong>: <em>Card types</em>, <em>Card master</em>, <em>Sequence controls</em>, <em>Action form</em>, <em>Application parameters</em> etc.</p>
 
-<p>To enable this optionn, two different scripts have to be executed in the HR Works database.</p>
+<p>To enable this optionn, two different scripts have to be executed in the HROn database.</p>
 
 <ol>
   <li>

@@ -13,7 +13,7 @@ tags: HR-Works Dec-2018 Company-creation Copy-master-data Administration
 
 **Data, fields and settings to be cloned**: *Card types*, *Card master*, *Sequence controls*, *Action form*, *Application parameters* etc.
 
-To enable this optionn, two different scripts have to be executed in the HR Works database.
+To enable this optionn, two different scripts have to be executed in the HROn database.
 
    1.  Script to create **Company Creation** menu. 
        
